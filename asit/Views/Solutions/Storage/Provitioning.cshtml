@@ -1,0 +1,26 @@
+﻿<h3>Utilización del Aprovisionamiento para Optimizar la Eficiencia</h3>
+<p>
+	Utilizando el aprovisionamiento ligero, las aplicaciones pueden crecer de una forma dinámica, al mismo tiempo que
+	utilizan solo el espacio que en realidad necesitan. Diseñado para mantener la carga empresarial a un nivel
+	eficiente, el aprovisionamiento ligero optimiza el espacio asignado de almacenamiento en disco de una manera flexible entre varios usuarios, según el espacio mínimo que necesite cada uno de ellos en un momento determinado. 
+</p>
+<p>
+	Esto reduce el uso de hardware de almacenamiento, pero también puede reducir el uso de energía eléctrica, la
+	generación de calor y el espacio de hardware. 
+</p>
+<p>
+	Un ejemplo de aprovisionamiento ligero podría incluir una situación en la que ningún usuario solicita más de 10
+	Giga Bytes (GB) de datos y en la que la media de datos utilizados de forma eficaz está por debajo de los 6 GB por
+	usuario. En dicho caso, el administrador de almacenamiento podría optar por asignar 10 GB de capacidad virtual a
+	cada usuario como volúmenes de aprovisionamiento ligero, mientras que en el almacenamiento back-end, la capacidad
+	real por usuario asciende a solo 6 GB.   Si, por ejemplo, hay 100usuarios, la capacidad virtual sería de 1TeraByte
+	(TB), pero solo hay 600 GB de capacidad real disponibles en el subsistema de almacenamiento.
+</p>
+<p>
+	Es un método válido cuando el administrador sabe gracias a anteriores observaciones que no todos los usuarios
+	solicitarán toda la cantidad de capacidad física al mismo tiempo. Algunos usuarios solicitarán solo 4 GB o menos y
+	otros podrían solicitar los 10 GB. Pero se supone que, de media, los usuarios solicitan menos de 6 GB de capacidad
+	real. El administrador de almacenamiento es el responsable de supervisar la asignación de capacidad real para evitar
+	quedarse sin almacenamiento, con alertas y controles del sistema de almacenamiento cuando se alcanzan los límites de
+	capacidad.
+</p>

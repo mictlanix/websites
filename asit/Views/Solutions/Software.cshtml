@@ -1,0 +1,242 @@
+﻿@*
+Software.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+@{
+    ViewBag.Title = "ASIT - Soluciones";
+    ViewBag.PageName = "Soluciones";
+    ViewBag.Section = "Solutions";
+}
+
+<link href="@Url.Content("~/Content/software.css")" rel="stylesheet" type="text/css"></link>
+<script src="@Url.Content("~/Scripts/path.min.js")" type='text/javascript'></script>
+
+<div id="software-solutions">
+	<div id="navigation">
+        <div id="accordion">
+            <h3 class="header-large">
+                <a class="availability" href="javascript:void(0)">
+                	<span>disponibilidad</span>
+                </a>
+            </h3>
+            <div>
+            	<ul>
+            		<li><a href="#availability">Máxima Disponibilidad al Menor Costo</a></li>
+            		<li><a href="#clusters">RAC</a></li>
+            		<li><a href="#dataguard">Data Guard</a></li>
+            		<li><a href="#fusion">Fusion Middleware</a></li>
+            	</ul>
+            </div>
+            <h3 class="header-large">
+                <a class="performance" href="javascript:void(0)">
+                	<span>rendimiento</span>
+            	</a>
+            </h3>
+            <div>
+            	<ul>
+            		<li><a href="#performance">Datos al Instante</a></li>
+            		<li><a href="#partitioning">Database Partitioning</a></li>
+            		<li><a href="#timesten">TimesTen In-Memory Database</a></li>
+            		<li><a href="#cache">In-Memory Database Cache</a></li>
+            		<li><a href="#compression">Advanced Compression</a></li>
+            	</ul>
+            </div>
+            <h3 class="header-large">
+                <a class="management" href="javascript:void(0)">
+                	<span>administración</span>
+            	</a>
+            </h3>
+            <div>
+            	<ul>
+            		<li><a href="#management">TI Alineado con el Negocio</a></li>
+            		<li><a href="#apps">Desempeño de las Aplicaciones</a></li>
+            		<li><a href="#lifecycle">Ciclo de Vida</a></li>
+            		<li><a href="#servicelevel">Nivel de Servicio</a></li>
+            		<li><a href="#settings">Configuraciones</a></li>
+            	</ul>
+            </div>
+        </div>
+	</div>
+	<div id="middle-block">
+		<div class="adornment"></div>
+	</div>
+	<div id="solution-content">
+		<div id="solution-header">
+			<div>
+				<a class="transition back-link" href="/Solutions">
+					<span>regresar a soluciones</span>
+				</a>
+			</div>
+			<div id="solution-title">
+				<span class="green">aplicaciones</span>
+				<span class="black">Software</span>
+			</div>
+		</div>
+		<div id="solution-description">
+		</div>
+	</div>
+</div>
+<div id="bottom-bar">
+	<img src="@Url.Content("~/Content/images/asit-gray-logo.png")" alt="ASIT"/>
+	<p>
+		¿Desea información detallada?<br/>
+		<a class="transition" href="/Contact">click aquí</a>
+	</p>
+	<img src="@Url.Content("~/Content/images/info-icon.png")" alt="Info"/>
+</div>
+<script type='text/javascript'>
+	function showSolutionBg(){
+		$("#solution-description").hide("drop", { direction: "down" }, 500, function(){
+			$("#accordion").accordion("option", "active", false);
+			$("#software-solutions").removeClass("content-bg");
+			$("#solution-header").removeClass("header-bg");
+			$("#solution-description").html(null);
+		});
+    }
+    
+	function showContentBg(selector){
+		var active = $("#accordion").accordion("option", "active");
+		
+		if(!(active === selector)) {
+			$("#accordion").accordion("activate", selector);
+		}
+		
+		$("#software-solutions").addClass("content-bg");
+	    $("#solution-header").addClass("header-bg");
+		$("#solution-description").hide("slide", { direction: "down" }, 250, function() {
+	    	$("#solution-description").show("slide", { direction: "up" }, 500);
+		});
+    }
+    
+	Path.map("#main").to(function(){
+	}).enter(showSolutionBg);
+    
+    
+	Path.map("#availability").to(function(){
+		$.get("/Solutions/Software/Availability", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(0);});
+    
+	Path.map("#clusters").to(function(){
+		$.get("/Solutions/Software/Clusters", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(0);});
+    
+	Path.map("#dataguard").to(function(){
+		$.get("/Solutions/Software/DataGuard", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(0);});
+    
+	Path.map("#fusion").to(function(){
+		$.get("/Solutions/Software/Fusion", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(0);});
+    
+    
+	Path.map("#performance").to(function(){
+		$.get("/Solutions/Software/Performance", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(1);});
+    
+	Path.map("#partitioning").to(function(){
+		$.get("/Solutions/Software/Partitioning", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(1);});
+    
+	Path.map("#cache").to(function(){
+		$.get("/Solutions/Software/Cache", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(1);});
+    
+	Path.map("#timesten").to(function(){
+		$.get("/Solutions/Software/TimesTen", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(1);});
+    
+	Path.map("#compression").to(function(){
+		$.get("/Solutions/Software/Compression", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(1);});
+    
+    
+	Path.map("#management").to(function(){
+		$.get("/Solutions/Software/Management", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(2);});
+    
+	Path.map("#apps").to(function(){
+		$.get("/Solutions/Software/Applications", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(2);});
+    
+	Path.map("#lifecycle").to(function(){
+		$.get("/Solutions/Software/LifeCycle", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(2);});
+    
+	Path.map("#servicelevel").to(function(){
+		$.get("/Solutions/Software/ServiceLevel", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(2);});
+    
+	Path.map("#settings").to(function(){
+		$.get("/Solutions/Software/Settings", function(data) {
+			$('#solution-description').html(data);
+		});
+    }).enter(function(){showContentBg(2);});
+    
+    Path.root("#main");
+    
+	$(function(){
+		$("#accordion").accordion({ collapsible: true, autoHeight: false, active: false, icons: false, animated: "bounceslide" });
+		$("#accordion").bind('accordionchange', function(event, ui) {
+			var active = $("#accordion").accordion("option", "active");
+			if(typeof active === "number") {
+				$("#accordion h3.ui-state-default").switchClass("header-large", "header-short", 500);
+				if(ui.newHeader.hasClass("header-short")) {
+					ui.newHeader.switchClass("header-short", "header-large", 500);
+				}
+			} else {
+			    $("#accordion h3").switchClass("header-short", "header-large", 500);
+			    location.hash = "#main";
+			}
+		});
+		
+		Path.listen();
+    });
+</script>

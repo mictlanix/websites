@@ -1,0 +1,189 @@
+﻿@*
+_Layout.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)" />
+		<meta name="copyright" content="Copyright © 2011 Eddy Zavaleta, Mictlanix"/>
+		<meta name="description" content="Arquitectura en Soluciones TI"/>
+		<meta name="keywords" content="software, hardware, storage, servidores, soluciones ti, ibm, oracle"/>
+		<title>@ViewBag.Title</title>
+		<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css"></link>
+		<!--
+		<script src="@Url.Content("~/Scripts/jquery.min.js")" type='text/javascript'></script>
+		<script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type='text/javascript'></script>
+		-->
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+		        $("body").hide();
+		        $("body").fadeIn(750);
+		        
+				$("a.transition").click(function(event){
+				    event.preventDefault();
+				    var linkLocation = this.href;
+				    $("body").fadeOut(750, function(){
+				        window.location = linkLocation;
+				    });
+				});
+	    	});
+		</script>
+	</head>
+	<body>
+		@RenderSection("Intro", required: false)
+		<div id="body-wrapper">
+			<div id="header">
+				<div id="header-left">
+					<div class="bkg"></div>
+				</div>
+				<div id="header-content">
+					<div id="logo">
+						<img src="@Url.Content("~/Content/images/asit-logo.png")" alt="ASIT" />
+					</div><div id="menu">
+						<div id="menu-top">
+							<ul id="menu-items">
+								<li class="home">
+									<a class="@(ViewBag.Section == "Home" ? "selected" : "transition")" href="@(ViewBag.Section == "Home" ? "javascript:void(0)" : "/Home")">Inicio</a>
+								</li>
+								<li class="about-us">
+									<a class="@(ViewBag.Section == "AboutUs" ? "selected" : "transition")" href="@(ViewBag.Section == "AboutUs" ? "javascript:void(0)" : "/AboutUs")">Nosotros</a>
+								</li>
+								<li class="solutions">
+									<a class="@(ViewBag.Section == "Solutions" ? "selected" : "transition")" href="@(ViewBag.Section == "Solutions" ? "javascript:void(0)" : "/Solutions")">Soluciones</a>
+								</li>
+								<li class="services">
+									<a class="@(ViewBag.Section == "Services" ? "selected" : "transition")" href="@(ViewBag.Section == "Services" ? "javascript:void(0)" : "/Services")">Servicios</a>
+								</li>
+								<li class="contact">
+									<a class="@(ViewBag.Section == "Contact" ? "selected" : "transition")" href="@(ViewBag.Section == "Contact" ? "javascript:void(0)" : "/Contact")">Contacto</a>
+								</li>
+							</ul>
+						</div>
+						<div id="menu-bottom">
+							<h1>@ViewBag.PageName</h1>
+						</div>
+					</div>
+				</div>
+				<div id="header-right">
+					<div class="bkg">
+						<div id="menu-top"></div>
+						<div id="menu-bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<div class="wrapper">
+					@RenderBody()
+				</div>
+			</div>
+			<div id="middle">
+				<div class="wrapper">
+				    <p class="contact-info">
+					    <b>Estamos a su servicio</b><br/>
+					    Tel.: +52 (55) 5148-3238<br/>
+					    Fax: 5148-3239<br/>
+					    Correo: <a href="mailto:contacto@as-it.com.mx">contacto@as-it.com.mx</a>
+				    </p><p class="contact-icons">
+				      <img class="letter" src="@Url.Content("~/Content/images/contact.png")" alt=""/>
+				      <img class="logo" src="@Url.Content("~/Content/images/asit-contact.png")" alt="Contacto ASIT"/>
+				    </p>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="wrapper">
+				  <div class="nav-top"></div>
+				  <div class="nav">
+					  <ul class="column">
+						<li class="header">
+						  <span>Soluciones</span>
+						</li>
+						<li>
+						  <a class="transition" href="/Solutions/Software">Software</a>
+						</li>
+						<li>
+						  <a class="transition" href="/Solutions/Storage">Storage</a>
+						</li>
+						<li>
+						  <a class="transition" href="/Solutions/Servers">Servers</a>
+						</li>
+					  </ul>
+					  <ul class="column">
+						<li class="header">
+						  <span>Servicios</span>
+						</li>
+						<li>
+						  <a href="/Services#page1">Consultoría</a>
+						</li>
+						<li>
+						  <a href="/Services#page1">Soporte</a>
+						</li>
+						<li>
+						  <a href="/Services#page2">Desarrollo</a>
+						</li>
+					  </ul>
+					  <ul class="column">
+						<li class="header">
+						  <span>Socios</span>
+						</li>
+						<li>
+						  <a href="http://www.ibm.com" target="_blank">IBM</a>
+						</li>
+						<li>
+						  <a href="http://www.oracle.com" target="_blank">Oracle</a>
+						</li>
+					  </ul>
+					  <ul class="social-links">
+						<li class="face">
+						  <a href="http://www.facebook.com/asit">Facebook</a>
+						</li>
+						<li class="tw">
+						  <a href="http://www.Twiter.com/asit">Twiter</a>
+						</li>
+						<li class="rss">
+						  <a href="#">Noticias</a>
+						</li>
+					  </ul>
+				  </div>
+				  <div class="nav-bottom"></div>
+				  <div class="info">
+					  <p class="address">
+						  <span class="header">Arquitectura y Soluciones de IT</span><br/>
+						  Bosques de Alisos 47-B, P.B, Centro Arcos Empresariales<br/>
+						  Colonia Bosques de las Lomas, Cuajimalpa, D. F.<br/>
+						  Tel. +52 (55) 5148-3238 / 5148-3239
+					  </p>
+					  <img class="partner" src="@Url.Content("~/Content/images/ibm-partner.png")" alt="IBM Partner"/>
+					  <img class="partner" src="@Url.Content("~/Content/images/oracle-partner.png")" alt="Oracle Partner"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

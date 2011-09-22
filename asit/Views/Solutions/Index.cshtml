@@ -1,0 +1,73 @@
+﻿@*
+Index.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+@{
+    ViewBag.Title = "ASIT - Soluciones";
+    ViewBag.PageName = "Soluciones";
+    ViewBag.Section = "Solutions";
+}
+
+<link href="@Url.Content("~/Content/solutions.css")" rel="stylesheet" type="text/css"></link>
+
+<div id="solutions">
+	<div id="items-container">
+		<div id="items">
+			<div class="item software">
+				<a class="transition" href="/Solutions/Software">
+					<span class="green">aplicaciones</span>
+					<span class="black">Software</span>
+				</a>
+			</div>
+			<div class="item storage">
+				<a class="transition" href="/Solutions/Storage">
+					<span class="green">almacenamiento</span>
+					<span class="black">Storage</span>
+				</a>
+			</div>
+			<div class="item servers">
+				<a class="transition" href="/Solutions/Servers">
+					<span class="green">servidores</span>
+					<span class="black">Servers</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="items-br"></div>
+</div>
+<div id="solutions-footer">
+</div>
+<div id="bottom-bar">
+	<img src="@Url.Content("~/Content/images/asit-gray-logo.png")" alt="ASIT"/>
+	<p>
+		¿Desea información detallada?<br/>
+		<a class="transition" href="/Contact">click aquí</a>
+	</p>
+	<img src="@Url.Content("~/Content/images/info-icon.png")" alt="Info"/>
+</div>
+<script type='text/javascript'>    
+	$(function(){
+    });
+</script>

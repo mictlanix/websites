@@ -1,0 +1,163 @@
+/*
+services.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+ul{
+  list-style-type:circle;
+}
+
+#menu-bottom {
+  background:#0E56A5;
+}
+
+#menu-bottom h1 {
+  padding-left:375px;
+}
+
+#content .wrapper {
+  position:relative;
+  height:780px;
+  background:white ;
+}
+
+#services {
+  height:770px;
+  background:white url('images/lines-pattern-bg.png');
+  padding:1px 0;
+}
+
+#services-header {
+  padding:1px 0;
+  background:url('images/services-header-bg.png');
+  margin:15px 0px 0px 240px;
+}
+
+#services-header p {
+  margin:10px 10px 10px 50px;
+  font-family:arial, serif;
+  font-size:16px;
+  font-weight:bold;
+  text-shadow:gray 3px 3px 3px;
+  text-align:right;
+  color:white;
+  letter-spacing:1px;
+  line-height:125%;
+}
+
+#services-content {
+  position:relative;
+  margin:10px 0 0 0;
+}
+
+#services-page-01 {
+  position:absolute;
+  margin:0px 5px 0px 30px;
+  font-size:smaller;
+  padding:1px 0;
+  width:770px;
+  height:640px;
+  background:url('images/gray-gr.png') repeat-y;
+}
+
+#services-right-bar {
+  position:absolute;
+  left:770px;
+}
+
+#services-left-bar {
+  position:absolute;
+  left:-40px;
+}
+
+#services-right-bar a {
+  position:absolute;
+  left:18px;
+  top:454px;
+}
+
+#services-left-bar a {
+  position:absolute;
+  left:-18px;
+  top:452px;
+}
+
+#services-page-02 {
+  position:absolute;
+  left:800px;
+  margin:0px 5px 0px 45px;
+  font-size:smaller;
+  padding:1px 0;
+  width:737px;
+  height:640px;
+  background:url('images/gray-gr.png') repeat-y;
+}
+
+.services-title {
+  font-weight:bold;
+  margin-top:25px;
+}
+
+.services-text-left {
+  float:left;
+  margin:120px 0 0 25px;
+  width:370px;
+}
+
+.services-text-right {
+  float:left;
+  margin:20px 0 0 0;
+  padding:0 0 0 30px;
+  width:335px;
+  border-left:white 1px solid;
+}
+
+.services-gray-logo {
+  position:absolute;
+  left:10px;
+  bottom:10px;
+}
+
+.services-green-line {
+  position:absolute;
+  left:720px;
+  top:0px;
+  width:15px;
+  height:500px;
+  background:url('images/services-line-green.png') repeat-x;
+}
+
+.services-page-02-image {
+  position:absolute;
+  top:430px;
+  left:450px;
+}
+
+#cross-rotated {
+  position:absolute;
+  left:-5px;
+  top:0px;
+}
+

@@ -1,0 +1,30 @@
+﻿<div id="pains">
+	<div id="pains-right-bar" class="pains-bar">
+		<img src="@Url.Content("~/Content/images/pains-right-bar.png")" alt="¿Cómo podemos ayudarlo?"/>
+		<a id="pains-show" href="javascript:void(0)"><img src="@Url.Content("~/Content/images/right-arrow.png")" alt="&gt;"/></a>
+	</div>
+	<div id="pains-left-bar" class="pains-bar">
+		<img src="@Url.Content("~/Content/images/pains-left-bar.png")" alt="Inicio"/>
+		<a id="pains-hide" href="javascript:void(0)"><img src="@Url.Content("~/Content/images/left-arrow.png")" alt="&lt;"/></a>
+	</div>
+	<div id="pains-content">
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		$('#pains-show').click(function(){
+			$('#pains').animate({left: '-=845'}, 500);
+			$('#pains-content').show(500);
+			$('#pains-left-bar').show(500);
+			$('#pains-right-bar').hide(500);
+		});
+		
+		$('#pains-hide').click(function(){
+			$('#pains').animate({left: '+=845'}, 500);
+			$('#pains-content').hide(500);
+			$('#pains-left-bar').hide(500);
+			$('#pains-right-bar').show(500);
+		});
+	})  
+</script>

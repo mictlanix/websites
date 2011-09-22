@@ -1,0 +1,152 @@
+/*
+solution.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+#menu-bottom {
+  background:#3f799d;
+}
+
+#menu-bottom h1 {
+  padding-left:248px;
+}
+
+#content .wrapper {
+  position:relative;
+  background:cornflowerblue;
+}
+
+#navigation {
+  display:inline-block;
+  width:259px;
+  height:700px;
+  vertical-align:top;
+}
+
+#middle-block {
+  display:inline-block;
+  width:8px;
+  height:700px;
+  background:white;
+  vertical-align:top;
+}
+
+.adornment {
+  width:8px;
+  height:120px;
+  background:#00caca;
+}
+
+#solution-content {
+  display:inline-block;
+  width:527px;
+  height:700px;
+  vertical-align:top;
+}
+
+#solution-header {
+  height:120px;
+  text-align:right;
+}
+
+.header-bg {
+  background:url(images/solutions-header.png) repeat-y;
+}
+
+#solution-header div:first-child {
+  padding:10px 20px 0 0;
+}
+
+.back-link {
+  padding:3px 20px 1px 0;
+  background:url(images/back.png) no-repeat right center;
+  font-family:Raleway, 'HelveticaNeue-Light', Helvetica, serif;
+  font-size:12px;
+  color:#333333;
+}
+
+#solution-title {
+  margin:15px 20px 0 0;
+}
+
+.black {
+  font-size:42px;
+  font-weight:bold;
+  color:black;
+}
+
+.green {
+  font-size:22px;
+  color:#7da85e;
+  opacity:0.5;
+  vertical-align:top;
+}
+
+#solution-description {
+  height:580px;
+  overflow:auto;
+}
+
+#solution-description h3, #solution-description h4 {
+  margin:10px 20px;
+}
+
+#solution-description p {
+  margin:10px 20px;
+  text-align:justify;
+}
+
+#solution-description ul {
+  margin:10px 20px 10px 40px;
+  text-align:justify;
+  list-style-type:square;
+}
+
+#bottom-bar {
+  background:url('images/gray-gr-small.png') white repeat-y;
+}
+
+#bottom-bar img {
+  display:inline-block;
+  margin:15px 0 5px 10px;
+  vertical-align:middle;
+}
+
+#bottom-bar p {
+  display:inline-block;
+  width:75%;
+  text-align:right;
+  vertical-align:middle;
+  color:#333333;
+}
+
+#bottom-bar a {
+  font-size:18px;
+  color:#999999;
+}
+
+#bottom-bar a:hover {
+  color:#aae974;
+}

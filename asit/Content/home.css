@@ -1,0 +1,173 @@
+/*
+home.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+#menu-bottom {
+  background:#a8eaec;
+}
+
+#intro {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
+
+#content .wrapper {
+  position:relative;
+  height:600px;
+  background:white url('images/home-bg.png') no-repeat center center;
+}
+
+#cross-solutions {
+  position:absolute;
+  margin:-185.5px 0 0 -245.5px;
+  left:50%;
+  top:50%;
+  width:500px;
+  height:340px;
+  text-align:center;
+}
+
+#cross-solutions img {
+  margin:10px;
+  vertical-align:middle;
+}
+
+#cross-solutions span {
+  display:inline-block;
+  font-size:20pt;
+  font-weight:bold;
+  width:102px;
+  height:42px;
+}
+
+#cross-solutions span.vert {
+  vertical-align:middle;
+}
+
+#cross-solutions a {
+  color:#cccccc;
+}
+
+#cross-solutions a:hover {
+  color:#7ec921;
+  text-shadow:#cccccc 0px 0px 8px;
+}
+
+#cross-unfolded {
+  position:absolute;
+  margin:166px 0 0 0;
+  width:100%;
+  height:225px;
+}
+
+#cross-sliding {
+  position:absolute;
+  left:292px;
+}
+
+.unfolded-content {
+  display:none;
+  position:absolute;
+  left:228px;
+  width:480px;
+  height:225px;
+  background:#fffff9;
+  box-shadow: 10px 10px 50px black;
+}
+
+.unfolded-title {
+  margin:0 25px 0 100px;
+  text-align:right;
+}
+
+.unfolded-title .black {
+  font-size:40px;
+  font-weight:bold;
+}
+
+.unfolded-title .green {
+  font-size:20px;
+  color:#7da85e;
+  vertical-align:top;
+}
+
+.unfolded-description {
+  margin:0 25px 0 100px;
+  text-align:justify;
+}
+
+.unfolded-links {
+  position: absolute;
+  bottom:0px;
+  margin:0 25px 20px 100px;
+}
+
+.unfolded-link {
+  margin:0 60px 0 30px;
+}
+
+.unfolded-link span {
+  vertical-align:middle;
+}
+
+.unfolded-link img {
+  margin:0 5px;
+  vertical-align:middle;
+}
+
+#pains {
+	position:absolute;
+	left:800px;
+}
+
+.pains-bar {
+	position:absolute;
+	left:0px;
+    top:0px;
+}
+
+#pains-show {
+  position:absolute;
+  left:20px;
+  top:424px;
+}
+
+#pains-hide {
+  position:absolute;
+  left:-18px;
+  top:424px;
+}
+
+#pains-content {
+  position:absolute;
+  margin:0 5px;
+  left:40px;
+  width:800px;
+  height:600px;
+}

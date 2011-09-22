@@ -1,0 +1,114 @@
+﻿@*
+Index.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+@{
+    ViewBag.Title = "ASIT - Nosotros";
+    ViewBag.PageName = "Nosotros";
+    ViewBag.Section = "AboutUs";
+}
+
+<link href="@Url.Content("~/Content/about-us.css")" rel="stylesheet" type="text/css"></link>
+
+<div id="about-us">
+	<div id="side-bar"></div>
+	<div id="about-us-content">
+		<div id="about-us-description">
+			<div id="about-us-header">
+				<p>
+					Arquitectura en soluciones de IT (ASIT),<br/>
+					es una empresa joven en México,<br/>
+					nuestra matriz es de Venezuela.
+				</p>
+			</div>
+			<p>
+				Somos asociados de negicios IBM manejando la comercialización
+				de servicios empresariales y toda la línea de almacenamiento.
+				Con Oracle manejamos licenciamiento y soporte técnico en la
+				parte operativa.
+			</p>
+			<p>
+				Nuesto enfoque es proporcionar soluciones integrales que
+				aporten valor al negocio de nuestros distinguidos clientes.
+			</p>
+		</div>
+		<div id="partners">
+			<div class="partner">
+				<div class="partner-header">
+					<span>IBM</span>
+				</div>
+				<p>
+					Ser socio de negocios de IBM es ser aliados de una gran empresa
+					de renombre mundial con alta tecnología en equipos y soluciones
+					de IT y poder ponerlos a disposición de todos nuestros clientes,
+					es brindar soluciones completas tanto de HW como de SW así como
+					servicios de soporte técnico.
+				</p>
+				<p>
+					Tenemos una fuerte responsabilidad en que nuestros diseños de
+					propuestas cumplan con las expectativas del cliente, funcionando
+					bien y a la primera.
+				</p>
+				<p>
+					Como socios de negocios tenemos la responsabilidad de mantener a
+					nuestro personal de ventas y técnico bien capacitados y ejecutando
+					frecuentemente procesos de certificación en los productos que
+					comercializamos.
+				</p>
+			</div>
+			<div class="partner">
+				<div class="partner-header">
+					<span>ORACLE</span>
+				</div>
+				<p>
+					En la actualidad, Oracle representa el estándar dorado, para
+					tecnología de base de datos y aplicaciones en las empresas
+					alrededor del mundo. Adicionalmente, es el proveedor líder
+					mundial de software para gestión de la información y segundo
+					vendedor más grande de software independiente.
+				</p>
+				<p>
+					Ser Partner de Oracle significa tener la capacidad de ofrecer
+					propuestas con valor incomparable a nuestros clientes gracias
+					a la experiencia que durante 30 años ha acumulado Oracle en el
+					área de soluciones de Tecnologías de la Información y a nuestro
+					enfoque consultivo en el proceso de ventas.
+				</p>
+				<p>
+					Debido a lo anterior, y a nuestra relación como Asociado de Negocio
+					Dorado de Oracle, que nos permite comercializar toda la gama de
+					productos en Tecnología de Oracle, podemos asegurar la calidad de
+					nuestras propuestas y servicios.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="cross">
+		<img src="@Url.Content("~/Content/images/cross-small.png")" alt="ASIT Cross" />
+	</div>
+</div>
+<div id="bottom-bar">
+	<img src="@Url.Content("~/Content/images/asit-gray-logo.png")" alt="ASIT"/>
+</div>

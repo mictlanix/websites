@@ -1,0 +1,126 @@
+/*
+about-us.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+#menu-bottom {
+  background:#93c3d5;
+}
+
+#menu-bottom h1 {
+  padding-left:128px;
+}
+
+#about-us {
+  position:relative;
+  background:#e6e6e6;
+  border:3px solid #ebf9db;
+}
+
+#cross {
+  position:absolute;
+  left:45px;
+  top:100px;
+}
+
+#side-bar {
+  float:left;
+  margin:15px 0 15px -3px;
+  width:75px;
+  height:570px;
+  background:url('images/partners.png') #4d4d4d no-repeat 5px bottom;
+}
+
+#about-us-content {
+  margin:0 0 0 85px;
+  width:700px;
+  min-height:600px;
+}
+
+#about-us-description {
+  padding:1px 0;
+  margin:-3px 30px 0 0;
+  background:#4d4d4d;
+  color:white;
+  overflow:visible;
+}
+
+#about-us-description p {
+  margin:0 20px 18px 85px;
+  font-family:Raleway, 'HelveticaNeue-Light', Helvetica, serif;
+  text-align:justify;
+  line-height:110%;
+}
+
+#about-us-header {
+  padding:1px 0;
+  margin:20px -25px 20px 85px;
+  background:#7ec921;
+}
+
+#about-us-header p {
+  margin:5px 45px 10px 0;
+  font-family:'News Cycle', arial, serif;
+  font-size:22px;
+  font-weight:bold;
+  line-height:100%;
+  text-align:right;
+}
+
+#partners {
+  padding:1px 0;
+}
+
+#partners .partner {
+  display:inline-block;
+  margin:10px 25px 10px 20px;
+  width:300px;
+  text-align:justify;
+  vertical-align:top;
+}
+
+#partners .partner-header {
+  margin:10px 0 20px 15px;
+  border-top:4px solid #7ec921;
+}
+
+#partners .partner-header span {
+  color:#4d4d4d;
+  font-size:26px;
+  font-weight:bold;
+}
+
+#partners .partner p {
+  margin:0 0 10px 0;
+  line-height:100%;
+}
+
+#bottom-bar {
+  background:url('images/gray-gr.png') white repeat-y;
+}
+
+#bottom-bar img {
+  margin:15px 0 5px 10px;
+}

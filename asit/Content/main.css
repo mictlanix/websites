@@ -1,0 +1,319 @@
+/*
+main.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+/*
+@import url(http://fonts.googleapis.com/css?family=News+Cycle);
+@import url(http://fonts.googleapis.com/css?family=Raleway:100);
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size:100%;
+  background:white url('images/body-bg.png') repeat-y;
+}
+
+body {
+  font-family:'News Cycle', arial, serif;
+  font-size:13px;
+  background:white url('images/body-bg.png') repeat-y;
+}
+
+h1 {
+  font-family: arial, serif;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color:black;
+}
+
+img {
+  border:none;
+}
+
+a:hover {
+  color:#aae974;
+}
+
+#header {
+  margin:30px 0px 0px 0px;
+  height:100px;
+  border-bottom:6px solid white;
+}
+
+#header-left {
+  margin-right:-400px;
+  float:left;
+  width:49.9%;
+}
+
+#header-left .bkg {
+  min-height:100px;
+  margin-right:400px;
+  background:url('images/logo-left-bg.png') repeat-y top right;
+}
+
+#header-right { 
+  margin-left: -400px;
+  float: left;
+  width: 49.9%;
+}
+
+#header-right .bkg {
+  margin-left: 400px;
+}
+
+#header-content {
+  width: 800px;
+  float: left;
+}
+
+#logo {
+  display:inline-block;
+  min-width:200px;
+  min-height:100px;
+  background:url('images/logo-right-bg.png') repeat-y top right;
+}
+
+#logo img {
+  float:right;
+}
+
+#menu {
+  display:inline-block;
+  width:600px;
+  overflow:visible;
+}
+
+#menu-top {
+  background: #666666;
+  height:48px;
+}
+
+#menu-bottom {
+  height:52px;
+}
+
+#menu-bottom h1 {
+  float:left;
+  padding:10px 0px 0px 10px;
+  font-size:36px;
+  font-weight:normal;
+  color:white;
+  text-shadow:lightgray 0px 1px 0px;
+}
+
+#menu-items {
+  position:relative;
+  float:left;
+  box-shadow:3px 3px 6px #222222;
+  top:20px;
+}
+
+#menu-items li {
+  position:relative;
+  float:left;
+  list-style-type: none;
+}
+
+#menu-items a {
+  display:block;
+  padding-top:6px;
+  width:118px;
+  height:24px;
+  color:white;
+  text-align:center;
+  background:#999999;
+  border-left:1px solid white;
+}
+
+#menu-items li.home a:hover,
+#menu-items li.home a.selected {
+   background:#a8eaec;
+}
+
+#menu-items li.about-us a:hover,
+#menu-items li.about-us a.selected {
+   background:#93c3d5;
+}
+
+#menu-items li.solutions a:hover,
+#menu-items li.solutions a.selected {
+   background:#3f799d;
+}
+
+#menu-items li.services a:hover,
+#menu-items li.services a.selected {
+   background:#0e56a5;
+}
+
+#menu-items li.contact a:hover,
+#menu-items li.contact a.selected {
+   background:#10325d;
+}
+
+#content {
+  clear: both;
+}
+
+.wrapper {
+  margin:0 auto;
+  width:800px;
+}
+
+#middle {
+  clear:both;
+  margin:0 0 15px 0;
+}
+
+#middle .contact-info {
+  display:inline-block;
+  padding:10px;
+  width:530px;
+  min-height:88px;
+  background:white;
+  border-top:6px solid #a8eaec;
+  vertical-align:top;
+}
+
+#middle .contact-info b {
+  color:#164450;
+  font-size:1.5em;
+}
+
+#middle .contact-icons {
+  display:inline-block;
+  padding:10px;
+  width:230px;
+  min-height:88px;
+  color:white;
+  background:#174551;
+  border-top:6px solid #1c1c1c;
+  vertical-align:top;
+}
+
+#middle img.letter {
+  margin:0 0 0 -75px;
+}
+
+#middle img.logo {
+  margin:25px 0 0 30px;
+}
+
+#footer {
+  clear:both;
+}
+
+#footer .wrapper {
+  background:white;
+}
+
+#footer .nav-top {
+  min-height:30px;
+  background:white url('images/footer-nav-tr.png') no-repeat top right;
+}
+
+#footer .nav {
+  font-family:Raleway, 'HelveticaNeue-Light', Helvetica, serif;
+  font-size:12px;
+  color:#1a1a1a;
+  line-height:125%;
+}
+
+#footer .nav-bottom {
+  min-height:30px;
+  background:white url('images/footer-nav-bl.png') no-repeat bottom left;
+  clear:both;
+}
+
+#footer ul.column {
+  float:left;
+  margin:10px 0 0 110px;
+}
+
+#footer ul.column li {
+  list-style-type: none;
+  margin:5px 0;
+}
+
+#footer ul.column li.header {
+  margin:10px 0;
+  text-transform: uppercase;
+}
+
+#footer ul.social-links {
+  float:right;
+  margin:30px 20px 0 0;
+}
+
+#footer ul.social-links li {
+  list-style:none;
+  padding:7px 0 8px 32px;
+}
+#footer ul.social-links li.tw {
+  background:url('images/tw.png') 0 0 no-repeat;
+}
+#footer ul.social-links li.face {
+  background:url('images/fb.png') 0 0 no-repeat;
+}
+#footer ul.social-links li.rss {
+  background:url('images/rss.png') 0 0 no-repeat;
+}
+#footer ul.social-links li a {
+  color:black;
+  text-shadow:lightgray 0px 1px 0px;
+}
+
+#footer .info {
+  font-size:12px;
+  background:#808080;
+}
+
+#footer .address {
+  display:inline-block;
+  padding:10px;
+  width:550px;
+  border-top:15px solid #82dadb;
+  font-family:Raleway, 'HelveticaNeue-Light', Helvetica, serif;
+  color:#f9f9f9;
+  line-height:125%;
+}
+
+#footer .address .header {
+  font-family:'News Cycle', arial, serif;
+  font-weight:bold;
+  color:white;
+}
+
+#footer .partner {
+  display:inline-block;
+  margin:0px 5px;
+}

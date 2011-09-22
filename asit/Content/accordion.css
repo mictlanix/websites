@@ -1,0 +1,100 @@
+/*
+accordion.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+#accordion {
+  margin:30px 0 0 0;
+  border:none;
+  font-size:12px;
+}
+
+.ui-accordion .ui-accordion-header {
+  margin:10px 0 0 0;
+  height:54px;
+  background:url(images/accordion-header.png) no-repeat right;
+  border:none;
+}
+
+.ui-accordion .ui-accordion-header a {
+  margin: 0 28px 0 0;
+  padding:16px 15px 0 26px;
+  height:38px;
+  font-size:18px;
+  color:white;
+}
+
+.ui-accordion .header-large {
+  width:200px;
+}
+
+.ui-accordion .header-short {
+  width:100px;
+}
+
+.ui-accordion .header-short span {
+  display:none;
+}
+
+.availability {
+  background:#7ec921 url(images/availability-icon.png) no-repeat 20px bottom;
+}
+
+.performance {
+  background:#7ec921 url(images/performance-icon.png) no-repeat 20px bottom;
+}
+
+.management {
+  background:#7ec921 url(images/management-icon.png) no-repeat 20px bottom;
+}
+
+.security {
+  background:#7ec921 url(images/security-icon.png) no-repeat 20px bottom;
+}
+
+.ui-accordion-content {
+  background:none;
+  border:none;
+}
+
+.ui-accordion-content ul {
+  list-style:none;
+  margin:0 0 0 20px;
+}
+
+.ui-accordion-content li {
+  padding:10px;
+  width:170px;
+  border-bottom:solid #e6e6e6 thin;
+  color:white;
+}
+
+.ui-accordion-content ul li:last-child {
+  border-bottom:none;
+}
+
+.ui-accordion-content li a {
+  color:white;
+}

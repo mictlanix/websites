@@ -1,0 +1,88 @@
+@*
+Index.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+@{
+    ViewBag.Title = "ASIT - Contacto";
+    ViewBag.PageName = "Contacto";
+    ViewBag.Section = "Contact";
+}
+
+<link href="@Url.Content("~/Content/contact.css")" rel="stylesheet" type="text/css"></link>
+
+<div id="contact">
+    <div id="location">
+		<div id="location-text" class="gradient-bg">
+			<p>
+				<span>Arquitectura y Soluciones de IT</span><br/><br/>
+				Bosques de Alisos 47-B, Planta Baja<br/>
+				Centro Arcos Empresariales<br/>
+				Colonia Bosques de las Lomas, Cuajimalpa<br/>
+				Distrito Federal, México
+			</p>
+		</div>
+		<div id="location-middle">
+			<a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Bosques+de+Alisos+47+B&amp;aq=&amp;sll=19.388694,-99.250349&amp;sspn=0.009594,0.013937&amp;ie=UTF8&amp;hq=&amp;hnear=Bosque+de+Alisos+47,+Palo+Alto(Granjas),+Cuajimalpa+de+Morelos,+Ciudad+de+M%C3%A9xico,+Distrito+Federal,+Mexico&amp;ll=19.388724,-99.250317&amp;spn=0.019431,0.029955&amp;z=14&amp;iwloc=A">&nbsp;</a>
+		</div>
+		<div id="location-map">
+			<iframe width="350" height="240" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bosques+de+Alisos+47+B&amp;aq=&amp;sll=19.388694,-99.250349&amp;sspn=0.009594,0.013937&amp;ie=UTF8&amp;hq=&amp;hnear=Bosque+de+Alisos+47,+Palo+Alto(Granjas),+Cuajimalpa+de+Morelos,+Ciudad+de+M%C3%A9xico,+Distrito+Federal,+Mexico&amp;ll=19.388724,-99.250317&amp;spn=0.019431,0.029955&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+		</div>
+	</div>
+    <div id="info" class="gray-bg">
+		<p>
+			<span>Tel: 5148-3238</span>
+			<span>contacto@as-it.com.mx</span>
+			<span>Fax: 5148-3239</span>
+		</p>
+	</div>
+    <div id="form">
+		<div id="form-fields" class="gradient-bg">
+			<div id="comment-label"></div>
+			<form action="send.php" method="post">
+				<fieldset>
+					<label>Nombre</label>
+					<input type="text" name="name" id="name" />
+					<label>Empresa</label>
+					<input type="text" name="company" id="company" />
+					<label>Email</label>
+					<input type="text" name="email" id="email" />
+					<label>Teléfono</label>
+					<input type="text" name="phone" id="phone" />
+					<label>
+						Comentarios
+					</label>
+					<textarea name="comments" id="comments" rows="7" cols="40"></textarea>
+					<button type="submit">Enviar</button>
+				</fieldset>
+			</form>
+		</div>
+		<div id="form-ilustration"></div>
+	</div>
+</div>
+<script type='text/javascript'>    
+	$(function(){
+		$('#name').focus();
+    });
+</script>
