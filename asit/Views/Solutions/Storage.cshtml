@@ -25,7 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
 @{
-    ViewBag.Title = "ASIT - Soluciones";
+    ViewBag.Title = "ASIT - Storage";
     ViewBag.PageName = "Soluciones";
     ViewBag.Section = "Solutions";
 }
@@ -72,11 +72,9 @@ THE SOFTWARE.
             	</ul>
             </div>
         </div>
-	</div>
-	<div id="middle-block">
+	</div><div id="middle-block">
 		<div class="adornment"></div>
-	</div>
-	<div id="solution-content">
+	</div><div id="solution-content">
 		<div id="solution-header">
 			<div>
 				<a class="transition back-link" href="/Solutions">
@@ -102,7 +100,7 @@ THE SOFTWARE.
 </div>
 <script type='text/javascript'>
 	function showSolutionBg(){
-		$("#solution-description").hide("drop", { direction: "down" }, 500, function(){
+		$("#solution-description").hide("drop", { direction: "down" }, 1000, function(){
 			$("#accordion").accordion("option", "active", false);
 			$("#storage-solutions").removeClass("content-bg");
 			$("#solution-header").removeClass("header-bg");
@@ -119,8 +117,8 @@ THE SOFTWARE.
 		
 		$("#storage-solutions").addClass("content-bg");
 	    $("#solution-header").addClass("header-bg");
-		$("#solution-description").hide("slide", { direction: "down" }, 250, function() {
-	    	$("#solution-description").show("slide", { direction: "up" }, 500);
+		$("#solution-description").hide("slide", { direction: "down" }, 2000, function() {
+	    	$("#solution-description").show("slide", { direction: "up" }, 1000);
 		});
     }
     

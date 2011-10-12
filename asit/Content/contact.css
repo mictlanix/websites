@@ -94,7 +94,7 @@ THE SOFTWARE.
 
 #info {
   margin:10px;
-  padding:1px 0;
+  padding:10px 0;
   text-align:center;
 }
 
@@ -133,25 +133,23 @@ THE SOFTWARE.
 }
 
 #form-fields label {
-  display:block;
+  display:inline-block;
   font-weight:bold;
   text-align:right;
-  width:90px;
-  float:left;
+  min-width:60px;
 }
 
 #form-fields input {
-  float: left;
-  margin:2px 0 10px 10px;
+  display:inline-block;
+  margin:10px 0 0 10px;
   padding:3px 2px;
-  width:260px;
+  width:280px;
   border:solid 1px white;
   background:#666666 url('images/white-gr.png') repeat-y;
 }
 
 #form-fields textarea {
-  float: left;
-  margin:2px 0 10px 10px;
+  margin:2px 0 10px 6px;
   padding:4px 2px;
   width:350px;
   height:100px;
@@ -174,4 +172,10 @@ THE SOFTWARE.
   width:280px;
   min-height:300px;
   background:url('images/cross-3d.png') no-repeat 100% bottom;
+}
+
+.field-validation-error {
+  display:block;
+  text-align:right;
+  color:red;
 }

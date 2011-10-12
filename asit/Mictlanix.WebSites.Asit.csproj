@@ -45,6 +45,7 @@
     <Reference Include="System.Web.WebPages">
       <HintPath>..\packages\AspNetMVC.3.0.0.0\System.Web.WebPages.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -56,16 +57,11 @@
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\SolutionsController.cs" />
+    <Compile Include="Models\ContactUs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -161,7 +157,6 @@
     <Content Include="Views\Solutions\Storage\Migration.cshtml" />
     <Content Include="Views\Solutions\Storage\Mirroring.cshtml" />
     <Content Include="Views\Solutions\Storage\EasyTier.cshtml" />
-    <Content Include="Views\Solutions\Storage\_blank.cshtml" />
     <Content Include="Views\Solutions\Storage\Director.cshtml" />
     <Content Include="Views\Solutions\Storage\Tivoli.cshtml" />
     <Content Include="Views\Solutions\Storage\Virtualization.cshtml" />
@@ -197,6 +192,15 @@
     <Content Include="Content\images\software-content-bg.png" />
     <Content Include="Content\images\software-letters.png" />
     <Content Include="Content\images\solutions-header.png" />
+    <Content Include="Views\Solutions\Software\Applications.cshtml" />
+    <Content Include="Views\Solutions\Software\Availability.cshtml" />
+    <Content Include="Views\Solutions\Software\Cache.cshtml" />
+    <Content Include="Views\Solutions\Software\Compression.cshtml" />
+    <Content Include="Views\Solutions\Software\Clusters.cshtml" />
+    <Content Include="Content\images\service-bg.png" />
+    <Content Include="Content\images\services-bg.png" />
+    <Content Include="Content\images\services-bg2.png" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -207,6 +211,7 @@
     <Folder Include="Views\Solutions\" />
     <Folder Include="Views\Solutions\Software\" />
     <Folder Include="Views\Solutions\Servers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
@@ -248,10 +253,11 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <None Include="Views\Solutions\Software\Applications.cshtml" />
-    <None Include="Views\Solutions\Software\Availability.cshtml" />
-    <None Include="Views\Solutions\Software\Cache.cshtml" />
-    <None Include="Views\Solutions\Software\Compression.cshtml" />
-    <None Include="Views\Solutions\Software\Clusters.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
 </Project>

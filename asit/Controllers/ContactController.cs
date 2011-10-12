@@ -24,7 +24,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,11 +31,17 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
+using Mictlanix.WebSites.Asit.Models;
 
 namespace Mictlanix.WebSites.Asit.Controllers
 {
     public class ContactController : Controller
     {
+        // This regex pattern came from: 
+        // http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
+        static readonly Regex REGEX_EMAIL = new Regex(@"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        
         //
         // GET: /Contact/
 
@@ -49,12 +54,23 @@ namespace Mictlanix.WebSites.Asit.Controllers
         // POST: /Contact/
 		
 		[HttpPost]
-        public ActionResult SendEmail()
+        public ActionResult Index(ContactUs input)
         {
-            return View();
+			if(!IsValidEmailAddress(input.Email))
+			{
+				ModelState.AddModelError("Email", "No es una dirección de email válida.");
+			}
+			
+		    if (ModelState.IsValid)
+		    {
+				SendEmail(input.Email, "contacto@as-it.com.mx", "Sitio Web - Contacto", input.ToString ());
+		        return View(new ContactUs { IsSent = true });
+		    }
+			
+            return View(input);
         }
 		
-		public bool SendEmail(string addrFrom, string addrTo, string subject, string body)
+		bool SendEmail(string addrFrom, string addrTo, string subject, string body)
 		{
 			var smtp = new SmtpClient("localhost");
 			var addr_from = new MailAddress(addrFrom);
@@ -78,5 +94,18 @@ namespace Mictlanix.WebSites.Asit.Controllers
 			
 			return false;
 		}
+
+        public static bool IsValidEmailAddress(string str)
+        {
+            if (IsStringMissing(str))
+                return false;
+
+            return REGEX_EMAIL.IsMatch(str);
+        }
+
+        public static bool IsStringMissing(string value)
+        {
+            return value == null || value.Trim().Length == 0;
+        }
     }
 }

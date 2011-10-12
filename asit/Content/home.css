@@ -26,7 +26,7 @@ THE SOFTWARE.
 */
 
 #menu-bottom {
-  background:#a8eaec;
+  background:#7ec921;
 }
 
 #intro {
@@ -102,7 +102,7 @@ THE SOFTWARE.
 }
 
 .unfolded-title {
-  margin:0 25px 0 100px;
+  margin:5px 25px 0 100px;
   text-align:right;
 }
 
@@ -125,11 +125,11 @@ THE SOFTWARE.
 .unfolded-links {
   position: absolute;
   bottom:0px;
-  margin:0 25px 20px 100px;
+  margin:0 25px 15px 100px;
 }
 
 .unfolded-link {
-  margin:0 60px 0 30px;
+  margin:0 45px 0 25px;
 }
 
 .unfolded-link span {

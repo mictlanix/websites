@@ -24,6 +24,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
+@model Mictlanix.WebSites.Asit.Models.ContactUs
+
 @{
     ViewBag.Title = "ASIT - Contacto";
     ViewBag.PageName = "Contacto";
@@ -51,32 +53,49 @@ THE SOFTWARE.
 		</div>
 	</div>
     <div id="info" class="gray-bg">
-		<p>
-			<span>Tel: 5148-3238</span>
-			<span>contacto@as-it.com.mx</span>
-			<span>Fax: 5148-3239</span>
-		</p>
 	</div>
     <div id="form">
 		<div id="form-fields" class="gradient-bg">
 			<div id="comment-label"></div>
-			<form action="send.php" method="post">
+			@using (Html.BeginForm())
+			{
 				<fieldset>
-					<label>Nombre</label>
-					<input type="text" name="name" id="name" />
-					<label>Empresa</label>
-					<input type="text" name="company" id="company" />
-					<label>Email</label>
-					<input type="text" name="email" id="email" />
-					<label>Teléfono</label>
-					<input type="text" name="phone" id="phone" />
-					<label>
-						Comentarios
-					</label>
-					<textarea name="comments" id="comments" rows="7" cols="40"></textarea>
+					@if(Model != null && Model.IsSent)
+					{
+						<div style="color:blue;text-align:center">
+							Mensaje Enviado!
+						</div>
+					}
+					<div>
+						<label>Nombre</label>
+			            @Html.EditorFor(model => model.Name)
+			            @Html.ValidationMessageFor(model => model.Name)
+		            </div>
+		            
+					<div>
+						<label>Empresa</label>
+			            @Html.EditorFor(model => model.Company)
+					</div>
+					
+					<div>
+						<label>Email</label>
+			            @Html.EditorFor(model => model.Email)
+			            @Html.ValidationMessageFor(model => model.Email)
+					</div>
+					
+					<div>
+						<label>Teléfono</label>
+			            @Html.EditorFor(model => model.Phone)
+					</div>
+					
+					<div>
+						<label>Comentario</label>
+			            @Html.EditorFor(model => model.Comment)
+					</div>
+					
 					<button type="submit">Enviar</button>
 				</fieldset>
-			</form>
+			}
 		</div>
 		<div id="form-ilustration"></div>
 	</div>

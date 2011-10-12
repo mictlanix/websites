@@ -40,7 +40,7 @@ THE SOFTWARE.
 
 #navigation {
   display:inline-block;
-  width:259px;
+  width:262px;
   height:700px;
   vertical-align:top;
 }
@@ -79,12 +79,12 @@ THE SOFTWARE.
   padding:10px 20px 0 0;
 }
 
-.back-link {
-  padding:3px 20px 1px 0;
+a.back-link {
+  padding:2px 20px 1px 0;
   background:url(images/back.png) no-repeat right center;
-  font-family:Raleway, 'HelveticaNeue-Light', Helvetica, serif;
+  font-family:'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
   font-size:12px;
-  color:#333333;
+  color:#3f799d;
 }
 
 #solution-title {

@@ -70,6 +70,7 @@ ul{
 #services-content {
   position:relative;
   margin:10px 0 0 0;
+  color:white;
 }
 
 #services-page-01 {
@@ -79,7 +80,7 @@ ul{
   padding:1px 0;
   width:770px;
   height:640px;
-  background:url('images/gray-gr.png') repeat-y;
+  background:url('images/services-bg.png') no-repeat;
 }
 
 #services-right-bar {
@@ -105,6 +106,7 @@ ul{
 }
 
 #services-page-02 {
+  display:none;
   position:absolute;
   left:800px;
   margin:0px 5px 0px 45px;
@@ -112,41 +114,31 @@ ul{
   padding:1px 0;
   width:737px;
   height:640px;
-  background:url('images/gray-gr.png') repeat-y;
-}
-
-.services-title {
-  font-weight:bold;
-  margin-top:25px;
+  background:url('images/services-bg2.png') no-repeat;
 }
 
 .services-text-left {
   float:left;
-  margin:120px 0 0 25px;
+  margin:120px 0 0 15px;
   width:370px;
+}
+
+#services-page-02 .services-text-left {
+  width:400px;
 }
 
 .services-text-right {
   float:left;
-  margin:20px 0 0 0;
-  padding:0 0 0 30px;
-  width:335px;
-  border-left:white 1px solid;
+  margin:30px 0 0 0;
+  padding:0 0 0 15px;
+  width:368px;
+  border-left:2px solid white;
 }
 
 .services-gray-logo {
   position:absolute;
   left:10px;
   bottom:10px;
-}
-
-.services-green-line {
-  position:absolute;
-  left:720px;
-  top:0px;
-  width:15px;
-  height:500px;
-  background:url('images/services-line-green.png') repeat-x;
 }
 
 .services-page-02-image {
@@ -161,3 +153,32 @@ ul{
   top:0px;
 }
 
+.service {
+  margin:5px 15px 5px 0;
+  padding:1px;
+  background:url('images/service-bg.png') repeat;
+}
+
+.service h3 {
+  margin:5px 0px 5px 20px;
+  font-weight:bold;
+}
+
+.service ul {
+  margin:5px 0px 10px 15px;
+  list-style-type:disc;
+}
+
+.service li {
+  margin-left:20px;
+}
+.adornment {
+  float:left;
+  margin:-1px;
+  width:10px;
+  height:90px;
+  background:#75c022;
+  -moz-box-shadow:4px 4px 8px #29430c;
+  -webkit-box-shadow:4px 4px 8px #29430c;
+  box-shadow:4px 4px 8px #29430c;
+}

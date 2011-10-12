@@ -26,7 +26,7 @@ THE SOFTWARE.
 *@
 @{
     ViewBag.Title = "Sitio Oficial de ASIT";
-    ViewBag.PageName = "Inicio";
+    ViewBag.PageName = "Arquitectura y Soluciones de IT";
     ViewBag.Section = "Home";
 }
 
@@ -67,8 +67,8 @@ THE SOFTWARE.
 
 <script type="text/javascript">
 	function foldCross(){
-		$('.unfolded-content').hide(500,function(){
-			$('#cross-sliding').animate({left:'292px'}, 300, function (){
+		$('.unfolded-content').hide(1000, function(){
+			$('#cross-sliding').animate({left:'292px'}, 500, function (){
 			   $('#cross-solutions').show();
 			   $('#cross-unfolded').hide();
 			});
@@ -78,12 +78,12 @@ THE SOFTWARE.
 	function unfoldCross(){
 		$('#cross-unfolded').show();
 		$('#cross-solutions').hide();
-		$('#cross-sliding').animate({left:'-=220'}, 300, function () {
-			$('.unfolded-content').show(500);
+		$('#cross-sliding').animate({left:'-=220'}, 1000, function () {
+			$('.unfolded-content').show(1000);
 		});
     }
 	
-	Path.map("#cross").to(function(){
+	Path.map("#main").to(function(){
 		$('.unfolded-content').html(null);
     }).enter(foldCross);
     
@@ -111,7 +111,7 @@ THE SOFTWARE.
 		});
     }).enter(unfoldCross);
 
-	Path.root("#cross");
+	Path.root("#main");
 
 	$(function(){
 		$('#body-wrapper').css('opacity', '0');

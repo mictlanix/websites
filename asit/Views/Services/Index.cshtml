@@ -43,34 +43,29 @@ THE SOFTWARE.
     </div>
 	<div id="services-content">
 		@Html.Partial("Page1")
+		@Html.Partial("Page2")
 	</div>
 </div>
 <img id="cross-rotated" src="@Url.Content("~/Content/images/services-cross.png")" alt="cross-rotated"/>
 
 <script type='text/javascript'>
-	function slideFromRight(){
-        $('#services-page-02').fadeIn(500);
-		$('#services-page-01').fadeOut(250);
-        $('#services-page-02').animate({left: '-=800'}, 500);
-	}
-	
 	function slideFromLeft(){
-		$('#services-page-02').delay(50).animate({left: '+=800'}, 450, function() {
-			$('#services-page-02').remove();
-		});
+		$('#services-page-02').delay(50).animate({left: 800}, 450);
 		$('#services-page-01').fadeIn(500);
 		$('#services-page-02').fadeOut(400);
+	}
+	
+	function slideFromRight(){
+        $('#services-page-02').delay(50).fadeIn(250);
+        $('#services-page-02').animate({left: 0}, 500);
+		$('#services-page-01').fadeOut(1250);
 	}
 
 	Path.map("#page1").to(function(){
 	}).enter(slideFromLeft);
     
 	Path.map("#page2").to(function(){
-		$.get("/Services/Page2", function(data) {
-			$('#services-content').append(data);
-			slideFromRight();
-		});
-    });
+    }).enter(slideFromRight);
     
     Path.root("#page1");
     
