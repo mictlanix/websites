@@ -1,11 +1,11 @@
 Dependencies
 
- -  Make a MVC 3 directory inside Packages
-    $ mkdir Packages/AspNetMVC.3.0.0.0
+ -  Make a MVC 3 directory inside packages
+    $ mkdir packages/AspNetMVC.3.0.0.0
  -  Copy MVC 3 dll files
-    $ cp <asp.net mvc 3 path>/System.Web.Mvc.dll Packages/AspNetMVC.3.0.0.0/
-    $ cp <asp.net mvc 3 path>/System.Web.Helpers.dll Packages/AspNetMVC.3.0.0.0/
-    $ cp <asp.net mvc 3 path>/System.Web.Razor.dll Packages/AspNetMVC.3.0.0.0/
-    $ cp <asp.net mvc 3 path>/System.Web.WebPages.dll Packages/AspNetMVC.3.0.0.0/
-    $ cp <asp.net mvc 3 path>/System.Web.WebPages.Razor.dll Packages/AspNetMVC.3.0.0.0/
-    $ cp <asp.net mvc 3 path>/System.Web.WebPages.Deployment.dll Packages/AspNetMVC.3.0.0.0/
+    $ cp <asp.net mvc 3 path>/System.Web.Mvc.dll packages/AspNetMVC.3.0.0.0/
+    $ cp <asp.net mvc 3 path>/System.Web.Helpers.dll packages/AspNetMVC.3.0.0.0/
+    $ cp <asp.net mvc 3 path>/System.Web.Razor.dll packages/AspNetMVC.3.0.0.0/
+    $ cp <asp.net mvc 3 path>/System.Web.WebPages.dll packages/AspNetMVC.3.0.0.0/
+    $ cp <asp.net mvc 3 path>/System.Web.WebPages.Razor.dll packages/AspNetMVC.3.0.0.0/
+    $ cp <asp.net mvc 3 path>/System.Web.WebPages.Deployment.dll packages/AspNetMVC.3.0.0.0/
