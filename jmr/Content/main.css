@@ -45,7 +45,7 @@ body {
   color:white;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, label, button {
   font-family:'YanoneKaffeesatzLight', Arial, sans-serif;
   color:#4d4d4d;
 }
@@ -73,6 +73,10 @@ a:hover {
 
 p {
   margin:10px;
+}
+
+li {
+  list-style-type:none;
 }
 
 #body-wrapper {
@@ -141,4 +145,72 @@ p {
 
 .center {
   text-align:center;
+}
+
+.branches {
+  background:black url(images/branch-info-bg.png) repeat-y;
+}
+
+.branches p {
+  text-align:center;
+}
+
+.branches .info {
+  font-size:14px;
+}
+
+.branches li {
+  margin:10px 0 30px 0;
+  padding:0 0 0 80px;
+  height:80px;
+  list-style-type:none;
+}
+
+.branches li.df {
+  background:url(images/df.png) no-repeat 15px center;
+}
+
+.branches li.df h3 {
+  background:url(images/df-label.png) no-repeat left top;
+}
+
+.branches li.puebla {
+  background:url(images/puebla.png) no-repeat 15px center;
+}
+
+.branches li.puebla h3 {
+  background:url(images/puebla-label.png) no-repeat left top;
+}
+
+.branches li.tuxtla {
+  background:url(images/tuxtla.png) no-repeat 15px center;
+}
+
+.branches li.tuxtla h3 {
+  background:url(images/tuxtla-label.png) no-repeat left top;
+}
+
+.branches span {
+  display:block;
+  width:225px;
+}
+
+.branches .phone-numbers {
+  margin-right:10px;
+  text-align:left;
+  background:url(images/phones-bg.png) repeat-y right;
+}
+
+.branches h3.name {
+  margin:0;
+  height:15px;
+}
+
+.branches .phone-numbers .email-icon {
+  margin:0px;
+  float:right;
+}
+
+.field-validation-error {
+  color:red;
 }

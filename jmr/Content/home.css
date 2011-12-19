@@ -38,7 +38,7 @@ h2 {
 #slider {
   position: relative;
   margin:-25px 0 0 0;
-  background:#1b1b1b url(/Content/images/slider-bg.png) repeat-y;
+  background:#1b1b1b url(images/slider-bg.png) repeat-y;
   text-align:center;
   z-index:5;
 }
@@ -50,12 +50,16 @@ h2 {
 
 .column {
   display:inline-block;
-  width:320px;
   vertical-align:top;
 }
-
+.column.make {
+  width:265px;
+}
 .column.space {
-  width:328px;
+  width:390px;
+}
+.column.branches {
+  width:315px;
 }
 
 .make ul {
@@ -66,7 +70,7 @@ h2 {
   width:250px;
   text-align:center;
   list-style-type:none;
-  background:url(/Content/images/make-sp.png) no-repeat center bottom;
+  background:url(images/make-sp.png) no-repeat center bottom;
 }
 
 .make li img {
@@ -85,64 +89,6 @@ div.email.black {
   margin:10px 0;
   font-size:22px;
   background:transparent;
-}
-
-.contact {
-  background:url(/Content/images/contact-col-bg.png) repeat-y;
-}
-
-.contact p {
-  text-align:center;
-}
-
-.contact .info {
-  font-size:14px;
-}
-
-.contact li {
-  margin:10px 0 30px 0;
-  padding-left:85px;
-  list-style-type:none;
-}
-
-.contact li.df {
-  background:url(/Content/images/df.png) no-repeat 15px center;
-}
-
-.contact li.puebla {
-  background:url(/Content/images/puebla.png) no-repeat 15px center;
-}
-
-.contact li.tuxtla {
-  background:url(/Content/images/tuxtla.png) no-repeat 15px center;
-}
-
-.contact span {
-  display:block;
-}
-
-.contact li h3 {
-  height:15px;
-}
-
-.contact .phone-numbers {
-  background:url(/Content/images/phones-bg.png) repeat-y right;
-}
-
-.contact li.df h3 {
-  background:url(/Content/images/df-label.png) no-repeat left top;
-}
-
-.contact li.puebla h3 {
-  background:url(/Content/images/puebla-label.png) no-repeat left top;
-}
-
-.contact li.tuxtla h3 {
-  background:url(/Content/images/tuxtla-label.png) no-repeat left top;
-}
-
-.contact .info a {
-  float:right;
 }
 
 #featured {

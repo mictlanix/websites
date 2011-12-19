@@ -25,20 +25,131 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
 @model Mictlanix.WebSites.JMR.Models.ContactUs
-
 @{
     ViewBag.Title = "JMR - Contacto";
     ViewBag.PageName = "Contacto";
     ViewBag.Section = "Contact";
 }
-
+<script src="@Url.Content("~/Scripts/path.min.js")" type='text/javascript'></script>
 <link href="@Url.Content("~/Content/contact.css")" rel="stylesheet" type="text/css"></link>
-
 <div id="contact">
-
+	<div id="sidebar">
+		<div id="sidebar-bg" class="branches">
+			<h3>Sucursales:</h3>
+			<ul class="info">
+				<li class="df">
+					<h3 class="name"></h3>
+					<div class="phone-numbers">
+						<span>01 (55) 1668-5781</span>
+						<span>01 (55) 5816-4844</span>
+						<span>52*250771*2</span>
+					</div>
+				</li>
+				<li class="puebla">
+					<h3 class="name"></h3>
+					<div class="phone-numbers">
+						<span>01 (222) 409-7223</span>
+						<span>01 (222) 409-7224</span>
+						<span>52*250771*1</span>
+					</div>
+				</li>
+				<li class="tuxtla">
+					<h3 class="name"></h3>
+					<div class="phone-numbers">
+						<span>01 (961) 663-7604</span>
+						<span>045 (961) 157-6320</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="more-info">
+		<h2>¿Más información?</h2>
+	</div>
+	<div id="form-block">
+		<div id="form-arrows">
+			<ul>
+				<li>
+					<a href="#df">
+						<img src="@Url.Content("~/Content/images/arrow.png")" alt="Contacto en DF" title="Contacto en DF"/>
+					</a>
+				</li>
+				<li>
+					<a href="#puebla">
+						<img src="@Url.Content("~/Content/images/arrow.png")" alt="Contacto en DF" title="Contacto en DF"/>
+					</a>
+				</li>
+				<li>
+					<a href="#tuxtla">
+						<img src="@Url.Content("~/Content/images/arrow.png")" alt="Contacto en DF" title="Contacto en DF"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="form-fields">
+			@using (Html.BeginForm())
+			{
+				<fieldset>
+					<div class="branch">
+						<h2 id="selected-branch">Distrito Federal</h2>
+						@Html.HiddenFor(x => x.To)
+		            </div>
+					
+					<div class="field">
+						<label>Nombre / Empresa</label>
+			            @Html.EditorFor(model => model.Name)
+			            @Html.ValidationMessageFor(model => model.Name)
+		            </div>
+					<div class="field">
+						<label>Email</label>
+			            @Html.EditorFor(model => model.Email)
+			            @Html.ValidationMessageFor(model => model.Email)
+					</div>
+					<div class="comment">
+						<label>Comentario</label>
+			            @Html.EditorFor(model => model.Comment)
+					</div>
+				</fieldset>
+					
+				<button type="submit">E n v i a r</button>
+			}
+		</div>
+	</div>
 </div>
-<script type='text/javascript'>    
+<script type='text/javascript'> 
+	function showForm(){
+		$('#form-fields').show("slow");
+	}
+	
+	function hideForm(){
+		$('#form-fields').hide("slow");
+	}
+	
+	Path.map("#main").to(function(){
+		$('#To').val("df");
+		$('#selected-branch').html("Distrito Federal");
+	}).enter(hideForm);
+	
+	Path.map("#df").to(function(){
+		$('#To').val("df");
+		$('#selected-branch').html("Distrito Federal");
+	}).enter(showForm);
+    
+	Path.map("#puebla").to(function(){
+		$('#To').val("puebla");
+		$('#selected-branch').html("Puebla");
+    }).enter(showForm);
+    
+	Path.map("#tuxtla").to(function(){
+		$('#To').val("tuxtla");
+		$('#selected-branch').html("Tuxtla Gtz.");
+    }).enter(showForm);
+    
+    Path.root("#main");
+
 	$(function(){
-		$('#name').focus();
+		$('#form-fields').hide();
+		$('#Name').focus();
+		Path.listen();
     });
 </script>

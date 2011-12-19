@@ -7,7 +7,7 @@ namespace Mictlanix.WebSites.JMR.Models
 	{
 		public override string ToString ()
 		{
-			return string.Format ("Nombre: {0}\nEmail: {1}\nEmpresa: {2}\nTeléfono: {3}\nComentario:{4}", Name, Email, Company, Phone, Comment);
+			return string.Format ("Nombre: {0}\nEmail: {1}\nComentario:\n{2}", Name, Email, Comment);
 		}
 		
         [Required(ErrorMessage = "El nombre es obligatorio.")]
@@ -16,11 +16,10 @@ namespace Mictlanix.WebSites.JMR.Models
         [Required(ErrorMessage = "El email es obligatorio.")]
         public string Email { get; set; }
 		
-        public string Company { get; set; }
-        public string Phone { get; set; }
         [DataType(DataType.MultilineText)]
         public string Comment { get; set; }
 		
+        public string To { get; set; }
         public bool IsSent { get; set; }
 	}
 }
