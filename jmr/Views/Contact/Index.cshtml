@@ -118,7 +118,8 @@ THE SOFTWARE.
 </div>
 <script type='text/javascript'> 
 	function showForm(){
-		$('#form-fields').show("slow");
+		//$('#form-fields').show("slow");
+		$("#form-fields").show("slide", { direction: "right" }, 1000);
 	}
 	
 	function hideForm(){
