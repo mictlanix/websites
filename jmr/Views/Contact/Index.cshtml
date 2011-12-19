@@ -30,6 +30,9 @@ THE SOFTWARE.
     ViewBag.PageName = "Contacto";
     ViewBag.Section = "Contact";
 }
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/path.min.js")" type='text/javascript'></script>
 <link href="@Url.Content("~/Content/contact.css")" rel="stylesheet" type="text/css"></link>
 <div id="contact">
@@ -63,6 +66,20 @@ THE SOFTWARE.
 			</ul>
 		</div>
 	</div>
+	<div id="emails">
+		<h3>Atención Personalizada:</h3>
+		<div class="black-box">
+			<div class="email black">
+				<a href="mailto:info@jmrmaquinaria.mx">info@jmrmaquinaria.mx</a>
+			</div>
+			<div class="email">
+				<a href="mailto:rafael@jmrmaquinaria.mx">rafael@jmrmaquinaria.mx</a>
+			</div>
+			<div class="email">
+				<a href="mailto:dario@jmrmaquinaria.mx">dario@jmrmaquinaria.mx</a>
+			</div>
+		</div>
+	</div>
 	<div id="more-info">
 		<h2>¿Más información?</h2>
 	</div>
@@ -87,43 +104,27 @@ THE SOFTWARE.
 			</ul>
 		</div>
 		<div id="form-fields">
-			@using (Html.BeginForm())
-			{
-				<fieldset>
-					<div class="branch">
-						<h2 id="selected-branch">Distrito Federal</h2>
-						@Html.HiddenFor(x => x.To)
-		            </div>
-					
-					<div class="field">
-						<label>Nombre / Empresa</label>
-			            @Html.EditorFor(model => model.Name)
-			            @Html.ValidationMessageFor(model => model.Name)
-		            </div>
-					<div class="field">
-						<label>Email</label>
-			            @Html.EditorFor(model => model.Email)
-			            @Html.ValidationMessageFor(model => model.Email)
-					</div>
-					<div class="comment">
-						<label>Comentario</label>
-			            @Html.EditorFor(model => model.Comment)
-					</div>
-				</fieldset>
-					
-				<button type="submit">E n v i a r</button>
-			}
+			@Html.Partial("_Form", Model)
 		</div>
 	</div>
 </div>
 <script type='text/javascript'> 
 	function showForm(){
-		//$('#form-fields').show("slow");
-		$("#form-fields").show("slide", { direction: "right" }, 1000);
+		if($("#form-fields").is(":visible")) {
+			$("#form-fields").hide("slide", { direction: "right" }, 500, function() {
+		    	$("#form-fields").show("slide", { direction: "right" }, 1000, function() {
+			    	$('#Name').delay(100).focus();
+				});
+			});
+		} else {
+			$("#form-fields").show("slide", { direction: "right" }, 1000, function() {
+		    	$('#Name').delay(100).focus();
+			});
+		}
 	}
 	
 	function hideForm(){
-		$('#form-fields').hide("slow");
+		$('#form-fields').hide("slide", { direction: "right" }, 1000, null);
 	}
 	
 	Path.map("#main").to(function(){
@@ -149,8 +150,6 @@ THE SOFTWARE.
     Path.root("#main");
 
 	$(function(){
-		$('#form-fields').hide();
-		$('#Name').focus();
 		Path.listen();
     });
 </script>

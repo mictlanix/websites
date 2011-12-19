@@ -1,0 +1,34 @@
+﻿@model Mictlanix.WebSites.JMR.Models.ContactUs
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "form-fields" }))
+{
+<fieldset>
+	<div class="branch">
+		@if(Model.To == "puebla")
+		{
+			<h2 id="selected-branch">Puebla</h2>
+		} else if(Model.To == "tuxtla") {
+			<h2 id="selected-branch">Tuxtla</h2>
+		} else {
+			<h2 id="selected-branch">Distrito Federal</h2>
+		}
+		@Html.HiddenFor(x => x.To)
+    </div>
+	
+	<div class="field">
+		<label>Nombre / Empresa</label>
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+	<div class="field">
+		<label>Email</label>
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+	</div>
+	<div class="comment">
+		<label>Comentario</label>
+        @Html.EditorFor(model => model.Comment)
+	</div>
+</fieldset>
+
+<button type="submit">E n v i a r</button>
+}

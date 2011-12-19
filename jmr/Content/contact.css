@@ -25,6 +25,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+h2.success {
+  margin:20px;
+  color:white;
+}
+
 h3 {
   margin:15px 0 5px 15px;
   text-transform:uppercase;
@@ -35,7 +40,7 @@ h3 {
   position:relative;
   margin:-3px 34px 0 34px;
   height:1183px;
-  background:#1b1b1b url(images/contact-bg.png) no-repeat right bottom;
+  background:black url(images/contact-bg.png) no-repeat right bottom;
 }
 
 #sidebar {
@@ -45,10 +50,39 @@ h3 {
 }
 
 #sidebar-bg {
-  padding-top:72px;
-  margin-right:10px;
-  height:800px;
+  padding:72px 0 350px 0;
+  margin:0 10px 0 0;
   background:url(images/branch-info-bg.png) repeat-y 75px;
+}
+
+#emails {
+  float:left;
+  clear:left;
+  width:340px;
+  background:url(images/black-bg.png);
+}
+
+#emails .black-box {
+  margin:10px 15px;
+  background:black;
+  border:none;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
+
+div.email {
+  margin:10px 20px 15px 20px;
+  padding:8px;
+  font-size:18px;
+  background:#d35500;
+  text-align:center;
+}
+
+div.email.black {
+  margin:10px 0;
+  font-size:22px;
+  background:transparent;
 }
 
 #more-info {
@@ -72,12 +106,11 @@ h3 {
 
 #form-arrows {
   width:26px;
-  height:370px;
   background:url(images/black-bg.png);
 }
 
 #form-arrows ul {
-  margin:45px 0 0 0;
+  margin:45px 0 20px 0;
 }
 
 #form-arrows li {
@@ -91,12 +124,11 @@ h3 {
   left:84px;
   top:0;
   width:526px;
-  height:450px;
   background:url(images/black-bg.png);
 }
 
 #form-fields fieldset {
-  margin:20px 10px 15px;
+  margin:30px 10px 15px;
   background:black;
   border:none;
   -webkit-border-radius:5px;
@@ -117,6 +149,7 @@ h3 {
   display:inline-block;
   margin:15px 15px 0;
   width:210px;
+  vertical-align:top;
 }
 
 #form-fields .comment {
@@ -126,7 +159,7 @@ h3 {
 
 #form-fields label {
   display:block;
-  margin:0 2px;
+  margin:5px 0;
   color:#4d4d4d;
   text-transform:uppercase;
 }
@@ -145,7 +178,7 @@ h3 {
   display:block;
   padding:5px;
   width:465px;
-  height:180px;
+  height:250px;
   border:none;
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
@@ -154,7 +187,7 @@ h3 {
 
 #form-fields button {
   display:block;
-  margin:0 10px;
+  margin:10px;
   padding:0 0 10px 0;
   width:275px;
   height:54px;

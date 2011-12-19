@@ -196,7 +196,8 @@ li {
 }
 
 .branches .phone-numbers {
-  margin-right:10px;
+  margin:0 10px 0 0;
+  height:60px;
   text-align:left;
   background:url(images/phones-bg.png) repeat-y right;
 }

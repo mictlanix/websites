@@ -47,7 +47,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(new ContactUs { To = "df"});
         }
 		
         //
@@ -63,11 +63,14 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			
 		    if (ModelState.IsValid)
 		    {
-				SendEmail(input.Email, "contacto@as-it.com.mx", "Sitio Web - Contacto", input.ToString ());
-		        return View(new ContactUs { IsSent = true });
+				string to = "info@jmrmaquinaria.mx";
+				string subject = string.Format("[{0}] Sitio Web - Contacto", input.To.ToUpper());
+				
+				SendEmail(input.Email, to, subject, input.ToString ());
+		        return PartialView("_Success", new ContactUs { IsSent = true });
 		    }
 			
-            return View(input);
+            return View("_Form", input);
         }
 		
 		bool SendEmail(string addrFrom, string addrTo, string subject, string body)

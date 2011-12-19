@@ -1,5 +1,5 @@
 /*
-HomeController.cs
+ContactController.cs
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
@@ -24,23 +24,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
+using Mictlanix.WebSites.JMR.Models;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
-    public class NewslettersController : Controller
+    public class ProductsController : Controller
     {
         //
-        // GET: /Newsletters/
+        // GET: /Products/
 
         public ActionResult Index()
         {
             return View();
         }
+		
     }
 }

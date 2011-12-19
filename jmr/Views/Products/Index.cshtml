@@ -1,5 +1,5 @@
-/*
-HomeController.cs
+﻿@*
+Index.cshtml
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
@@ -23,24 +23,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-*/
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Mictlanix.WebSites.JMR.Controllers
-{
-    public class NewslettersController : Controller
-    {
-        //
-        // GET: /Newsletters/
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-    }
+*@
+@{
+    ViewBag.Title = "JMR - Catálogo";
+    ViewBag.PageName = "Catálogo";
+    ViewBag.Section = "Products";
 }
+<link href="@Url.Content("~/Content/products.css")" rel="stylesheet" type="text/css"></link>
+
+<div id="products">
+	<div style="text-align:right">
+		<h2>Excavadoras</h2>
+	</td>
+	<div style="text-align:right">
+		<a href="">Índice</a>
+		<a href="">&lt;</a>
+		<a href="">&gt;</a>
+	</div>
+	<div>
+		<div id="info" style="width:200px;">
+		<div>
+		<div id="photos" style="text-align:right">
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+</script>

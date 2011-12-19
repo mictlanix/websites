@@ -1,5 +1,5 @@
 /*
-HomeController.cs
+products.css
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
@@ -25,22 +25,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+h2 {
+	color:white;
+}
 
-namespace Mictlanix.WebSites.JMR.Controllers
-{
-    public class NewslettersController : Controller
-    {
-        //
-        // GET: /Newsletters/
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-    }
+#products {
+  position:relative;
+  padding:72px 0 0 0;
+  background:#1b1b1b;
 }
