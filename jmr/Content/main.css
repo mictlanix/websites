@@ -1,0 +1,144 @@
+/*
+main.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro);
+@import url(fonts/yanone/stylesheet.css);
+
+* {
+  margin:0;
+  padding:1px 0;
+}
+
+html {
+  font-size:100%;
+  background:black;
+}
+
+body {
+  font-family:"Maven Pro";
+  font-size:16px;
+  padding:0;
+  color:white;
+}
+
+h1, h2, h3, h4 {
+  font-family:'YanoneKaffeesatzLight', Arial, sans-serif;
+  color:#4d4d4d;
+}
+
+h1 {
+  font-size:32px;
+}
+
+h2 {
+  font-size:18px/27px;
+}
+  
+a, a:hover, a:visited {
+  text-decoration:none;
+  color:white;
+}
+
+img {
+  border:none;
+}
+
+a:hover {
+  color:#aae974;
+}
+
+p {
+  margin:10px;
+}
+
+#body-wrapper {
+  position:relative;
+  margin:0 auto;
+  width:980px;
+}
+
+#logo {
+  position:absolute;
+  left:60px;
+  z-index:99;
+}
+
+#header {
+  position:relative;
+  margin:80px auto 0 auto;
+  width:912px;
+  background:#ff6d00;
+  z-index:10;
+}
+
+#menu ul {
+  font-family:'YanoneKaffeesatzRegular', Arial, sans-serif;
+  text-align:right;
+  background:#ff6d00 url(images/menu-bg.png) repeat-y;
+}
+
+#menu li {
+  display:inline-block;
+  position:relative;
+  padding:8px 35px;
+  color:white;
+  background:url(images/menu-sp.png) no-repeat center right;
+  list-style-type:none;
+}
+
+#menu li:last-child {
+  background:none;
+}
+
+#menu li a {
+  font-size:20px;
+  color:white;
+}
+
+#menu li a:hover {
+  color:#ff6d00;
+}
+
+#footer {
+  margin:120px 0 20px 0;
+  background:url(images/footer-bg.png) repeat-y;
+  text-align:right;
+}
+
+#footer img.logo {
+
+}
+
+.hbar {
+  padding:0;
+  height:5px;
+  background:url(images/hbar.png) repeat-y;
+}
+
+.center {
+  text-align:center;
+}

@@ -1,0 +1,213 @@
+﻿@*
+Index.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+@{
+    ViewBag.Title = "JMR Maquinaría";
+    ViewBag.PageName = "JMR Maquinaría";
+    ViewBag.Section = "Home";
+}
+<link href="@Url.Content("~/Content/home.css")" rel="stylesheet" type="text/css"></link>
+
+@section Slider {
+<div id="slider">
+	<img src="@Url.Content("~/Content/images/slide-01.png")" alt="Slide One"/>
+</div>
+}
+<div id="home">
+	<div id="featured">
+		<h2>Destacados</h2>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+		<div class="ad">
+			<div class="image">
+				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
+			</div>
+			<div class="info">
+				Marca:<br/>
+				Tipo de máquina:<br/>
+				Precio:<br/>
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<h2>Por marca:</h2>
+	</div>
+	<div class="column space"></div>
+	<div class="column">
+		<h2>Estamos a sus ordenes</h2>
+	</div>
+	<div class="hbar"></div>
+	<div class="column make">
+		<ul>
+			<li>
+				<a href="http://www.cat.com/">
+					<img src="@Url.Content("~/Content/images/cat.png")" alt="CAT" title="CAT"/>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.volvoce.com/">
+					<img src="@Url.Content("~/Content/images/volvo.png")" alt="Volvo" title="Volvo"/>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.casece.com/wps/portal/casece?brandsite_brand=CaseCE&brandsite_language=es&brandsite_geo=LA">
+					<img src="@Url.Content("~/Content/images/case.png")" alt="CASE" title="CASE"/>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.jcb.com/">
+					<img src="@Url.Content("~/Content/images/jcb.png")" alt="JCB" title="JCB"/>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.komatsu.com/">
+					<img src="@Url.Content("~/Content/images/komatsu.png")" alt="Komat'su" title="Komat'su"/>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="column space"></div>
+	<div class="column contact">
+		<p>Te ofrecemos<br/>el mejor servicio a tu alcance:</p>
+		<div class="email black">
+			<a href="mailto:info@jmrmaquinaria.mx">info@jmrmaquinaria.mx</a>
+		</div>
+		<div class="email">
+			<a href="mailto:rafael@jmrmaquinaria.mx">rafael@jmrmaquinaria.mx</a>
+		</div>
+		<div class="email">
+			<a href="mailto:dario@jmrmaquinaria.mx">dario@jmrmaquinaria.mx</a>
+		</div>
+		<ul class="info">
+			<li class="df">
+				<h3 class="name"></h3>
+				<div class="phone-numbers">
+					<a href="">
+						<img src="@Url.Content("~/Content/images/email-icon.png")" alt="Contacto en DF" title="Contacto en DF"/>
+					</a>
+					<span>01 (55) 1668-5781</span>
+					<span>01 (55) 5816-4844</span>
+					<span>ID 52*250771*2</span>
+				</div>
+			</li>
+			<li class="puebla">
+				<h3 class="name"></h3>
+				<div class="phone-numbers">
+					<a href="">
+						<img src="@Url.Content("~/Content/images/email-icon.png")" alt="Contacto en Puebla" title="Contacto en Puebla"/>
+					</a>
+					<span>01 (222) 409-7223</span>
+					<span>01 (222) 409-7224</span>
+					<span>ID 52*250771*1</span>
+				</div>
+			</li>
+			<li class="tuxtla">
+				<h3 class="name"></h3>
+				<div class="phone-numbers">
+					<a href="">
+						<img src="@Url.Content("~/Content/images/email-icon.png")" alt="Contacto en Tuxtla Gtz." title="Contacto en Tuxtla Gtz."/>
+					</a>
+					<span>01 (961) 663-7604</span>
+					<span>045 (961) 157-6320</span>
+					<span>&nbsp;</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="hbar"></div>
+</div>
+
+<script type="text/javascript">
+
+</script>

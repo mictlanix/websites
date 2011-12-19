@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{133103BC-3AFF-48D0-A46F-94E20D8FE0A5}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{603C0E0B-DB56-11DC-BE95-000D561079B0};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mictlanix.WebSites.JMR</RootNamespace>
+    <AssemblyName>Mictlanix.WebSites.JMR</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\AspNetMVC.3.0.0.0\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\AspNetMVC.3.0.0.0\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\AspNetMVC.3.0.0.0\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Views\Newsletters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+    <Content Include="Web.config" />
+    <Content Include="Global.asax" />
+    <Content Include="Default.aspx" />
+    <Content Include="Content\main.css" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Content\fonts\yanone\stylesheet.css" />
+    <Content Include="Content\images\ad-01.png" />
+    <Content Include="Content\images\case.png" />
+    <Content Include="Content\images\cat.png" />
+    <Content Include="Content\images\cat2.png" />
+    <Content Include="Content\images\contact-col-bg.png" />
+    <Content Include="Content\images\df.png" />
+    <Content Include="Content\images\df-label.png" />
+    <Content Include="Content\images\email-icon.png" />
+    <Content Include="Content\images\footer-bg.png" />
+    <Content Include="Content\images\hbar.png" />
+    <Content Include="Content\images\jcb.png" />
+    <Content Include="Content\images\jdeere.png" />
+    <Content Include="Content\images\komatsu.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo-bw.png" />
+    <Content Include="Content\images\make-sp.png" />
+    <Content Include="Content\images\mcallen.png" />
+    <Content Include="Content\images\menu-bg.png" />
+    <Content Include="Content\images\menu-sp.png" />
+    <Content Include="Content\images\phones-bg.png" />
+    <Content Include="Content\images\puebla.png" />
+    <Content Include="Content\images\puebla-label.png" />
+    <Content Include="Content\images\slide-01.png" />
+    <Content Include="Content\images\slide-02.png" />
+    <Content Include="Content\images\slide-03.png" />
+    <Content Include="Content\images\slide-04.png" />
+    <Content Include="Content\images\slide-05.png" />
+    <Content Include="Content\images\slider-bg.png" />
+    <Content Include="Content\images\tuxtla.png" />
+    <Content Include="Content\images\tuxtla-label.png" />
+    <Content Include="Content\images\volvo.png" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Content\contact.css" />
+    <Content Include="Content\images\contact-bg.png" />
+    <Content Include="Content\newsletters.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewslettersController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Models\ContactUs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="0.0.0.0" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="Content\home.css" />
+    <None Include="Content\fonts\yanone\SIL Open Font License 1.1.txt" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Bold-webfont.eot" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Bold-webfont.svg" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Bold-webfont.ttf" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Bold-webfont.woff" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Light-webfont.eot" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Light-webfont.svg" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Light-webfont.ttf" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Light-webfont.woff" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Regular-webfont.eot" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Regular-webfont.svg" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Regular-webfont.ttf" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Regular-webfont.woff" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Thin-webfont.eot" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Thin-webfont.svg" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Thin-webfont.ttf" />
+    <None Include="Content\fonts\yanone\YanoneKaffeesatz-Thin-webfont.woff" />
+  </ItemGroup>
+</Project>
