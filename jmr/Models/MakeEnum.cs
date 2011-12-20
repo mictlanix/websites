@@ -1,7 +1,8 @@
-//ContactUs.cs
+﻿//MakeEnum.cs
 
 //Author:
 //       Eddy Zavaleta <eddy@mictlanix.org>
+//       Eduardo Nieto <enieto@mictlanix.org>
 
 //Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -25,26 +26,26 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Mictlanix.WebSites.JMR.Properties;
 
 namespace Mictlanix.WebSites.JMR.Models
 {
-	public class ContactUs
-	{
-		public override string ToString ()
-		{
-			return string.Format ("Nombre: {0}\nEmail: {1}\nComentario:\n{2}", Name, Email, Comment);
-		}
-		
-        [Required(ErrorMessage = "El nombre es obligatorio.")]
-        public string Name { get; set; }
-		
-        [Required(ErrorMessage = "El email es obligatorio.")]
-        public string Email { get; set; }
-		
-        [DataType(DataType.MultilineText)]
-        public string Comment { get; set; }
-		
-        public string To { get; set; }
-        public bool IsSent { get; set; }
-	}
+    public enum MakeEnum : int
+    {
+        [Display(Name = "CAT", ResourceType = typeof(Resources))]
+        CAT = 1,
+        [Display(Name = "CASE", ResourceType = typeof(Resources))]
+        CASE,
+        [Display(Name = "Komatsu", ResourceType = typeof(Resources))]
+        Komatsu,
+        [Display(Name = "JohnDeere", ResourceType = typeof(Resources))]
+        JohnDeere,
+        [Display(Name = "Volvo", ResourceType = typeof(Resources))]
+        Volvo,
+        [Display(Name = "JCB", ResourceType = typeof(Resources))]
+        JCB
+    }
 }

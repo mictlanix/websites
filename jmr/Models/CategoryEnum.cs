@@ -1,7 +1,8 @@
-//ContactUs.cs
+﻿//CategoryEnum.cs
 
 //Author:
 //       Eddy Zavaleta <eddy@mictlanix.org>
+//       Eduardo Nieto <enieto@mictlanix.org>
 
 //Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -25,26 +26,32 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Mictlanix.WebSites.JMR.Properties;
 
 namespace Mictlanix.WebSites.JMR.Models
 {
-	public class ContactUs
-	{
-		public override string ToString ()
-		{
-			return string.Format ("Nombre: {0}\nEmail: {1}\nComentario:\n{2}", Name, Email, Comment);
-		}
-		
-        [Required(ErrorMessage = "El nombre es obligatorio.")]
-        public string Name { get; set; }
-		
-        [Required(ErrorMessage = "El email es obligatorio.")]
-        public string Email { get; set; }
-		
-        [DataType(DataType.MultilineText)]
-        public string Comment { get; set; }
-		
-        public string To { get; set; }
-        public bool IsSent { get; set; }
-	}
+    public enum CategoryEnum : int
+    {
+        [Display(Name = "Excavators", ResourceType = typeof(Resources))]
+        Excavators = 1,
+        [Display(Name = "Backhoes", ResourceType = typeof(Resources))]
+        Backhoes,
+        [Display(Name = "MotorGraders", ResourceType = typeof(Resources))]
+        MotorGraders,
+        [Display(Name = "VibroCompactors", ResourceType = typeof(Resources))]
+        VibroCompactors,
+        [Display(Name = "Tractors", ResourceType = typeof(Resources))]
+        Tractors,
+        [Display(Name = "AsphaltEquipment", ResourceType = typeof(Resources))]
+        AsphaltEquipment,
+        [Display(Name = "FrontLoaders", ResourceType = typeof(Resources))]
+        FrontLoaders,
+        [Display(Name = "Cranes", ResourceType = typeof(Resources))]
+        Cranes,
+        [Display(Name = "Others", ResourceType = typeof(Resources))]
+        Others
+    }
 }

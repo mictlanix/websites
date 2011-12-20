@@ -1,9 +1,13 @@
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.ActiveRecord;
+using Castle.ActiveRecord.Framework;
+using Mictlanix.WebSites.JMR.Models;
 
 namespace Mictlanix.WebSites.JMR
 {
@@ -32,6 +36,9 @@ namespace Mictlanix.WebSites.JMR
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            IConfigurationSource source = ConfigurationManager.GetSection("activeRecord") as IConfigurationSource;
+            ActiveRecordStarter.Initialize(typeof(Product).Assembly, source);
         }
     }
 }

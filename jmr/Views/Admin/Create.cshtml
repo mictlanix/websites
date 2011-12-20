@@ -1,0 +1,137 @@
+﻿@*
+Index.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+
+@using Mictlanix.WebSites.JMR
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Properties
+@using Mictlanix.WebSites.JMR.Helpers
+@model Mictlanix.WebSites.JMR.Models.Product
+ 
+@{
+    ViewBag.Title = Resources.CreateNew;
+}
+
+<h2>@Resources.Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category)
+        </div>
+        <div class="editor-field">
+            <select id="category-list" name="Category">
+                @foreach (var item in Enum.GetValues(typeof(CategoryEnum)))
+                {
+                    <option value="@((int)item)">@(((CategoryEnum)item).GetDisplayName())</option>
+                }
+            </select>
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Make)
+        </div>
+        <div class="editor-field">
+            <select id="make-list" name="Make">
+                @foreach (var item in Enum.GetValues(typeof(MakeEnum)))
+                {
+                    <option value="@((int)item)">@(((MakeEnum)item).GetDisplayName())</option>
+                }
+            </select>
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Model)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Model)
+            @Html.ValidationMessageFor(model => model.Model)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Hours)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Hours)
+            @Html.ValidationMessageFor(model => model.Hours)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Serial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Serial)
+            @Html.ValidationMessageFor(model => model.Serial)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comment)
+            @Html.ValidationMessageFor(model => model.Comment)
+        </div>
+
+        <p><button type="submit" class="icon save">@Resources.Create</button></p>
+
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Resources.BackToList, "Index", new { }, new { @class = "button icon back" })
+</div>
+
