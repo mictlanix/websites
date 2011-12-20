@@ -27,6 +27,144 @@ THE SOFTWARE.
 
 #newsletters {
   position:relative;
-  height:500px;
-  background:yellow;
+  left:34px;
+  width:912px;
+  height:1051px;
+  background:url(images/branches-bg.png) repeat-x;
+}
+
+#newsletters-gray {
+    background: url(images/branch-info-bg.png) repeat-y ;
+}
+
+#newsletters-img 
+{
+    position: relative;
+    left: 303px;
+}
+
+#newsletters-data{
+    position:absolute;
+    top: 265px;
+    left:-30px;
+    background: url('images/bkg-black.png') ;  
+    width:949px;
+    height:454px; 
+}
+
+.newsletters-p-sucribe{
+    color:White;
+    font-size:28px;
+    text-align:right;
+    margin-right:30px;
+    margin-top:30px;
+    float: right;
+}
+
+#newsletters-form{
+    background:transparent;
+    border:8px #d45500 solid;
+    width:474px;
+    height:220px;
+    margin-left:50px;
+    position:absolute;
+    top: 97px;
+}
+
+.newsletters-form-label1{
+    color:#d45500;
+    font-size: 20px;
+    font-family:Haettenschweiler;
+    margin: 80px 0px 0px  20px;
+}
+
+.newsletters-form-input-nombre
+{
+    display: block; 
+    margin: 10px ;
+    background:transparent;
+    border-radius: 20px;
+    color: White;
+    width: 380px;
+    height: 40px;
+    font-size:20px;
+}
+
+#newsletters-text
+{
+    background:#d45500;
+    width:407px;
+    height:188px;
+    position:absolute;
+    top: 97px;
+    left:490px;
+    font-size: 20px;
+    padding: 50px 25px 0px 25px;
+    text-align: justify;
+}
+
+
+#sidebar {
+  float:left;
+  width:302px;
+  background:black url(images/branches-bg.png) repeat-x;
+}
+
+#sidebar-bg {
+  padding-top:72px;
+  margin-right:10px;
+  height:800px;
+  background:url(images/branch-info-bg.png) repeat-y 75px;
+}
+
+#newsletters-button
+{
+    position:absolute;
+    top: 380px;
+    margin: 0px 0px 0px 80px;
+}
+
+#button-font
+{
+    font-family: Haettenschweiler;
+    font-size: 20px;
+    position:absolute;
+    margin: 100px 0px 0px 0px;
+    background: url('images/button.png') transparent;
+    width:275px;
+    height:44px;
+    color:White;
+    border:none;
+    cursor:pointer;
+}
+
+#newsletters-msg
+{
+    font: Maven Pro;
+    font-size: 23px;
+    color: #d45500;
+    position:absolute;
+    top: 372px;
+    left: 500px;
+}
+
+.newsletters-fieldset
+{
+    border:none;
+}
+
+fieldset
+{
+    border:none;
+}
+
+.newsletters-footer-img
+{
+    float:right;
+    margin: 30px 10px 0px 10px;    
+}
+
+input:active 
+{
+    border:none;    
 }
