@@ -27,10 +27,11 @@ THE SOFTWARE.
 
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro);
 @import url(fonts/yanone/stylesheet.css);
+@import url(fonts/digitmono/stylesheet.css);
 
 * {
   margin:0;
-  padding:1px 0;
+  padding:1px 0 0 0;
 }
 
 html {
@@ -56,19 +57,25 @@ h1 {
 
 h2 {
   font-size:18px/27px;
+  text-transform:uppercase;
 }
-  
+
+h3 {
+  text-transform:uppercase;
+}
+
 a, a:hover, a:visited {
   text-decoration:none;
   color:white;
 }
 
 img {
+  padding:0;
   border:none;
 }
 
 a:hover {
-  color:#aae974;
+  color:#d9c30f;
 }
 
 p {
@@ -92,11 +99,24 @@ li {
 }
 
 #header {
+  margin:40px auto 0 auto;
+  padding:1px 0 0 0;
+  background:#1b1b1b;
   position:relative;
-  margin:80px auto 0 auto;
+  z-index:10;
+  -webkit-border-radius:20px 20px 0 0;
+  -moz-border-radius:20px 20px 0 0;
+  border-radius:20px 20px 0 0;
+}
+
+#header-bg {
+  margin:40px auto 0 auto;
   width:912px;
   background:#ff6d00;
-  z-index:10;
+}
+
+#menu {
+  padding:1px 0 2px 0;
 }
 
 #menu ul {
@@ -125,6 +145,15 @@ li {
 
 #menu li a:hover {
   color:#ff6d00;
+}
+
+#content {
+  margin:-1px 0 0 0;
+  padding:1px 0 0 0;
+  background:#1b1b1b;
+  -webkit-border-radius:0 0 20px 20px;
+  -moz-border-radius:0 0 20px 20px;
+  border-radius:0 0 20px 20px;
 }
 
 #footer {
@@ -212,6 +241,25 @@ li {
   float:right;
 }
 
+#makes-strip {
+  padding:0 0 0 245px;
+  margin:10px 0 25px 0;
+}
+
+#makes-strip ul {
+  margin:30px 0 0 0;
+}
+
+#makes-strip ul li {
+  display:inline-block;
+  margin:0 20px 0 0;
+}
+
+#makes-strip ul img {
+  max-height:36px;
+}
+
 .field-validation-error {
+  margin:2px;
   color:red;
 }

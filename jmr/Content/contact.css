@@ -32,19 +32,19 @@ h2.success {
 
 h3 {
   margin:15px 0 5px 15px;
-  text-transform:uppercase;
   color:white;
 }
 
 #contact {
   position:relative;
-  margin:-3px 34px 0 34px;
+  margin:0 34px;
   height:1183px;
-  background:black url(images/contact-bg.png) no-repeat right bottom;
+  background:black url(images/contact-bg.png) no-repeat right top;
 }
 
 #sidebar {
   float:left;
+  margin:-1px 0 0 0;
   width:302px;
   background:black url(images/branches-bg.png) repeat-x;
 }
@@ -129,6 +129,7 @@ div.email.black {
 
 #form-fields fieldset {
   margin:30px 10px 15px;
+  padding:1px 0;
   background:black;
   border:none;
   -webkit-border-radius:5px;
@@ -166,6 +167,7 @@ div.email.black {
 
 #form-fields input {
   display:block;
+  margin: 5px 0px;
   padding:5px;
   width:222px;
   border:none;

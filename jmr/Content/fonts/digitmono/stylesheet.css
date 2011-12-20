@@ -1,0 +1,12 @@
+
+@font-face {
+    font-family: '01DigitMonoRegular';
+    src: url('digitmono-webfont.eot');
+    src: url('digitmono-webfont.eot?#iefix') format('embedded-opentype'),
+         url('digitmono-webfont.woff') format('woff'),
+         url('digitmono-webfont.ttf') format('truetype'),
+         url('digitmono-webfont.svg#01DigitMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

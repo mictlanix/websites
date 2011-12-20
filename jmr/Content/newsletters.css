@@ -33,8 +33,14 @@ THE SOFTWARE.
   background:url(images/branches-bg.png) repeat-x;
 }
 
+#makes-strip {
+  padding:0 0 0 176px;
+}
+
 #newsletters-gray {
-    background: url(images/branch-info-bg.png) repeat-y ;
+  margin:-1px 0 0;
+  padding:0;
+  background: url(images/branch-info-bg.png) repeat-y ;
 }
 
 #newsletters-img 
@@ -52,13 +58,13 @@ THE SOFTWARE.
     height:454px; 
 }
 
-.newsletters-p-sucribe{
-    color:White;
-    font-size:28px;
-    text-align:right;
-    margin-right:30px;
-    margin-top:30px;
-    float: right;
+.newsletters-p-sucribe {
+  margin:15px 30px;
+  font:normal 28px '01DigitMonoRegular', Arial, sans-serif;
+  text-align:right;
+  color:white;
+  letter-spacing:1px;
+  word-spacing:10px;
 }
 
 #newsletters-form{
@@ -140,7 +146,6 @@ THE SOFTWARE.
 
 #newsletters-msg
 {
-    font: Maven Pro;
     font-size: 23px;
     color: #d45500;
     position:absolute;

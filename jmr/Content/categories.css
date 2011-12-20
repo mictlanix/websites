@@ -1,0 +1,95 @@
+/*
+categories.css
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+#categories {
+  position:relative;
+  padding:70px 0 0 0;
+  background:#1b1b1b url(images/categories-bg.png) no-repeat left 100px;
+  -webkit-border-radius:0 0 20px 20px;
+  -moz-border-radius:0 0 20px 20px;
+  border-radius:0 0 20px 20px;
+}
+
+#categories-list {
+  position:relative;
+  padding:8px 0 150px 245px;
+  background:url(images/categories-list-bg.png) no-repeat left 50px;
+}
+
+#search-box {
+  float:right;
+  margin:0 30px 0 0;
+}
+
+#search-box label  {
+  padding:7px;
+  font-size:18px;
+  text-transform:uppercase;
+  vertical-align:middle;
+}
+
+#search-box input {
+  padding:3px;
+  font-size:18px;
+  vertical-align:middle;
+  border:2px solid #FF6D00;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
+
+#search-box button {
+  padding:2px;
+  background:#FF6D00;
+  border:1px solid #FF6D00;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  cursor: pointer;
+  cursor:hand;
+  vertical-align:middle;
+}
+
+#search-box button:active {
+  background:#FF6D00;
+  border:1px solid white;
+}
+
+#categories-list ul {
+  margin:0 60px 0 0;
+  font:normal 28px '01DigitMonoRegular', Arial, sans-serif;
+  text-transform: uppercase;
+  text-align:right;
+  letter-spacing:1px;
+  word-spacing:10px;
+}
+
+#categories-list ul li {
+  margin:20px 0 0 0;
+  padding:2px;
+  background:url(images/category-bg.png) repeat-y;
+}

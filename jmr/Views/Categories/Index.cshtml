@@ -24,41 +24,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
+@using Mictlanix.WebSites.JMR
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@using Mictlanix.WebSites.JMR.Properties
 @{
-    ViewBag.Title = "JMR - Registro";
-    ViewBag.PageName = "Registro";
-    ViewBag.Section = "Newsletters";
+    ViewBag.Title = "JMR - Catálogo";
+    ViewBag.PageName = "Catálogo";
+    ViewBag.Section = "Categories";
 }
-<link href="@Url.Content("~/Content/newsletters.css")" rel="stylesheet" type="text/css"></link>
+<link href="@Url.Content("~/Content/categories.css")" rel="stylesheet" type="text/css"></link>
 
-<div id="newsletters">
-    <div id ="newsletters-gray">
-        <img id ="newsletters-img" src="@Url.Content("~/Content/images/registro-machine.png")" alt="maquinaria" />
-    </div>
-    <div id="newsletters-data">
-        <p class="newsletters-p-sucribe">SUSCRIBETE SIN<br/>COSTO</p>
-        <!--<img class="newsletters-p-sucribe" src="../../Content/images/registro.png" alt="imagen contacta"/>-->
-        <div id="newsletters-form">
-            <form action="#">
-                <fieldset class="newsletters-fieldset">
-                    <label  class="newsletters-form-label1">N O M B R E / E M P R E S A:</label>    
-                    <input class="newsletters-form-input-nombre" type="text" />
-                    <label class="newsletters-form-label1">E - M A I L</label>    
-                    <input class="newsletters-form-input-nombre" type="text" />
-                </fieldset>
-                <button type="submit" id="button-font">E N V I A R</button>
-            </form>
-        </div>
-        <div id="newsletters-text">
-        Déjanos tu dirección de correo electrónico y con gusto te enviamos el boletín mensual, 
-        donde encontraras más información de nuestra maquinaria y las mejores promociones para tí. 
-        </div>
-        <div  id="newsletters-msg">
-            <span>Te ofrecemos</span><br/>
-            <span>el mejor servicio a tu alcance</span>
-        </div>
-    </div>
+<div id="categories">
+	<div id="search-box">
+		<label>Búsqueda:</label>
+		<input type="text" name="search" />
+		<button type="submit">
+			<img src="@Url.Content("~/Content/images/search.png")" alt="Buscar"/>
+		</button>
+	</div>
 	<div id="makes-strip">
+		<h3>Marcas:</h3>
 		<ul>
 			<li>
 				<a href="http://www.cat.com/">
@@ -92,7 +78,19 @@ THE SOFTWARE.
 			</li>
 		</ul>
 	</div>
+	<div id="categories-list">
+		<h3>Tipos de Máquina:</h3>
+		<ul>
+            @foreach (var item in Enum.GetValues(typeof(CategoryEnum)))
+            {
+			<li>
+				<a href="/Categories/@item">@(((CategoryEnum)item).GetDisplayName())</a>
+			</li>
+            }
+		</ul>
+	</div>
 </div>
+
 <script type="text/javascript">
 
 </script>

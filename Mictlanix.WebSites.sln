@@ -20,10 +20,10 @@ Global
 		{9AA512B2-FD51-46E0-B839-E1D9A3ADD770}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AA512B2-FD51-46E0-B839-E1D9A3ADD770}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = jmr\Mictlanix.WebSites.JMR.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
