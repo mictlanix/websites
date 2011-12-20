@@ -32,9 +32,39 @@ THE SOFTWARE.
 <link href="@Url.Content("~/Content/newsletters.css")" rel="stylesheet" type="text/css"></link>
 
 <div id="newsletters">
-
+    <div id ="newsletters-gray">
+        <img id ="newsletters-img" src="@Url.Content("~/Content/images/registro-machine.png")" alt="maquinaria" />
+    </div>
+    <div id="newsletters-data">
+        <!--<p class="newsletters-p-sucribe">SUSCRIBETE SIN</p>
+        <p class="newsletters-p-sucribe">COSTO</p>-->
+        <img class="newsletters-p-sucribe" src="../../Content/images/registro.png" alt="imagen contacta"/>
+        <div id="newsletters-form">
+            <form action="#">
+                <fieldset class="newsletters-fieldset">
+                    <label  class="newsletters-form-label1">N O M B R E / E M P R E S A:</label>    
+                    <input class="newsletters-form-input-nombre" type="text" />
+                    <label class="newsletters-form-label1">E - M A I L</label>    
+                    <input class="newsletters-form-input-nombre" type="text" />
+                </fieldset>
+                <button type="submit" id="button-font">E N V I A R</button>
+            </form>
+        </div>
+        <div id="newsletters-text">
+        Déjanos tu dirección de correo electrónico y con gusto te enviamos el boletín mensual, 
+        donde encontraras más información de nuestra maquinaria y las mejores promociones para tí. 
+        </div>
+        <div  id="newsletters-msg">
+            <span>Te ofrecemos</span><br/>
+            <span>el mejor servicio a tu alcance</span>
+        </div>
+    </div>
+    <a href="#"><img class="newsletters-footer-img"  src="@Url.Content("~/Content/images/komatsu.png")"/></a>
+    <a href="#"><img class="newsletters-footer-img"  src="@Url.Content("~/Content/images/case.png")"/></a>
+    <a href="#"><img class="newsletters-footer-img"  src="@Url.Content("~/Content/images/jdeere.png")"/></a>
+    <a href="#"><img class="newsletters-footer-img"  src="@Url.Content("~/Content/images/volvo.png")"/></a>
+    <a href="#"><img class="newsletters-footer-img"  src="@Url.Content("~/Content/images/cat.png")"/></a>
 </div>
-
 <script type="text/javascript">
 
 </script>
