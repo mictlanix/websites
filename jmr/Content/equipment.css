@@ -25,19 +25,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-#categories {
+#equipment {
   position:relative;
   padding:70px 0 0 0;
   background:#1b1b1b url(images/categories-bg.png) no-repeat left 100px;
   -webkit-border-radius:0 0 20px 20px;
   -moz-border-radius:0 0 20px 20px;
   border-radius:0 0 20px 20px;
-}
-
-#categories-list {
-  position:relative;
-  padding:8px 0 150px 245px;
-  background:url(images/categories-list-bg.png) no-repeat left 50px;
 }
 
 #search-box {
@@ -77,6 +71,12 @@ THE SOFTWARE.
 #search-box button:active {
   background:#FF6D00;
   border:1px solid white;
+}
+
+#categories-list {
+  position:relative;
+  padding:8px 0 150px 245px;
+  background:url(images/categories-list-bg.png) no-repeat left 50px;
 }
 
 #categories-list ul {

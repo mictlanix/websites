@@ -34,6 +34,8 @@ THE SOFTWARE.
     ViewBag.Title = Resources.CreateNew;
 }
 
+<link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
+<div id="admin-panel">
 <h2>@Resources.Create</h2>
 
 @using (Html.BeginForm()) {
@@ -134,3 +136,4 @@ THE SOFTWARE.
     @Html.ActionLink(Resources.BackToList, "Index")
 </div>
 
+</div>

@@ -36,13 +36,34 @@ h3 {
   margin:0 25px;
 }
 
-#browse {
+#specs {
   position:relative;
   padding:70px 0 15px 0;
   background:#1b1b1b;
   -webkit-border-radius:0 0 20px 20px;
   -moz-border-radius:0 0 20px 20px;
   border-radius:0 0 20px 20px;
+}
+
+#nav {
+  margin:20px;
+  text-align:right;
+}
+
+#info {
+  float:left;
+  margin:10px 0 0 0;
+  width:230px;
+  vertical-align:bottom;
+}
+
+#photos {
+  margin:10px 20px 0 260px;
+  height:434px;
+  background:black;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
 }
 
 .display-image {
@@ -66,6 +87,69 @@ h3 {
   font-size:18px;
   color:white;
   text-align:right;
+}
+
+#description {
+  margin:10px 20px 10px 0;
+  padding:1px 0;
+}
+
+#description .display-label {
+  float:left;
+  clear:left;
+  margin:0;
+  width:230px;
+}
+
+#description .display-field {
+  margin:0 0 10px 270px;
+  text-align:left;
+}
+
+#tools {
+  margin:10px 20px 10px 260px;
+  padding:1px 0;
+  background:url(images/tools-bg.png) repeat-y right;
+  text-align:right;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+#tools ul {
+  display:inline-block;
+  margin:2px 5px;
+  background:url(images/tools-sp.png) no-repeat left center;
+}
+
+#tools li {
+  display:inline-block;
+  position:relative;
+  padding:1px 20px;
+  color:white;
+  background:url(images/tools-sp.png) no-repeat right center;
+  list-style-type:none;
+  text-align:center;
+}
+
+#tools li a {
+  display:block;
+  margin:8px;
+  color:#474747;
+  font-size:15px;
+  text-transform:lowercase;
+}
+
+#tools .display-label {
+  float:left;
+}
+
+#quote {
+  margin:10px 20px 10px 260px;
+  width:350px;
+  font-size:20px;
+  text-align:justify;
+  color:#d35500;
 }
 
 #comment {

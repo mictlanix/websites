@@ -56,6 +56,5 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			
 			return View (category);
 		}
-		
     }
 }

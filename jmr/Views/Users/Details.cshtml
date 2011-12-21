@@ -8,6 +8,9 @@
     var CurrentUser = Html.CurrentUser() ?? new User();
 }
 
+<link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
+<div id="admin-panel">
+
 <h2>@Resources.Details</h2>
 
 <fieldset>
@@ -35,3 +38,5 @@
 }
     @Html.ActionLink(Resources.BackToList, "Index")
 </p>
+
+</div>

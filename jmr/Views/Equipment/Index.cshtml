@@ -33,9 +33,9 @@ THE SOFTWARE.
     ViewBag.PageName = "Catálogo";
     ViewBag.Section = "Categories";
 }
-<link href="@Url.Content("~/Content/categories.css")" rel="stylesheet" type="text/css"></link>
+<link href="@Url.Content("~/Content/equipment.css")" rel="stylesheet" type="text/css"></link>
 
-<div id="categories">
+<div id="equipment">
 	<div id="search-box">
 		<label>Búsqueda:</label>
 		<input type="text" name="search" />
@@ -84,7 +84,7 @@ THE SOFTWARE.
             @foreach (var item in Enum.GetValues(typeof(CategoryEnum)))
             {
 			<li>
-				<a href="/Categories/@item">@(((CategoryEnum)item).GetDisplayName())</a>
+				<a href="/Equipment/@item">@(((CategoryEnum)item).GetDisplayName())</a>
 			</li>
             }
 		</ul>

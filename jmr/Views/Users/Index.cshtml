@@ -8,6 +8,8 @@
     var CurrentUser = Html.CurrentUser() ?? new User();
 }
 
+<link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
+<div id="admin-panel">
 
 <h2>@Resources.DisplayName_Users</h2>
 
@@ -48,3 +50,4 @@
 }
 
 </table>
+</div>

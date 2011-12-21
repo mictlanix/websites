@@ -30,7 +30,12 @@ THE SOFTWARE.
 @using Mictlanix.WebSites.JMR.Helpers
 @using Mictlanix.WebSites.JMR.Properties
 @model IEnumerable<Product>
-           
+
+<link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
+<div id="admin-panel">
+
+@Html.ActionLink(Resources.CreateNew, "Create", new { }, new { @class = "button icon add" })
+
 <table style="width:100%">
     <tr>
         <th>
@@ -99,6 +104,4 @@ THE SOFTWARE.
 
 </table>
 
-@Html.ActionLink(Resources.CreateNew, "Create", new { }, new { @class = "button icon add" })
-
-
+</div>

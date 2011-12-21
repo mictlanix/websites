@@ -1,5 +1,5 @@
 /*
-browse.css
+ContactController.cs
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
@@ -24,53 +24,49 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Web;
+using System.Web.Mvc;
+using System.Text.RegularExpressions;
+using Mictlanix.WebSites.JMR.Models;
 
-h2 {
-  margin:20px;
-  font:normal 42px '01DigitMonoRegular', Arial, sans-serif;
-  text-align:right;
-  color:white;
-}
+namespace Mictlanix.WebSites.JMR.Controllers
+{
+    public class EquipmentController : Controller
+    {
+        //
+        // GET: /Products/
 
-h3 {
-  margin:0 25px;
-}
-
-#browse {
-  position:relative;
-  padding:70px 0 15px 0;
-  background:#1b1b1b;
-  -webkit-border-radius:0 0 20px 20px;
-  -moz-border-radius:0 0 20px 20px;
-  border-radius:0 0 20px 20px;
-}
-
-.display-image {
-  margin:10px 0 20px 40px;
-  text-align:center;
-}
-
-.display-label {
-  margin:2px 0;
-  text-transform:uppercase;
-  font:normal 18px '01DigitMonoRegular', Arial, sans-serif;
-  color:#4d4d4d;
-  letter-spacing:1px;
-  word-spacing:10px;
-  text-align:right;
-}
-
-.display-field {
-  margin:0 0 12px 0;
-  text-transform:uppercase;
-  font-size:18px;
-  color:white;
-  text-align:right;
-}
-
-#comment {
-  margin:10px 25px;
-  font-size:20px;
-  text-align:justify;
-  color:white;
+        public ActionResult Index()
+        {
+            return View();
+        }
+		
+		public ActionResult Browse (string category)
+		{
+			CategoryEnum item;
+			
+			if (!CategoryEnum.TryParse (category, true, out item) ||
+			    !Enum.IsDefined (typeof(CategoryEnum), item)) {
+				return RedirectToAction ("Index");
+			}
+			
+			return View (item);
+		}
+		
+		public ActionResult Specs (int equipment)
+		{
+			CategoryEnum category = CategoryEnum.Excavators;
+			
+			if (equipment == 0) {
+				return RedirectToAction ("Index");
+			}
+			
+			return View (category);
+		}
+    }
 }

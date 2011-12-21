@@ -18,22 +18,28 @@ namespace Mictlanix.WebSites.JMR
             filters.Add(new HandleErrorAttribute());
         }
 
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+        public static void RegisterRoutes (RouteCollection routes)
+		{
+			routes.IgnoreRoute ("{resource}.axd/{*pathInfo}");
 			
 			routes.MapRoute (
-                "Categories", // Route name
-                "Categories/{id}", // URL with parameters
-                new { controller = "Categories", action = "Browse" } // Parameter defaults
+                "Specifications",
+                "Equipment/Specs/{equipment}",
+                new { controller = "Equipment", action = "Specs", equipment = @"\d+" }
             );
 			
-            routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+			routes.MapRoute (
+                "Equipment",
+                "Equipment/{category}",
+                new { controller = "Equipment", action = "Browse" }
             );
-        }
+			
+			routes.MapRoute (
+                "Default",
+                "{controller}/{action}/{id}",
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+		}
 
         protected void Application_Start()
         {

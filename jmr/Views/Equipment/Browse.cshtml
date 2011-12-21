@@ -24,30 +24,35 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
+@using Mictlanix.WebSites.JMR
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@using Mictlanix.WebSites.JMR.Properties
 @{
     ViewBag.Title = "JMR - Catálogo";
     ViewBag.PageName = "Catálogo";
-    ViewBag.Section = "Products";
+    ViewBag.Section = "Browse";
 }
-<link href="@Url.Content("~/Content/products.css")" rel="stylesheet" type="text/css"></link>
 
-<div id="products">
-	<div style="text-align:right">
-		<h2>Excavadoras</h2>
-	</td>
-	<div style="text-align:right">
-		<a href="">Índice</a>
-		<a href="">&lt;</a>
-		<a href="">&gt;</a>
+<link href="@Url.Content("~/Content/browse.css")" rel="stylesheet" type="text/css"></link>
+
+<div id="browse">
+	<h2>@Model</h2>
+	<div id="tiles">
+		<a href="/Equipment/Specs/12345">
+			<img src="@Url.Content("~/Content/images/info.png")" alt="Imprimir" title="Imprimir"/>
+		</a>
 	</div>
-	<div>
-		<div id="info" style="width:200px;">
-		<div>
-		<div id="photos" style="text-align:right">
-		</div>
+	<h3>Condiciones de Compra</h3>
+	<div class="hbar"></div>
+	<div id="comment">
+		<p>Si requieres de algún equipo en especial, nosotros lo conseguimos para tí.</p>
 	</div>
+	<div class="hbar"></div>
 </div>
 
 <script type="text/javascript">
+	$(function() {
 
+	});
 </script>
