@@ -1,0 +1,44 @@
+﻿@using Mictlanix.WebSites.JMR.Properties
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@model Mictlanix.WebSites.JMR.Models.User
+
+@{
+    ViewBag.Title = Resources.Edit;
+}
+
+<h2>@Resources.Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Resources.User</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.UserName)
+            @Html.DisplayFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.EditorFor(model => model.IsAdministrator)
+            @Html.LabelFor(model => model.IsAdministrator)
+        </div>
+
+        <p><button type="submit" class="icon save">@Resources.Save</button></p>
+    </fieldset>
+}
+
+<div>
+        @Html.ActionLink(Resources.BackToList, "Index")
+</div>

@@ -39,9 +39,9 @@
         <td class="actions">
         	@if(CurrentUser.IsAdministrator)
         	{
-	            @Html.ActionLink(Resources.Edit, "Edit", new { id = item.UserName })
-	            @Html.ActionLink(Resources.Details, "Details", new { id = item.UserName })
-	            @Html.ActionLink(Resources.Delete, "Delete", new { id = item.UserName })
+	            @Html.ActionLink(Resources.Edit, "Edit", new { id = item.UserName }) @:|
+	            @Html.ActionLink(Resources.Details, "Details", new { id = item.UserName }) @:|
+	            @Html.ActionLink(Resources.Delete, "Delete", new { id = item.UserName }) 
             }
         </td>
     </tr>

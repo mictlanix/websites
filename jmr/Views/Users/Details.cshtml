@@ -24,14 +24,14 @@
     </div>
 
     <div class="display-label">
+        @Html.LabelFor(x => x.IsAdministrator)        
         @Html.DisplayFor(x => x.IsAdministrator)
-        @Html.LabelFor(x => x.IsAdministrator)
     </div>
 </fieldset>
 <p>
 @if(CurrentUser.IsAdministrator)
 {
-	@Html.ActionLink(Resources.Edit, "Edit", new { id = Model.UserName })
+	@Html.ActionLink(Resources.Edit, "Edit", new { id = Model.UserName }) @:|
 }
     @Html.ActionLink(Resources.BackToList, "Index")
 </p>

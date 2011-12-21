@@ -34,6 +34,7 @@ using System.Web.Mvc;
 using System.Drawing;
 using Castle.ActiveRecord;
 using Mictlanix.WebSites.JMR.Models;
+using Mictlanix.WebSites.JMR.Helpers;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
@@ -44,7 +45,8 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Index()
         {
-            if (!Request.IsAuthenticated)
+            if (!Request.IsAuthenticated ||
+                !SecurityHelpers.GetUser(User.Identity.Name).IsAdministrator)
             {
                 return RedirectToAction("LogOn", "Account");
             }
