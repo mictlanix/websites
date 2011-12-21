@@ -222,4 +222,139 @@
   <data name="Yes" xml:space="preserve">
     <value>Si</value>
   </data>
+  <data name="AccountInformation" xml:space="preserve">
+    <value>Información del Usuario</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmar Contraseña</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña Actual</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="DisplayName_ChangePassword" xml:space="preserve">
+    <value>Cambio de Contraseña</value>
+  </data>
+  <data name="DisplayName_LogOn" xml:space="preserve">
+    <value>Inicio de Sesión</value>
+  </data>
+  <data name="DisplayName_Register" xml:space="preserve">
+    <value>Registro de Usuario</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Iniciar Sesión</value>
+  </data>
+  <data name="Message_ChangePasswordFail" xml:space="preserve">
+    <value>El cambio de contraseña no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo.</value>
+  </data>
+  <data name="Message_ChangePasswordSuccess" xml:space="preserve">
+    <value>Su contraseña se ha cambiado exitosamente.</value>
+  </data>
+  <data name="Message_ChangePasswordWrong" xml:space="preserve">
+    <value>La contraseña actual es incorrecta o la contraseña nueva es inválida.</value>
+  </data>
+  <data name="Message_DeleteUnsuccessful" xml:space="preserve">
+    <value>No se pudo borrar el elemento porque existen dependencias en el sistema hacia él.</value>
+  </data>
+  <data name="Message_InvalidUserPassword" xml:space="preserve">
+    <value>El usuario o contraseña es  incorrecto.</value>
+  </data>
+  <data name="Message_LoginRegister" xml:space="preserve">
+    <value>Por favor ingrese su usuario y contraseña. O si usted no tiene un usuario, favor de</value>
+  </data>
+  <data name="Message_LoginUnsuccessful" xml:space="preserve">
+    <value>El inicio de sesión no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo.</value>
+  </data>
+  <data name="Message_RegisterUnsuccessful" xml:space="preserve">
+    <value>El registro no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo.</value>
+  </data>
+  <data name="Message_UnknownError" xml:space="preserve">
+    <value>Error desconocido. Por favor, verifica tus datos y vuelve a intentarlo. Si el problema persiste contacte a su administrador de sistema.</value>
+  </data>
+  <data name="Message_UserNameAlreadyExists" xml:space="preserve">
+    <value>El nombre de usuario ya existe.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Contraseña Nueva</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Photos" xml:space="preserve">
+    <value>Fotos</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>¿Recordarme?</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Title_ChangePassword" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Title_LogOn" xml:space="preserve">
+    <value>Inicio de Sesión</value>
+  </data>
+  <data name="Title_Register" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="UpdateFoto" xml:space="preserve">
+    <value>Subir Foto</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Validation_Duplicate" xml:space="preserve">
+    <value>El campo {0} contiene un valor duplicado.</value>
+  </data>
+  <data name="Validation_Email" xml:space="preserve">
+    <value>Lo introducido no corresponde a un {0}.</value>
+  </data>
+  <data name="Validation_InvalidLogOn" xml:space="preserve">
+    <value>El usuario y/o contraseña son invalidos.</value>
+  </data>
+  <data name="Validation_InvalidPassword" xml:space="preserve">
+    <value>La contraseña actual es inválida.</value>
+  </data>
+  <data name="Validation_PasswordDoNotMatch" xml:space="preserve">
+    <value>La nueva contraseña y la confirmación no coinciden.</value>
+  </data>
+  <data name="Administrator" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="DisplayName_Users" xml:space="preserve">
+    <value>Catálogo de Usuarios</value>
+  </data>
+  <data name="SavePhoto" xml:space="preserve">
+    <value>Guardar Foto</value>
+  </data>
+  <data name="Message_DeleteConfirmation" xml:space="preserve">
+    <value>¿Está seguro de borrar esto?</value>
+  </data>
+  <data name="Title_Users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
 </root>

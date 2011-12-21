@@ -61,11 +61,29 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Información del Usuario.
+        /// </summary>
+        public static string AccountInformation {
+            get {
+                return ResourceManager.GetString("AccountInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Activo.
         /// </summary>
         public static string Active {
             get {
                 return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administrador.
+        /// </summary>
+        public static string Administrator {
+            get {
+                return ResourceManager.GetString("Administrator", resourceCulture);
             }
         }
         
@@ -124,11 +142,29 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cambiar Contraseña.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comentario.
         /// </summary>
         public static string Comment {
             get {
                 return ResourceManager.GetString("Comment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmar Contraseña.
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
             }
         }
         
@@ -169,11 +205,92 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contraseña Actual.
+        /// </summary>
+        public static string CurrentPassword {
+            get {
+                return ResourceManager.GetString("CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Borrar.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descripción.
         /// </summary>
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detalles.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cambio de Contraseña.
+        /// </summary>
+        public static string DisplayName_ChangePassword {
+            get {
+                return ResourceManager.GetString("DisplayName_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inicio de Sesión.
+        /// </summary>
+        public static string DisplayName_LogOn {
+            get {
+                return ResourceManager.GetString("DisplayName_LogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro de Usuario.
+        /// </summary>
+        public static string DisplayName_Register {
+            get {
+                return ResourceManager.GetString("DisplayName_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catálogo de Usuarios.
+        /// </summary>
+        public static string DisplayName_Users {
+            get {
+                return ResourceManager.GetString("DisplayName_Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correo.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -232,11 +349,128 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Salir.
+        /// </summary>
+        public static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iniciar Sesión.
+        /// </summary>
+        public static string LogOn {
+            get {
+                return ResourceManager.GetString("LogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Marca.
         /// </summary>
         public static string Make {
             get {
                 return ResourceManager.GetString("Make", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El cambio de contraseña no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo..
+        /// </summary>
+        public static string Message_ChangePasswordFail {
+            get {
+                return ResourceManager.GetString("Message_ChangePasswordFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Su contraseña se ha cambiado exitosamente..
+        /// </summary>
+        public static string Message_ChangePasswordSuccess {
+            get {
+                return ResourceManager.GetString("Message_ChangePasswordSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La contraseña actual es incorrecta o la contraseña nueva es inválida..
+        /// </summary>
+        public static string Message_ChangePasswordWrong {
+            get {
+                return ResourceManager.GetString("Message_ChangePasswordWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¿Está seguro de borrar esto?.
+        /// </summary>
+        public static string Message_DeleteConfirmation {
+            get {
+                return ResourceManager.GetString("Message_DeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No se pudo borrar el elemento porque existen dependencias en el sistema hacia él..
+        /// </summary>
+        public static string Message_DeleteUnsuccessful {
+            get {
+                return ResourceManager.GetString("Message_DeleteUnsuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario o contraseña es  incorrecto..
+        /// </summary>
+        public static string Message_InvalidUserPassword {
+            get {
+                return ResourceManager.GetString("Message_InvalidUserPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Por favor ingrese su usuario y contraseña. O si usted no tiene un usuario, favor de.
+        /// </summary>
+        public static string Message_LoginRegister {
+            get {
+                return ResourceManager.GetString("Message_LoginRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El inicio de sesión no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo..
+        /// </summary>
+        public static string Message_LoginUnsuccessful {
+            get {
+                return ResourceManager.GetString("Message_LoginUnsuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El registro no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo..
+        /// </summary>
+        public static string Message_RegisterUnsuccessful {
+            get {
+                return ResourceManager.GetString("Message_RegisterUnsuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error desconocido. Por favor, verifica tus datos y vuelve a intentarlo. Si el problema persiste contacte a su administrador de sistema..
+        /// </summary>
+        public static string Message_UnknownError {
+            get {
+                return ResourceManager.GetString("Message_UnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre de usuario ya existe..
+        /// </summary>
+        public static string Message_UserNameAlreadyExists {
+            get {
+                return ResourceManager.GetString("Message_UserNameAlreadyExists", resourceCulture);
             }
         }
         
@@ -259,6 +493,15 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contraseña Nueva.
+        /// </summary>
+        public static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
@@ -277,11 +520,29 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contraseña.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to URL.
         /// </summary>
         public static string Path {
             get {
                 return ResourceManager.GetString("Path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fotos.
+        /// </summary>
+        public static string Photos {
+            get {
+                return ResourceManager.GetString("Photos", resourceCulture);
             }
         }
         
@@ -304,6 +565,42 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registrarse.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¿Recordarme?.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar Foto.
+        /// </summary>
+        public static string SavePhoto {
+            get {
+                return ResourceManager.GetString("SavePhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Número de Serie.
         /// </summary>
         public static string Serial {
@@ -313,11 +610,119 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contraseña.
+        /// </summary>
+        public static string Title_ChangePassword {
+            get {
+                return ResourceManager.GetString("Title_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inicio de Sesión.
+        /// </summary>
+        public static string Title_LogOn {
+            get {
+                return ResourceManager.GetString("Title_LogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro.
+        /// </summary>
+        public static string Title_Register {
+            get {
+                return ResourceManager.GetString("Title_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuarios.
+        /// </summary>
+        public static string Title_Users {
+            get {
+                return ResourceManager.GetString("Title_Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tractores.
         /// </summary>
         public static string Tractors {
             get {
                 return ResourceManager.GetString("Tractors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subir Foto.
+        /// </summary>
+        public static string UpdateFoto {
+            get {
+                return ResourceManager.GetString("UpdateFoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        public static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo {0} contiene un valor duplicado..
+        /// </summary>
+        public static string Validation_Duplicate {
+            get {
+                return ResourceManager.GetString("Validation_Duplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lo introducido no corresponde a un {0}..
+        /// </summary>
+        public static string Validation_Email {
+            get {
+                return ResourceManager.GetString("Validation_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario y/o contraseña son invalidos..
+        /// </summary>
+        public static string Validation_InvalidLogOn {
+            get {
+                return ResourceManager.GetString("Validation_InvalidLogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La contraseña actual es inválida..
+        /// </summary>
+        public static string Validation_InvalidPassword {
+            get {
+                return ResourceManager.GetString("Validation_InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La nueva contraseña y la confirmación no coinciden..
+        /// </summary>
+        public static string Validation_PasswordDoNotMatch {
+            get {
+                return ResourceManager.GetString("Validation_PasswordDoNotMatch", resourceCulture);
             }
         }
         

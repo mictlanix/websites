@@ -1,0 +1,35 @@
+﻿@using Mictlanix.WebSites.JMR.Properties
+@model Mictlanix.WebSites.JMR.Models.User
+
+@{
+    ViewBag.Title = Resources.Delete;
+}
+
+<h2>@Resources.Delete</h2>
+
+<h3>@Resources.Message_DeleteConfirmation</h3>
+<fieldset>
+    <legend>@Resources.User</legend>
+    
+    <div class="display-label">@Html.LabelFor(model => model.UserName)</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">@Html.LabelFor(model => model.Email)</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">@Html.LabelFor(model => model.IsAdministrator)</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAdministrator)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <button type="submit" class="icon delete">@Resources.Delete</button>
+        @Html.ActionLink(Resources.BackToList, "Index")
+    </p>
+}

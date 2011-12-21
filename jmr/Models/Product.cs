@@ -36,6 +36,8 @@ namespace Mictlanix.WebSites.JMR.Models
     [ActiveRecord("product")]
     public class Product : ActiveRecordLinqBase<Product>
     {
+        IList<Photo> photos = new List<Photo>();
+
         [PrimaryKey(PrimaryKeyType.Identity, "product_id")]
         public int Id { get; set; }
 
@@ -100,6 +102,12 @@ namespace Mictlanix.WebSites.JMR.Models
         [Display(Name = "CreationTime", ResourceType = typeof(Resources))]
         public DateTime CreationTime { get; set; }
 
+        [HasMany(typeof(Photo), Table = "photo", ColumnKey = "product", Lazy = true)]
+        public IList<Photo> Photos
+        {
+            get { return photos; }
+            set { photos = value; }
+        }
 
         #region Override Base Methods
 

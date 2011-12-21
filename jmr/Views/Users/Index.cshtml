@@ -1,0 +1,50 @@
+﻿@using Mictlanix.WebSites.JMR.Properties
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@model IEnumerable<User>
+
+@{
+    ViewBag.Title = Resources.Title_Users;
+    var CurrentUser = Html.CurrentUser() ?? new User();
+}
+
+
+<h2>@Resources.DisplayName_Users</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.LabelFor(x => new User().UserName)
+        </th>
+        <th>
+            @Html.LabelFor(x => new User().Email)
+        </th>
+        <th>
+            @Html.LabelFor(x => new User().IsAdministrator)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(x => item.UserName)
+        </td>
+        <td class="center">
+            @Html.DisplayFor(x => item.Email)
+        </td>
+        <td class="center">
+            @Html.DisplayFor(x => item.IsAdministrator)
+        </td>
+        <td class="actions">
+        	@if(CurrentUser.IsAdministrator)
+        	{
+	            @Html.ActionLink(Resources.Edit, "Edit", new { id = item.UserName })
+	            @Html.ActionLink(Resources.Details, "Details", new { id = item.UserName })
+	            @Html.ActionLink(Resources.Delete, "Delete", new { id = item.UserName })
+            }
+        </td>
+    </tr>
+}
+
+</table>

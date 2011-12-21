@@ -29,7 +29,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.IO;
 using System.Web.Mvc;
+using System.Drawing;
 using Castle.ActiveRecord;
 using Mictlanix.WebSites.JMR.Models;
 
@@ -42,6 +44,11 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Index()
         {
+            if (!Request.IsAuthenticated)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+
             var qry = from x in Product.Queryable
                       select x;
             return View(qry.ToList());
@@ -52,12 +59,77 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Details(int id)
         {
-            Product product = Product.Find(id);
-            return View(product);
+            using (new SessionScope())
+            {
+                Product item = Product.Find(id);
+
+                item.Photos.ToList();
+
+                return View(item);
+            }
         }
 
         //
         // GET: /Admin/Create
+
+        [HttpPost]
+        public ActionResult UpdatePhoto(int id, HttpPostedFileBase file)
+        {
+            var path = string.Format("~/Photos/{0:000000}", id);
+            var filename = string.Format("{0}/{1}.jpg", path, Guid.NewGuid());
+            
+            Photo item = new Photo {
+                Product = Product.Find(id),
+                Path = filename
+            };
+
+            Directory.CreateDirectory(Server.MapPath(path));
+            SavePhoto(item.Path, file);
+            item.Create();
+
+            return RedirectToAction("Details", new { id = id });
+        }
+
+        void SavePhoto(string fileName, HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                var img = System.Drawing.Image.FromStream(file.InputStream);
+                img = resizeImage(img, new Size(480, 320));
+                img.Save(Server.MapPath(fileName), System.Drawing.Imaging.ImageFormat.Jpeg);
+                img.Dispose();
+            }
+        }
+
+        private static Image resizeImage(Image imgToResize, Size size)
+        {
+            int sourceWidth = imgToResize.Width;
+            int sourceHeight = imgToResize.Height;
+
+            float nPercent = 0;
+            float nPercentW = 0;
+            float nPercentH = 0;
+
+            nPercentW = ((float)size.Width / (float)sourceWidth);
+            nPercentH = ((float)size.Height / (float)sourceHeight);
+
+            if (nPercentH < nPercentW)
+                nPercent = nPercentH;
+            else
+                nPercent = nPercentW;
+
+            int destWidth = (int)(sourceWidth * nPercent);
+            int destHeight = (int)(sourceHeight * nPercent);
+
+            Bitmap b = new Bitmap(destWidth, destHeight);
+            Graphics g = Graphics.FromImage((Image)b);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
+            g.DrawImage(imgToResize, 0, 0, destWidth, destHeight);
+            g.Dispose();
+
+            return (Image)b;
+        }
 
         public ActionResult Create()
         {
@@ -104,10 +176,35 @@ namespace Mictlanix.WebSites.JMR.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.CreationTime = DateTime.Now;
                 product.Save();
                 return RedirectToAction("Index");
             }
             return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult DeletePhoto(int id)
+        {
+            Photo item;
+            int product;
+
+            using (new SessionScope())
+            {
+                item = Photo.Find(id);
+                product = item.Product.Id;
+                item.Delete();
+            }
+
+            try
+            {
+                System.IO.File.Delete(Server.MapPath(item.Path));
+            }
+            catch
+            {
+            }
+
+            return RedirectToAction("Details", new { id = product });
         }
 
         //
@@ -115,8 +212,8 @@ namespace Mictlanix.WebSites.JMR.Controllers
  
         public ActionResult Delete(int id)
         {
-            Product product = Product.Find(id);
-            return View(product);
+            Product item = Product.Find(id);
+            return View(item);
         }
 
         //
@@ -126,9 +223,20 @@ namespace Mictlanix.WebSites.JMR.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = Product.Find(id);
-            product.Delete();
+            try
+            {
+                product.Delete();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return View("DeleteUnsuccessful"); 
+            }
+        }
 
-            return RedirectToAction("Index");
+        public ActionResult DeleteUnsuccessful()
+        {
+            return View();
         }
     }
 }

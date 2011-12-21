@@ -27,10 +27,11 @@ THE SOFTWARE.
 
 @using Mictlanix.WebSites.JMR
 @using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
 @using Mictlanix.WebSites.JMR.Properties
 @model IEnumerable<Product>
            
-<table>
+<table style="width:100%">
     <tr>
         <th>
             @Html.LabelFor(x => new Product().CreationTime)
@@ -68,25 +69,30 @@ THE SOFTWARE.
             @Html.DisplayFor(x => item.CreationTime)
         </td>
         <td>
-            @Html.DisplayFor(x => item.Category)
+            @item.Category.GetDisplayName()
         </td>
-        <td>
-            @Html.DisplayFor(x => item.Make)
+        <td style="text-align:center">
+            @item.Make.GetDisplayName()
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(x => item.Model)
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(x => item.Year)
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(x => item.Serial)
         </td>
-        <td>
+        <td style="text-align:right">
             @Html.DisplayFor(x => item.Price)
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(x => item.IsActive)
+        </td>
+        <td>
+            	@Html.ActionLink(Resources.Edit, "Edit", new { id = item.Id }) |
+            	@Html.ActionLink(Resources.Details, "Details", new { id = item.Id }) |
+            	@Html.ActionLink(Resources.Delete, "Delete", new { id = item.Id })                                
         </td>
     </tr>
 }

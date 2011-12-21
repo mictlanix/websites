@@ -32,10 +32,10 @@ THE SOFTWARE.
 @model Mictlanix.WebSites.JMR.Models.Product
  
 @{
-    ViewBag.Title = Resources.CreateNew;
+    ViewBag.Title = Resources.Edit;
 }
 
-<h2>@Resources.Create</h2>
+<h2>@Resources.Edit</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -126,12 +126,12 @@ THE SOFTWARE.
             @Html.ValidationMessageFor(model => model.Comment)
         </div>
 
-        <p><button type="submit" class="icon save">@Resources.Create</button></p>
+        <p><button type="submit" class="icon save">@Resources.Save</button></p>
 
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink(Resources.BackToList, "Index", new { }, new { @class = "button icon back" })
+    @Html.ActionLink(Resources.BackToList, "Index")
 </div>
 

@@ -44,7 +44,7 @@ namespace Mictlanix.WebSites.JMR.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         public string Path { get; set; }
 
-        [BelongsTo("product")]
+        [BelongsTo("product", Lazy = FetchWhen.OnInvoke)]
         [Display(Name = "Product", ResourceType = typeof(Resources))]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         public virtual Product Product { get; set; }

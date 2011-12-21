@@ -32,12 +32,12 @@ THE SOFTWARE.
 @model Mictlanix.WebSites.JMR.Models.Product
  
 @{
-    ViewBag.Title = Resources.Details;
+    ViewBag.Title = Resources.Delete;
 }
 
 <link href="@Url.Content("~/Content/photos.css")" rel="stylesheet" type="text/css" />
 
-<h2>@Resources.Details</h2>
+<h2>@Resources.Delete</h2>
 
 
 <fieldset>
@@ -86,47 +86,16 @@ THE SOFTWARE.
         @Html.LabelFor(model => model.Comment) :
         @Html.DisplayFor(model => model.Comment)
     </div>
-       
+   
+    
+    @using (Html.BeginForm()) {
+        <p>
+            <button type="submit" class="icon delete">@Resources.Delete</button>
+        </p>
+    }    
 </fieldset>
-
 
 <div>
-    @Html.ActionLink(Resources.BackToList, "Index") |
-    @Html.ActionLink(Resources.Edit, "Edit", new { id = Model.Id }) |
-    @Html.ActionLink(Resources.Delete, "Delete", new { id = Model.Id }) 
-
+    @Html.ActionLink(Resources.BackToList, "Index")
 </div>
-
-<h2>@Resources.Photos</h2>
-<fieldset>
-    @using (Html.BeginForm("UpdatePhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @Html.ValidationSummary(true)
-        {
-            @Html.HiddenFor(x => x.Id)
-
-            <div>
-                <div class="editor-label">
-                    @Resources.UpdateFoto
-                </div>
-                <div class="editor-input">
-                    <input type="file" name="file" id="file" />
-                </div>
-            
-                <p><button type="submit" class="icon save">@Resources.SavePhoto</button></p>
-            </div>
-        }
-    }
-    <div id="items-container">
-        <ul class="list-items">
-            @foreach (var item in Model.Photos)
-            {
-                @Html.Partial("Photo", item)
-            }
-        </ul>
-    </div>
-</fieldset>
-
-
-
 

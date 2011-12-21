@@ -1,0 +1,37 @@
+﻿@using Mictlanix.WebSites.JMR.Properties
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@model User
+
+@{
+    ViewBag.Title = Resources.Details;
+    var CurrentUser = Html.CurrentUser() ?? new User();
+}
+
+<h2>@Resources.Details</h2>
+
+<fieldset>
+    <legend>@Resources.User</legend>
+
+    <div class="display-label">@Html.LabelFor(x => x.UserName)</div>
+    <div class="display-field">
+        @Html.DisplayFor(x => x.UserName)
+    </div>
+
+    <div class="display-label">@Html.LabelFor(x => x.Email)</div>
+    <div class="display-field">
+        @Html.DisplayFor(x => x.Email)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayFor(x => x.IsAdministrator)
+        @Html.LabelFor(x => x.IsAdministrator)
+    </div>
+</fieldset>
+<p>
+@if(CurrentUser.IsAdministrator)
+{
+	@Html.ActionLink(Resources.Edit, "Edit", new { id = Model.UserName })
+}
+    @Html.ActionLink(Resources.BackToList, "Index")
+</p>
