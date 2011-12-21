@@ -35,7 +35,7 @@ using Mictlanix.WebSites.JMR.Models;
 
 namespace Mictlanix.WebSites.JMR.Helpers
 {
-    public static class HtmlHelpers
+    public static class SecurityHelpers
     {
         public static User CurrentUser(this HtmlHelper helper)
         {
