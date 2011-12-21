@@ -61,6 +61,12 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Details(int id)
         {
+            if (!Request.IsAuthenticated ||
+               !SecurityHelpers.GetUser(User.Identity.Name).IsAdministrator)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+
             using (new SessionScope())
             {
                 Product item = Product.Find(id);
@@ -135,6 +141,12 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Create()
         {
+            if (!Request.IsAuthenticated ||
+               !SecurityHelpers.GetUser(User.Identity.Name).IsAdministrator)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+
             return View();
         } 
 
@@ -165,6 +177,12 @@ namespace Mictlanix.WebSites.JMR.Controllers
  
         public ActionResult Edit(int id)
         {
+            if (!Request.IsAuthenticated ||
+               !SecurityHelpers.GetUser(User.Identity.Name).IsAdministrator)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+
             Product product = Product.Find(id);
 
             return View(product);
@@ -174,15 +192,29 @@ namespace Mictlanix.WebSites.JMR.Controllers
         // POST: /Admin/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product item)
         {
-            if (ModelState.IsValid)
-            {
-                product.CreationTime = DateTime.Now;
-                product.Save();
-                return RedirectToAction("Index");
-            }
-            return View(product);
+            if (!ModelState.IsValid)
+                return View(item);
+
+            var product = Product.Find(item.Id);
+
+            product.Category = item.Category;
+            product.Comment = item.Comment;
+            product.CreationTime = DateTime.Now;
+            product.Description = item.Description;
+            product.Hours = item.Hours;
+            product.IsActive = item.IsActive;
+            product.Make = item.Make;
+            product.Model = item.Model;
+            product.Price = item.Price;
+            product.Serial = item.Serial;
+            product.Year = item.Year;
+
+            product.Update();
+
+            return RedirectToAction("Index");
+            
         }
 
         [HttpPost]
@@ -214,6 +246,12 @@ namespace Mictlanix.WebSites.JMR.Controllers
  
         public ActionResult Delete(int id)
         {
+            if (!Request.IsAuthenticated ||
+               !SecurityHelpers.GetUser(User.Identity.Name).IsAdministrator)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+
             Product item = Product.Find(id);
             return View(item);
         }

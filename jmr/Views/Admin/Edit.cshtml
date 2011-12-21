@@ -43,6 +43,8 @@ THE SOFTWARE.
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
+        @Html.HiddenFor(x => x.Id)
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Category)
         </div>
@@ -50,7 +52,14 @@ THE SOFTWARE.
             <select id="category-list" name="Category">
                 @foreach (var item in Enum.GetValues(typeof(CategoryEnum)))
                 {
-                    <option value="@((int)item)">@(((CategoryEnum)item).GetDisplayName())</option>
+                    if ((CategoryEnum)item == Model.Category)
+                    {
+                        <option value="@((int)item)" selected="selected">@(((CategoryEnum)item).GetDisplayName())</option>
+                    }
+                    else
+                    {
+                        <option value="@((int)item)">@(((CategoryEnum)item).GetDisplayName())</option>
+                    }
                 }
             </select>
         </div>
@@ -61,7 +70,14 @@ THE SOFTWARE.
             <select id="make-list" name="Make">
                 @foreach (var item in Enum.GetValues(typeof(MakeEnum)))
                 {
-                    <option value="@((int)item)">@(((MakeEnum)item).GetDisplayName())</option>
+                    if ((MakeEnum)item == Model.Make)
+                    {
+                        <option value="@((int)item)" selected="selected">@(((MakeEnum)item).GetDisplayName())</option>
+                    }
+                    else
+                    {
+                        <option value="@((int)item)">@(((MakeEnum)item).GetDisplayName())</option>
+                    }
                 }
             </select>
         </div>

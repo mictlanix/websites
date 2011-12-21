@@ -493,6 +493,15 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nombre.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contraseña Nueva.
         /// </summary>
         public static string NewPassword {

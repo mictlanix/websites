@@ -45,8 +45,8 @@ THE SOFTWARE.
     letter-spacing:0;
 }
 
-img {
-  border:none;
+ul.list-items li div.photo {
+  text-align:center;
 }
 
 ul.list-items li div.photo img {

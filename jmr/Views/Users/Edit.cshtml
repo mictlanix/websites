@@ -6,6 +6,8 @@
 @{
     ViewBag.Title = Resources.Edit;
 }
+<link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
+<div id="admin-panel">
 
 <h2>@Resources.Edit</h2>
 
@@ -41,4 +43,5 @@
 
 <div>
         @Html.ActionLink(Resources.BackToList, "Index")
+</div>
 </div>

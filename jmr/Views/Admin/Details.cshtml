@@ -42,49 +42,69 @@ THE SOFTWARE.
 <h2>@Resources.Details</h2>
 
 <fieldset>
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Category) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Category)
+    </div>
+    <div class="display-field">
         @Model.Category.GetDisplayName()
     </div>
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Make) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Make)
+    </div>
+    <div class="display-field">
         @Model.Make.GetDisplayName()
     </div>
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Model) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Model)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Model)
     </div>  
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Year) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Year)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Year)
     </div> 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Hours) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Hours)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Hours)
     </div>
         
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Description) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Description)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
         
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Serial) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Serial)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Serial)
     </div>
         
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Price) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.Price)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Price)
     </div>
         
-    <div class="editor-label">
-        @Html.LabelFor(model => model.IsActive) :
+    <div class="display-label">
+        @Html.LabelFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.IsActive)
     </div>
         
     <div class="editor-label">
-        @Html.LabelFor(model => model.Comment) :
+        @Html.LabelFor(model => model.Comment)
+    </div>
+    <div class="display-field">
         @Html.DisplayFor(model => model.Comment)
     </div>
        
@@ -100,6 +120,11 @@ THE SOFTWARE.
 
 <h2>@Resources.Photos</h2>
 <fieldset>
+<div style="padding:20px">
+
+    <div class="editor-label">
+        @Resources.UpdateFoto
+    </div>
     @using (Html.BeginForm("UpdatePhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.ValidationSummary(true)
@@ -107,17 +132,13 @@ THE SOFTWARE.
             @Html.HiddenFor(x => x.Id)
 
             <div>
-                <div class="editor-label">
-                    @Resources.UpdateFoto
-                </div>
-                <div class="editor-input">
-                    <input type="file" name="file" id="file" />
-                </div>
-            
-                <p><button type="submit" class="icon save">@Resources.SavePhoto</button></p>
+                <input type="file" name="file" id="file" />
+                <button type="submit" class="icon save">@Resources.SavePhoto</button>
             </div>
         }
     }
+</div>
+    <div class="hbar"></div>
     <div id="items-container">
         <ul class="list-items">
             @foreach (var item in Model.Photos)

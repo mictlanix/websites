@@ -4,6 +4,9 @@
     ViewBag.Title = Resources.Delete;
 }
 
-<h2>@Resources.Delete</h2>
-<p>@Resources.Message_DeleteUnsuccessful</p>
-<p>@Html.ActionLink(Resources.BackToList, "Index", new { })</p>
+<link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
+<div id="admin-panel">
+    <h2>@Resources.Delete</h2>
+    <p>@Resources.Message_DeleteUnsuccessful</p>
+    <p>@Html.ActionLink(Resources.BackToList, "Index", new { })</p>
+</div>

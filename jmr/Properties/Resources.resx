@@ -357,4 +357,7 @@
   <data name="User" xml:space="preserve">
     <value>Usuario</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
 </root>

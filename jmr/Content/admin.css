@@ -30,6 +30,8 @@ h2 {
   font:normal 42px '01DigitMonoRegular', Arial, sans-serif;
   text-align:right;
   color:white;
+  letter-spacing:1px;
+  word-spacing:10px;
 }
 
 h3 {
@@ -80,4 +82,67 @@ fieldset {
   font-size:20px;
   text-align:justify;
   color:white;
+}
+
+button, .button 
+{
+  margin: 2px;
+  padding:2px 8px;
+  background:#FF6D00;
+  border:1px solid #FF6D00;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  cursor: pointer;
+  cursor:hand;
+  vertical-align:middle;
+  color:White;
+  font-size:16px;
+}
+
+button:active, .button:active {
+  background:#FF6D00;
+  border:1px solid white;
+}
+
+.list-items
+{
+    padding:0;
+    vertical-align:top;
+    *overflow:hidden;
+}
+.list-items li
+{
+    display:inline-block;
+    vertical-align:top;
+    padding:5px;
+    background:transparent;
+    border-radius:8px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    *display:block;
+    *float:left;
+    letter-spacing:0;
+}
+
+ul.list-items li div.photo {
+  text-align:center;
+}
+
+ul.list-items li div.photo img {
+  display:block;
+  margin:8px 5px 0 5px;
+  max-width:80px;
+  max-height:80px;
+}
+
+textarea.text-box {
+  width:500px;
+  height:50px;
+}
+
+p.multiline {
+    margin: 0;
+    width:200mm;
+    word-wrap:break-word;
 }

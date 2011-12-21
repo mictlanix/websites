@@ -104,4 +104,12 @@ THE SOFTWARE.
 
 </table>
 
+<div style="text-align:right; margin:30px 0">
+@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink(Resources.Title_Users, "Index", "Users", new { }, new { @class = "button"}) 
+    @Html.ActionLink("Cerrar Sesión", "LogOff", "Account", new { }, new { @class= "button"})
+}
+</div>
+
 </div>
