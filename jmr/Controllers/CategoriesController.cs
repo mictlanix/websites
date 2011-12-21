@@ -41,10 +41,21 @@ namespace Mictlanix.WebSites.JMR.Controllers
         //
         // GET: /Categories/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+        public ActionResult Index ()
+		{
+			return View ();
+		}
+		
+		public ActionResult Browse (string id)
+		{
+			CategoryEnum category;
+			
+			if (!CategoryEnum.TryParse (id, true, out category)) {
+				return RedirectToAction ("Index");
+			}
+			
+			return View (category);
+		}
 		
     }
 }

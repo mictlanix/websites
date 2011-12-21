@@ -35,16 +35,12 @@ h2 {
 }
 
 #slider {
-  position: relative;
+  position:relative;
   margin:-25px 0 0 0;
+  padding:1px 0 25px 0;
   background:#1b1b1b url(images/slider-bg.png) repeat-y;
   text-align:center;
   z-index:5;
-}
-
-
-#slider img {
-  margin:22px 0 0 0;
 }
 
 .column {

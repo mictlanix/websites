@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  font-family:"Maven Pro";
+  font-family:"Maven Pro", Arial, sans-serif;
   font-size:16px;
   padding:0;
   color:white;
@@ -79,7 +79,7 @@ a:hover {
 }
 
 p {
-  margin:10px;
+  margin:0;
 }
 
 li {
@@ -101,7 +101,7 @@ li {
 #header {
   margin:40px auto 0 auto;
   padding:1px 0 0 0;
-  background:#1b1b1b;
+  background:#1b1b1b url(images/slider-bg.png) repeat-y 0px 50%;
   position:relative;
   z-index:10;
   -webkit-border-radius:20px 20px 0 0;
