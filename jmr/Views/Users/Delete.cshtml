@@ -28,13 +28,17 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.IsAdministrator)
     </div>
-</fieldset>
+
 @using (Html.BeginForm())
 {
     <p>
         <button type="submit" class="icon delete">@Resources.Delete</button>
-        @Html.ActionLink(Resources.BackToList, "Index")
     </p>
 }
+
+</fieldset>
+<p>
+        @Html.ActionLink(Resources.BackToList, "Index")
+</p>
 
 </div>

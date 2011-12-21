@@ -32,6 +32,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Mictlanix.WebSites.JMR.Models;
+using Mictlanix.WebSites.JMR.Helpers;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
@@ -42,6 +43,12 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Index()
         {
+            if (!Request.IsAuthenticated ||
+                !SecurityHelpers.GetUser(User.Identity.Name).IsAdministrator)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+
             var qry = from x in Models.User.Queryable
                       select x;
 
