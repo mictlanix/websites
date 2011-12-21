@@ -30,17 +30,65 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
+using Castle.ActiveRecord;
+using Mictlanix.WebSites.JMR.Models;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
     public class NewslettersController : Controller
     {
+		// This regex pattern came from: 
+		// http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
+		static readonly Regex REGEX_EMAIL = new Regex (@"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        
         //
         // GET: /Newsletters/
-
-        public ActionResult Index()
+		
+        public ActionResult Index ()
+		{
+			return View ();
+		}
+		
+        public static bool IsValidEmailAddress(string str)
         {
-            return View();
+            if (IsStringMissing(str))
+                return false;
+
+            return REGEX_EMAIL.IsMatch(str);
         }
+
+        public static bool IsStringMissing(string value)
+        {
+            return value == null || value.Trim().Length == 0;
+        }
+		
+		[HttpPost]
+		public ActionResult Index (Subscriber input)
+		{
+			if (!IsValidEmailAddress (input.Email)) {
+				ModelState.AddModelError ("Email", "No es una dirección de email válida.");
+			}
+			
+			if (ModelState.IsValid) {
+				Subscriber item = Subscriber.TryFind (input.Email);
+			
+				if (item == null) {
+					using (var session = new SessionScope()) {
+						input.IsActive = true;
+						input.CreateAndFlush ();
+					}
+				} else {
+					using (var session = new SessionScope()) {
+						item.IsActive = true;
+						item.UpdateAndFlush ();
+					}
+				}
+				
+				return PartialView ("_Success");
+			}
+			
+			return PartialView ("_Form", input);
+		}
     }
 }

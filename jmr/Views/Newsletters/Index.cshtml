@@ -24,11 +24,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
+@model Mictlanix.WebSites.JMR.Models.Subscriber
 @{
     ViewBag.Title = "JMR - Registro";
     ViewBag.PageName = "Registro";
     ViewBag.Section = "Newsletters";
 }
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
 <link href="@Url.Content("~/Content/newsletters.css")" rel="stylesheet" type="text/css"></link>
 
 <div id="newsletters">
@@ -37,17 +41,8 @@ THE SOFTWARE.
     </div>
     <div id="newsletters-data">
         <p class="newsletters-p-sucribe">SUSCRIBETE SIN<br/>COSTO</p>
-        <!--<img class="newsletters-p-sucribe" src="../../Content/images/registro.png" alt="imagen contacta"/>-->
         <div id="newsletters-form">
-            <form action="#">
-                <fieldset class="newsletters-fieldset">
-                    <label  class="newsletters-form-label1">N O M B R E / E M P R E S A:</label>    
-                    <input class="newsletters-form-input-nombre" type="text" />
-                    <label class="newsletters-form-label1">E - M A I L</label>    
-                    <input class="newsletters-form-input-nombre" type="text" />
-                </fieldset>
-                <button type="submit" id="button-font">E N V I A R</button>
-            </form>
+        	@Html.Partial("_Form", Model)
         </div>
         <div id="newsletters-text">
         Déjanos tu dirección de correo electrónico y con gusto te enviamos el boletín mensual, 
@@ -61,32 +56,32 @@ THE SOFTWARE.
 	<div id="makes-strip">
 		<ul>
 			<li>
-				<a href="http://www.cat.com/">
+				<a href="http://www.cat.com/" target="_blank">
 					<img src="@Url.Content("~/Content/images/cat.png")" alt="CAT" title="CAT"/>
 				</a>
 			</li>
 			<li>
-				<a href="http://www.volvoce.com/">
+				<a href="http://www.volvoce.com/" target="_blank">
 					<img src="@Url.Content("~/Content/images/volvo.png")" alt="Volvo" title="Volvo"/>
 				</a>
 			</li>
 			<li>
-				<a href="http://www.jcb.com/">
+				<a href="http://www.jcb.com/" target="_blank">
 					<img src="@Url.Content("~/Content/images/jcb.png")" alt="JCB" title="JCB"/>
 				</a>
 			</li>
 			<li>
-				<a href="http://www.deere.com/wps/dcom/en_US/industry/construction/construction.page">
+				<a href="http://www.deere.com/wps/dcom/en_US/industry/construction/construction.page" target="_blank">
 					<img src="@Url.Content("~/Content/images/jdeere.png")" alt="John Deere" title="John Deere"/>
 				</a>
 			</li>
 			<li>
-				<a href="http://www.casece.com/wps/portal/casece?brandsite_brand=CaseCE&brandsite_language=es&brandsite_geo=LA">
+				<a href="http://www.casece.com/wps/portal/casece?brandsite_brand=CaseCE&brandsite_language=es&brandsite_geo=LA" target="_blank">
 					<img src="@Url.Content("~/Content/images/case.png")" alt="CASE" title="CASE"/>
 				</a>
 			</li>
 			<li>
-				<a href="http://www.komatsu.com/">
+				<a href="http://www.komatsu.com/" target="_blank">
 					<img src="@Url.Content("~/Content/images/komatsu.png")" alt="Komat'su" title="Komat'su"/>
 				</a>
 			</li>

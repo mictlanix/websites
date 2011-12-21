@@ -27,11 +27,9 @@ THE SOFTWARE.
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
-using System.Text.RegularExpressions;
+using Castle.ActiveRecord;
 using Mictlanix.WebSites.JMR.Models;
 
 namespace Mictlanix.WebSites.JMR.Controllers
@@ -55,18 +53,40 @@ namespace Mictlanix.WebSites.JMR.Controllers
 				return RedirectToAction ("Index");
 			}
 			
-			return View (item);
+			var qry = from x in Product.Queryable
+					  where x.IsActive && x.Category == item
+                      select new EquipmentItem { Id = x.Id, Make = x.Make, Model = x.Model, Price = x.Price };
+			
+			var list = qry.ToList ();
+			
+			foreach (var equipment in list) {
+				Photo photo = Photo.Queryable.Where (x => x.Product.Id == equipment.Id).FirstOrDefault ();
+				
+				if(photo != null)
+					equipment.Path = photo.Path;
+			}
+			
+			return View (new MasterDetails<CategoryEnum, EquipmentItem> {
+				Master = item,
+				Details = list
+			});
 		}
 		
 		public ActionResult Specs (int equipment)
 		{
-			CategoryEnum category = CategoryEnum.Excavators;
+			Product item = null;
 			
-			if (equipment == 0) {
-				return RedirectToAction ("Index");
+			using (new SessionScope()) {
+				item = Product.TryFind (equipment);
+				
+				if (item == null) {
+					return RedirectToAction ("Index");
+				}
+				
+				item.Photos.ToList ();
 			}
 			
-			return View (category);
+			return View (item);
 		}
     }
 }

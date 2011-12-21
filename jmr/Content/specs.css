@@ -32,6 +32,11 @@ h2 {
   color:white;
 }
 
+h2 a, h2 img, h2 span {
+  margin:0px 5px;
+  vertical-align:middle;
+}
+
 h3 {
   margin:0 25px;
 }
@@ -67,7 +72,7 @@ h3 {
 }
 
 .display-image {
-  margin:10px 0 20px 40px;
+  margin:10px 0 20px 4px;
   text-align:center;
 }
 

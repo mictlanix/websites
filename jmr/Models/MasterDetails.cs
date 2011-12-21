@@ -1,5 +1,5 @@
-// 
-// ContactUs.cs
+﻿// 
+// MasterDetails.cs
 // 
 // Author:
 //   Eddy Zavaleta <eddy@mictlanix.org>
@@ -27,27 +27,21 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Mictlanix.WebSites.JMR.Properties;
 
 namespace Mictlanix.WebSites.JMR.Models
 {
-	public class ContactUs
-	{
-		public override string ToString ()
-		{
-			return string.Format ("Nombre: {0}\nEmail: {1}\nComentario:\n{2}", Name, Email, Comment);
-		}
-		
-        [Required(ErrorMessage = "El nombre es obligatorio.")]
-        public string Name { get; set; }
-		
-        [Required(ErrorMessage = "El email es obligatorio.")]
-        public string Email { get; set; }
-		
-        [DataType(DataType.MultilineText)]
-        public string Comment { get; set; }
-		
-        public string To { get; set; }
-        public bool IsSent { get; set; }
-	}
+    public class MasterDetails<TMaster, TDetail>
+    {
+        public MasterDetails()
+        {
+            Details = new List<TDetail>();
+        }
+
+        public TMaster Master { get; set; }
+        public IList<TDetail> Details { get; set; }
+    }
+    
 }

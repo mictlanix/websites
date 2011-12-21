@@ -30,6 +30,9 @@ h2 {
   font:normal 42px '01DigitMonoRegular', Arial, sans-serif;
   text-align:right;
   color:white;
+  letter-spacing:1px;
+  word-spacing:10px;
+
 }
 
 h3 {
@@ -38,39 +41,27 @@ h3 {
 
 #browse {
   position:relative;
-  padding:70px 0 15px 0;
+  padding:70px 20px 15px;
   background:#1b1b1b;
   -webkit-border-radius:0 0 20px 20px;
   -moz-border-radius:0 0 20px 20px;
   border-radius:0 0 20px 20px;
 }
 
-.display-image {
-  margin:10px 0 20px 40px;
-  text-align:center;
+#tiles {
 }
 
-.display-label {
-  margin:2px 0;
-  text-transform:uppercase;
-  font:normal 18px '01DigitMonoRegular', Arial, sans-serif;
-  color:#4d4d4d;
-  letter-spacing:1px;
-  word-spacing:10px;
-  text-align:right;
+#tiles .equipment {
+  display:inline-block;
+  margin:10px;
 }
 
-.display-field {
-  margin:0 0 12px 0;
-  text-transform:uppercase;
-  font-size:18px;
-  color:white;
-  text-align:right;
+#tiles .image img {
+  padding:0;
+  max-width:150px;
+  max-height:150px;
 }
 
-#comment {
-  margin:10px 25px;
-  font-size:20px;
-  text-align:justify;
-  color:white;
+#tiles .info {
+  font-size:12px;
 }

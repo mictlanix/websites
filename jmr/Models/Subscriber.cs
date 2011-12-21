@@ -38,7 +38,7 @@ namespace Mictlanix.WebSites.JMR.Models
     [ActiveRecord("subscriber")]
     public class Subscriber : ActiveRecordLinqBase<Subscriber>
     {
-        [PrimaryKey("email_id")]
+        [PrimaryKey("email")]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [StringLength(250, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Email", ResourceType = typeof(Resources))]

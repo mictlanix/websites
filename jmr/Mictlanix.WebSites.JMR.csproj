@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -108,6 +108,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Models\EquipmentItem.cs" />
+    <Compile Include="Models\MasterDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\admin.css" />
@@ -179,6 +181,21 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Content\products.css" />
     <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\categories-bg.png" />
+    <Content Include="Content\images\categories-list-bg.png" />
+    <Content Include="Content\fonts\digitmono\stylesheet.css" />
+    <Content Include="Content\images\true.png" />
+    <Content Include="Content\images\registro-bkg.png" />
+    <Content Include="Content\images\registro-bkg-gray.png" />
+    <Content Include="Content\images\registro-machine.png" />
+    <Content Include="Content\images\search.png" />
+    <Content Include="Scripts\jquery.gallery.js" />
+    <Content Include="Scripts\jquery.slideshow.js" />
+    <Content Include="Views\Equipment\Browse.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\Specs.cshtml" />
+    <Content Include="Views\Newsletters\_Form.cshtml" />
+    <Content Include="Views\Newsletters\_Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

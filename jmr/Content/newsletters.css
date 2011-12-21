@@ -25,6 +25,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+h2.success {
+  margin:20px;
+  color:white;
+}
+
 #newsletters {
   position:relative;
   left:34px;
@@ -77,17 +82,18 @@ THE SOFTWARE.
     top: 97px;
 }
 
-.newsletters-form-label1{
+.newsletters-form-label{
     color:#d45500;
     font-size: 20px;
     font-family:Haettenschweiler;
     margin: 80px 0px 0px  20px;
 }
 
-.newsletters-form-input-nombre
+.newsletters-fieldset input
 {
     display: block; 
     margin: 10px ;
+    padding:0 10px;
     background:transparent;
     border-radius: 20px;
     color: White;

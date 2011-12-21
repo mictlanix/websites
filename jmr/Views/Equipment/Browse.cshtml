@@ -28,6 +28,7 @@ THE SOFTWARE.
 @using Mictlanix.WebSites.JMR.Models
 @using Mictlanix.WebSites.JMR.Helpers
 @using Mictlanix.WebSites.JMR.Properties
+@model MasterDetails<CategoryEnum, EquipmentItem>
 @{
     ViewBag.Title = "JMR - Catálogo";
     ViewBag.PageName = "Catálogo";
@@ -37,16 +38,22 @@ THE SOFTWARE.
 <link href="@Url.Content("~/Content/browse.css")" rel="stylesheet" type="text/css"></link>
 
 <div id="browse">
-	<h2>@Model</h2>
+	<h2>@Model.Master.GetDisplayName()</h2>
 	<div id="tiles">
-		<a href="/Equipment/Specs/12345">
-			<img src="@Url.Content("~/Content/images/info.png")" alt="Imprimir" title="Imprimir"/>
-		</a>
-	</div>
-	<h3>Condiciones de Compra</h3>
-	<div class="hbar"></div>
-	<div id="comment">
-		<p>Si requieres de algún equipo en especial, nosotros lo conseguimos para tí.</p>
+		@foreach (var item in Model.Details) {
+		<div class="equipment">
+			<div class="image">
+				<a href="/Equipment/Specs/@item.Id">
+					<img src="@Url.Content(item.Path)" alt="Ver Especificación" title="Ver Especificación"/>
+				</a>
+			</div>
+			<div class="info">
+				Marca: @item.Make<br/>
+				Modelo: @item.Model<br/>
+				Precio: @item.Price.ToString("c")<br/>
+			</div>
+		</div>
+		}
 	</div>
 	<div class="hbar"></div>
 </div>

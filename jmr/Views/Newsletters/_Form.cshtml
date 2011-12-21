@@ -1,0 +1,13 @@
+﻿@model Mictlanix.WebSites.JMR.Models.Subscriber
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "newsletters-form" }))
+{
+    <fieldset class="newsletters-fieldset">
+        <label class="newsletters-form-label">N O M B R E / E M P R E S A:</label>
+        @Html.EditorFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)<br/>
+        <label class="newsletters-form-label">E - M A I L</label>    
+        @Html.EditorFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+    </fieldset>
+    <button type="submit" id="button-font">E N V I A R</button>
+}

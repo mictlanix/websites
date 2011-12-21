@@ -70,7 +70,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 		        return PartialView("_Success", new ContactUs { IsSent = true });
 		    }
 			
-            return View("_Form", input);
+            return PartialView("_Form", input);
         }
 		
 		bool SendEmail(string addrFrom, string addrTo, string subject, string body)
