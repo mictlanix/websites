@@ -91,6 +91,7 @@ div.email.black {
   left:270px;
   top:15px;
   width:394px;
+  height:654px;
   background:#3e3e3e;
 }
 
@@ -101,6 +102,7 @@ div.email.black {
 #featured .ad {
   display:inline-block;
   margin:20px 10px 15px 20px;
+  padding:1px 0 2px 0;
   width:160px;
   border-bottom:1px solid #707070;
 }
@@ -109,13 +111,22 @@ div.email.black {
   padding:0;
   height:75px;
   background:#d35500;
-  text-align:right;
+}
+
+#featured .ad .image span {
+  float:left;
+  margin:10px 0 0 15px;
+  font:normal 40px '01DigitMonoRegular', Arial, sans-serif;
 }
 
 #featured .ad .image img {
+  float:right;
   padding:0;
+  max-width:100px;
+  height:75px;
 }
 
 #featured .info {
   font-size:10px;
+  text-align:center;
 }

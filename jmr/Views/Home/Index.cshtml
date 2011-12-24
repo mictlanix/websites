@@ -24,10 +24,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
+@using Mictlanix.WebSites.JMR
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@using Mictlanix.WebSites.JMR.Properties
+@model List<EquipmentItem>
 @{
     ViewBag.Title = "JMR Maquinaría";
     ViewBag.PageName = "JMR Maquinaría";
     ViewBag.Section = "Home";
+    int i = 1;
 }
 <script src="@Url.Content("~/Scripts/jquery.slideshow.js")" type="text/javascript"></script>
 <link href="@Url.Content("~/Content/jquery.slideshow.css")" rel="stylesheet" type="text/css"></link>
@@ -53,86 +59,21 @@ THE SOFTWARE.
 <div id="home">
 	<div id="featured">
 		<h2>Destacados</h2>
+		@foreach(var item in Model) {
 		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
+			<a href="/Equipment/Specs/@item.Id">
+				<div class="image">
+					<img src="@Url.Content(item.Path)" alt="Foto"/>
+					<span>@(i++)</span>
+				</div>
+			</a>
 			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
+				@item.Category.GetDisplayName()<br/>
+				@item.Make @item.Model<br/>
+				@item.Price.ToString("c")
 			</div>
 		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
-		<div class="ad">
-			<div class="image">
-				<img src="@Url.Content("~/Content/images/ad-01.png")" alt="Ad One"/>
-			</div>
-			<div class="info">
-				Marca:<br/>
-				Tipo de máquina:<br/>
-				Precio:<br/>
-			</div>
-		</div>
+		}
 	</div>
 	<div class="column make">
 		<h2>Marcas:</h2>

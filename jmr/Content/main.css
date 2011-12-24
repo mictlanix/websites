@@ -56,7 +56,7 @@ h1 {
 }
 
 h2 {
-  font-size:18px/27px;
+  font-size:28px;
   text-transform:uppercase;
 }
 
@@ -262,4 +262,23 @@ li {
 .field-validation-error {
   margin:2px;
   color:red;
+}
+
+.print {
+	display:none;
+}
+
+@page { size: US-Letter }
+@media print {
+	
+	#header, #footer,.noprint {
+  		display:none;
+	}
+	#body-wrapper {
+	  margin:0;
+	  width:100%;
+	}
+	.print {
+  		display:block;
+	}
 }

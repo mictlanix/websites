@@ -25,6 +25,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+h2 {
+  font:normal 28px '01DigitMonoRegular', Arial, sans-serif;
+  text-align:right;
+  color:white;
+  letter-spacing:1px;
+  word-spacing:10px;
+}
+
 h2.success {
   margin:20px;
   color:white;

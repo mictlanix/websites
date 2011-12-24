@@ -1,0 +1,114 @@
+﻿@*
+Index.cshtml
+
+Author:
+       Eddy Zavaleta <eddy@mictlanix.org>
+
+Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*@
+@using Mictlanix.WebSites.JMR
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@using Mictlanix.WebSites.JMR.Properties
+@model Product
+<div id="info">
+	<div class="display-image">
+		<img src="@Url.Content(string.Format("~/Content/images/{0}.png", Model.Make.ToString().ToLower()))" alt="CAT" title="CAT"/>
+	</div>
+	
+    <div class="display-label">Máquina</div>
+    <div class="display-field">@Model.Category.GetDisplayName()</div>
+    
+    <div class="display-label">Marca</div>
+    <div class="display-field">@Model.Make.GetDisplayName()</div>
+	
+    <div class="display-label">No. Serie</div>
+    <div class="display-field">@Model.Serial</div>
+    
+    <div class="display-label">Modelo / Año</div>
+    <div class="display-field">@Model.Model / @Model.Year</div>
+
+    <div class="display-label">Horas</div>
+    <div class="display-field">@Model.Hours</div>
+    
+    <div class="display-label">Precio</div>
+    <div class="display-field">@Model.Price.ToString("c")</div>
+</div>
+<div id="photos" class="ad-gallery">
+	<div class="ad-nav">
+		<div class="ad-thumbs">
+			<ul class="ad-thumb-list">
+			@foreach (var item in Model.Photos) {
+				<li>
+					<a href="@Url.Content(item.Path)">
+						<img src="@Url.Content(item.Path)" alt="Photo"/>
+					</a>
+				</li>
+				}
+			</ul>
+		</div>
+	</div>
+	<div class="ad-image-wrapper"></div>
+</div>
+<div id="description">
+    <div class="display-label">Descripción</div>
+    <div class="display-field"><p>@Model.Description</p></div>
+</div>
+<div id="tools">
+	<div class="display-label">Opciones</div>
+	<ul>
+		<li>
+			<a href="javascript:print()">
+				<img src="@Url.Content("~/Content/images/print.png")" alt="Imprimir" title="Imprimir"/>
+				<br/>Imprimir
+			</a>
+		</li>@*
+		<li>
+			<a href="#">
+				<img src="@Url.Content("~/Content/images/share.png")" alt="Recomendar" title="Recomendar"/>
+				<br/>Recomendar
+			</a>
+		</li>*@
+		<li>
+			<a href="/Contact#df">
+				<img src="@Url.Content("~/Content/images/info.png")" alt="Más Info" title="Más Info"/>
+				<br/>Más Info
+			</a>
+		</li>
+	</ul>
+</div>
+<div id="quote">
+	<p>Si requieres de algún equipo en especial, nosotros lo conseguimos para tí.</p>
+</div>
+@if(!string.IsNullOrEmpty(Model.Comment) && 
+	!string.IsNullOrWhiteSpace(Model.Comment)) {
+<h3>Condiciones de Compra</h3>
+<div class="hbar"></div>
+<div id="comment"><p>@Model.Comment</p></div>
+}
+<div class="hbar"></div>
+<script type="text/javascript">
+	$(function() {
+		var galleries = $(".ad-gallery").adGallery({
+			loader_image: "@Url.Content("~/Content/images/loader.gif")"
+		});
+	});
+</script>

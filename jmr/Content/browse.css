@@ -25,43 +25,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-h2 {
-  margin:20px;
-  font:normal 42px '01DigitMonoRegular', Arial, sans-serif;
-  text-align:right;
-  color:white;
-  letter-spacing:1px;
-  word-spacing:10px;
-
-}
-
 h3 {
   margin:0 25px;
 }
 
 #browse {
   position:relative;
-  padding:70px 20px 15px;
+  padding:40px 20px 15px;
   background:#1b1b1b;
   -webkit-border-radius:0 0 20px 20px;
   -moz-border-radius:0 0 20px 20px;
   border-radius:0 0 20px 20px;
 }
 
-#tiles {
+#slider {
+
 }
 
-#tiles .equipment {
-  display:inline-block;
-  margin:10px;
-}
-
-#tiles .image img {
-  padding:0;
-  max-width:150px;
-  max-height:150px;
-}
-
-#tiles .info {
+#slider .info {
   font-size:12px;
+  text-align:center;
+}
+
+.mtx-slider .mtx-forward, .mtx-slider .mtx-back {
+  height:100px;
+}
+
+#specs {
+  padding:10px 0 15px 0;
 }

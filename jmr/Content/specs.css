@@ -27,9 +27,11 @@ THE SOFTWARE.
 
 h2 {
   margin:20px;
-  font:normal 42px '01DigitMonoRegular', Arial, sans-serif;
+  font:normal 28px '01DigitMonoRegular', Arial, sans-serif;
   text-align:right;
   color:white;
+  letter-spacing:1px;
+  word-spacing:10px;
 }
 
 h2 a, h2 img, h2 span {
@@ -72,8 +74,12 @@ h3 {
 }
 
 .display-image {
-  margin:10px 0 20px 4px;
+  margin:10px 0 20px 10px;
   text-align:center;
+}
+
+.display-image img {
+  max-width:220px;
 }
 
 .display-label {
@@ -162,4 +168,15 @@ h3 {
   font-size:20px;
   text-align:justify;
   color:white;
+}
+
+@media print {
+	#slider,#tools,h2 a {
+  		display:none;
+	}
+	h2, h2 span {
+  		margin:0;
+  		padding:0;
+  		text-align:right;
+	}
 }

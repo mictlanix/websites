@@ -31,8 +31,8 @@ THE SOFTWARE.
 		<meta charset="UTF-8" />
 		<meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)" />
 		<meta name="copyright" content="Copyright © 2011 Eddy Zavaleta, Mictlanix and contributors."/>
-		<meta name="description" content="Venta de Maquinaría Pesada"/>
-		<meta name="keywords" content="maquinaria, maquinaria pesada, excavadoras, "/>
+		<meta name="description" content="Venta de Maquinaría Pesada: Excavadoras, Retroexcavadoras, Motoconformadoras, Vibrocompactadores, Tractores, Equipo de Asfalto, Cargadores Frontales, Grúas y Otros."/>
+		<meta name="keywords" content="maquinaria, maquinaria pesada, excavadoras, retroexcavadoras, motoconformadoras, vibrocompactadores, tractores, equipo de asfalto, cargadores frontales, grúas"/>
 		<title>@ViewBag.Title</title>
 		<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css"></link>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
@@ -42,7 +42,8 @@ THE SOFTWARE.
 	<body>
 		<div id="body-wrapper">
 			<div id="logo">
-				<img src="@Url.Content("~/Content/images/logo.png")" alt="JMR Maquinaría" />
+				<img class="noprint" src="@Url.Content("~/Content/images/logo.png")" alt="JMR Maquinaría" />
+				<img class="print" src="@Url.Content("~/Content/images/logo-bw.png")" alt="JMR Maquinaría" />
 			</div>
 			<div id="header">
 				<div id="header-bg">
@@ -61,7 +62,7 @@ THE SOFTWARE.
 				@RenderBody()
 			</div>
 			<div id="footer">
-				<img class="logo" src="@Url.Content("~/Content/images/logo-bw.png")" alt="JMR Maquinaría" />
+				<img class="logo" src="@Url.Content("~/Content/images/logo-small-bw.png")" alt="JMR Maquinaría" />
 			</div>
 		</div>
 	</body>

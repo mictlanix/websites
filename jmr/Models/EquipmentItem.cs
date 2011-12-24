@@ -36,12 +36,15 @@ namespace Mictlanix.WebSites.JMR.Models
 	{
 		public int Id { get; set; }
 		
+		[Display(Name = "Category", ResourceType = typeof(Resources))]
+		public CategoryEnum Category { get; set; }
+		
 		[Display(Name = "Make", ResourceType = typeof(Resources))]
 		public MakeEnum Make { get; set; }
 
 		[Display(Name = "Model", ResourceType = typeof(Resources))]
 		public string Model { get; set; }
-
+		
 		[Display(Name = "Price", ResourceType = typeof(Resources))]
 		[DataType(DataType.Currency)]
 		public decimal Price { get; set; }

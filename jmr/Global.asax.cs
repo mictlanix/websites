@@ -1,10 +1,12 @@
 using System;
 using System.Configuration;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Threading;
 using Castle.ActiveRecord;
 using Castle.ActiveRecord.Framework;
 using Mictlanix.WebSites.JMR.Models;
@@ -41,15 +43,28 @@ namespace Mictlanix.WebSites.JMR
             );
 		}
 
-        protected void Application_Start()
-        {
-            AreaRegistration.RegisterAllAreas();
+        protected void Application_Start ()
+		{
+			AreaRegistration.RegisterAllAreas ();
 
-            RegisterGlobalFilters(GlobalFilters.Filters);
-            RegisterRoutes(RouteTable.Routes);
+			RegisterGlobalFilters (GlobalFilters.Filters);
+			RegisterRoutes (RouteTable.Routes);
 
-            IConfigurationSource source = ConfigurationManager.GetSection("activeRecord") as IConfigurationSource;
-            ActiveRecordStarter.Initialize(typeof(Product).Assembly, source);
-        }
+			IConfigurationSource source = ConfigurationManager.GetSection ("activeRecord") as IConfigurationSource;
+			ActiveRecordStarter.Initialize (typeof(Product).Assembly, source);
+			
+		}
+		
+		protected void Application_BeginRequest (object sender, EventArgs e)
+		{
+			CultureInfo culture = new System.Globalization.CultureInfo ("es-MX");
+			culture.NumberFormat.CurrencySymbol = "USD $";
+			Thread.CurrentThread.CurrentCulture = culture;
+		}
+		
+		protected void Application_EndRequest (Object sender, EventArgs e)
+		{
+			HttpContext.Current.Items.Remove ("CurrentUser");
+		}
     }
 }

@@ -1,0 +1,57 @@
+.mtx-slider {
+  position:relative;
+  margin:10px 20px;
+}
+.mtx-slider * {
+  margin: 0;
+  padding: 0;
+}
+.mtx-slider .mtx-forward, .mtx-slider .mtx-back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+}
+/* IE 6 doesn't like height: 100% */
+*html .mtx-slider .mtx-forward, .mtx-slider .mtx-back {
+  height: 136px;
+}
+.mtx-slider .mtx-back {
+  cursor: pointer;
+  left: -20px;
+  width: 13px;
+  display: block;
+  background: url(images/arrow-prev.png) no-repeat left center;
+}
+.mtx-slider .mtx-forward {
+  cursor: pointer;
+  display: block;
+  right: -20px;
+  width: 13px;
+  background: url(images/arrow-next.png) no-repeat right center;;
+}
+.mtx-slider .mtx-thumbs {
+  overflow: hidden;
+  width:100%;
+}
+.mtx-slider .mtx-thumbs .mtx-thumb-list {
+  float: left;
+  width: 9000px;
+  list-style: none;
+}
+.mtx-slider .mtx-thumbs li {
+  float: left;
+  padding-right: 5px;
+}
+.mtx-slider .mtx-thumbs li a {
+  display: block;
+}
+.mtx-slider .mtx-thumbs li a img {
+  display: block;
+  border: 3px solid #CCC;
+  height:100px;
+}
+.mtx-slider .mtx-thumbs li a.mtx-active img {
+  border: 3px solid #ff6d00;
+}
+
