@@ -268,9 +268,8 @@ li {
 	display:none;
 }
 
-@page { size: US-Letter }
 @media print {
-	
+	@page { size: US-Letter }
 	#header, #footer,.noprint {
   		display:none;
 	}
