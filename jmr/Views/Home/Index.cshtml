@@ -84,38 +84,7 @@ THE SOFTWARE.
 	</div>
 	<div class="hbar"></div>
 	<div class="column make">
-		<ul>
-			<li>
-				<a href="http://www.cat.com/" target="_blank">
-					<img src="@Url.Content("~/Content/images/cat.png")" alt="CAT" title="CAT"/>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.volvoce.com/" target="_blank">
-					<img src="@Url.Content("~/Content/images/volvo.png")" alt="Volvo" title="Volvo"/>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.jcb.com/" target="_blank">
-					<img src="@Url.Content("~/Content/images/jcb.png")" alt="JCB" title="JCB"/>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.deere.com/wps/dcom/en_US/industry/construction/construction.page" target="_blank">
-					<img src="@Url.Content("~/Content/images/jdeere.png")" alt="John Deere" title="John Deere" target="_blank"/>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.casece.com/wps/portal/casece?brandsite_brand=CaseCE&brandsite_language=es&brandsite_geo=LA" target="_blank">
-					<img src="@Url.Content("~/Content/images/case.png")" alt="CASE" title="CASE"/>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.komatsu.com/" target="_blank">
-					<img src="@Url.Content("~/Content/images/komatsu.png")" alt="Komat'su" title="Komat'su"/>
-				</a>
-			</li>
-		</ul>
+		@Html.Partial("_MakesList")
 	</div>
 	<div class="column space"></div><div class="column branches">
 		<p>Te ofrecemos<br/>el mejor servicio a tu alcance:</p>

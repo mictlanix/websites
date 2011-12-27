@@ -31,7 +31,7 @@ THE SOFTWARE.
 @model Product
 <div id="info">
 	<div class="display-image">
-		<img src="@Url.Content(string.Format("~/Content/images/{0}.png", Model.Make.ToString().ToLower()))" alt="CAT" title="CAT"/>
+		<img src="@Url.Content(string.Format("~/Content/images/{0}.png", Model.Make.ToString().ToLower()))" alt="@Model.Make.GetDisplayName()" title="@Model.Make.GetDisplayName()"/>
 	</div>
 	
     <div class="display-label">Máquina</div>

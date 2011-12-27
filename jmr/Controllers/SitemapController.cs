@@ -36,39 +36,12 @@ using Mictlanix.WebSites.JMR.Models;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
-    public class HomeController : Controller
+    public class SitemapController : Controller
     {
-		Random rand = new Random ();
-		
         //
-        // GET: /Home/
+        // GET: /Sitemap
 
         public ActionResult Index ()
-		{
-			var items = new List<EquipmentItem> (8); 
-			var qry = from x in Product.Queryable
-					  where x.IsActive
-					  select new { Id = x.Id };
-			
-			foreach (var i in qry.ToList ().OrderBy (x => rand.Next ()).Take (8)) {
-				using (new SessionScope()) {
-					var item = Product.Find (i.Id);
-					var photo = item.Photos.OrderBy (x => rand.Next ()).FirstOrDefault ();
-					items.Add (new EquipmentItem {
-						Id = item.Id,
-						Category = item.Category,
-						Make = item.Make,
-						Model = item.Model,
-						Price = item.Price,
-						Path = photo.Path,
-					});
-				}
-			}
-			
-			return View (items);
-		}
-		
-		public ActionResult Sitemap ()
 		{
 			return View ();
 		}

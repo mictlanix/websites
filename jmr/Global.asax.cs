@@ -32,7 +32,7 @@ namespace Mictlanix.WebSites.JMR
 			
 			routes.MapRoute (
                 "Equipment",
-                "Equipment/{category}",
+                "Equipment/{item}",
                 new { controller = "Equipment", action = "Browse" }
             );
 			

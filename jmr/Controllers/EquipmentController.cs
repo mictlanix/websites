@@ -33,6 +33,7 @@ using System.Web;
 using System.Web.Mvc;
 using Castle.ActiveRecord;
 using Mictlanix.WebSites.JMR.Models;
+using Mictlanix.WebSites.JMR.Helpers;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
@@ -41,35 +42,60 @@ namespace Mictlanix.WebSites.JMR.Controllers
         //
         // GET: /Products/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-		
-		public ActionResult Browse (string category)
+        public ActionResult Index ()
 		{
-			Product master;
-			CategoryEnum item;
+			return View ();
+		}
+		
+		
+		public ActionResult Browse (string item)
+		{
+			MakeEnum make;
+			CategoryEnum category;
 			
-			if (!CategoryEnum.TryParse (category, true, out item) ||
-			    !Enum.IsDefined (typeof(CategoryEnum), item)) {
-				return RedirectToAction ("Index");
+			if (MakeEnum.TryParse (item, true, out make) &&
+			    Enum.IsDefined (typeof(MakeEnum), make)) {
+				return BrowseByMake (make);
 			}
 			
+			if (CategoryEnum.TryParse (item, true, out category) &&
+			    Enum.IsDefined (typeof(CategoryEnum), category)) {
+				return BrowseByCategory (category);
+			}
+			
+			return RedirectToAction ("Index");
+		}
+
+		ActionResult BrowseByCategory (CategoryEnum item)
+		{
 			var qry = from x in Product.Queryable
 					  where x.IsActive && x.Category == item
                       select new EquipmentItem { Id = x.Id, Make = x.Make, Model = x.Model, Price = x.Price };
+
+			return Browse (item.GetDisplayName (), qry.ToList ());
+		}
+		
+		ActionResult BrowseByMake (MakeEnum item)
+		{
+			var qry = from x in Product.Queryable
+					  where x.IsActive && x.Make == item
+                      select new EquipmentItem { Id = x.Id, Make = x.Make, Model = x.Model, Price = x.Price };
+
+			return Browse (item.GetDisplayName (), qry.ToList ());
+		}
+		
+		ActionResult Browse (string group, IList<EquipmentItem> details)
+		{
+			Product master;
 			
-			var list = qry.ToList ();
-			
-			if (list.Count == 0) {
+			if (details.Count == 0) {
 				return View (new MasterDetails<Product, EquipmentItem> {
-					Master = new Product { Category = item },
-					Details = list
+					Master = new Product { Group = group },
+					Details = details
 				});
 			}
 			
-			foreach (var equipment in list) {
+			foreach (var equipment in details) {
 				Photo photo = Photo.Queryable.Where (x => x.Product.Id == equipment.Id).FirstOrDefault ();
 				
 				if (photo != null)
@@ -77,13 +103,14 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			}
 			
 			using (new SessionScope()) {
-				master = Product.TryFind (list.First ().Id);
+				master = Product.TryFind (details.First ().Id);
+				master.Group = group;
 				master.Photos.ToList ();
 			}
 			
 			return View (new MasterDetails<Product, EquipmentItem> {
 				Master = master,
-				Details = list
+				Details = details
 			});
 		}
 		

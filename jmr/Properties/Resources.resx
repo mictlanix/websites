@@ -133,7 +133,7 @@
     <value>CASE</value>
   </data>
   <data name="CAT" xml:space="preserve">
-    <value>CAT</value>
+    <value>Caterpillar</value>
   </data>
   <data name="Category" xml:space="preserve">
     <value>Categoria</value>
@@ -172,7 +172,7 @@
     <value>John Deere</value>
   </data>
   <data name="Komatsu" xml:space="preserve">
-    <value>Komat'su</value>
+    <value>Komatsu</value>
   </data>
   <data name="Make" xml:space="preserve">
     <value>Marca</value>

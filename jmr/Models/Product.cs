@@ -106,13 +106,14 @@ namespace Mictlanix.WebSites.JMR.Models
         public DateTime CreationTime { get; set; }
 
         [HasMany(typeof(Photo), Table = "photo", ColumnKey = "product", Lazy = true)]
-        public IList<Photo> Photos
-        {
-            get { return photos; }
-            set { photos = value; }
-        }
-
-        #region Override Base Methods
+        public IList<Photo> Photos {
+			get { return photos; }
+			set { photos = value; }
+		}
+		
+		public string Group { get; set; }
+  
+		#region Override Base Methods
 
         public override string ToString()
         {

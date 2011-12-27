@@ -1,0 +1,13 @@
+﻿@using Mictlanix.WebSites.JMR
+@using Mictlanix.WebSites.JMR.Models
+@using Mictlanix.WebSites.JMR.Helpers
+@using Mictlanix.WebSites.JMR.Properties
+<ul>
+    @foreach (var item in Enum.GetValues(typeof(MakeEnum))) {
+	<li>
+		<a href="/Equipment/@item">
+			<img src="@Url.Content(string.Format("~/Content/images/{0}.png", item.ToString().ToLower()))" alt="@(((CategoryEnum)item).GetDisplayName())" title="@(((CategoryEnum)item).GetDisplayName())"/>
+		</a>
+	</li>
+    }
+</ul>
