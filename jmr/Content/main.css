@@ -92,6 +92,28 @@ li {
   list-style-type:none;
 }
 
+button {
+  padding:4px 30px;
+  background:#FF6D00;
+  border:1px solid #FF4D00;
+  font-family:'YanoneKaffeesatzRegular', Arial, sans-serif;
+  font-size:18px;
+  color:white;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  box-shadow:black 5px 6px 5px;
+  cursor:pointer;
+  cursor:hand;
+  text-transform: uppercase;
+  letter-spacing:4px;
+}
+
+button:active {
+  padding:5px 30px 4px 31px;
+  border:1px solid white;
+}
+
 #body-wrapper {
   position:relative;
   margin:0 auto;

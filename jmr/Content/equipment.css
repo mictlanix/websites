@@ -58,19 +58,7 @@ THE SOFTWARE.
 
 #search-box button {
   padding:2px;
-  background:#FF6D00;
-  border:1px solid #FF6D00;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  border-radius:5px;
-  cursor: pointer;
-  cursor:hand;
   vertical-align:middle;
-}
-
-#search-box button:active {
-  background:#FF6D00;
-  border:1px solid white;
 }
 
 #categories-list {

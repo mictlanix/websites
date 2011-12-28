@@ -210,17 +210,5 @@ div.email.black {
 }
 
 #form-fields button {
-  display:block;
-  margin:10px;
-  padding:0 0 10px 0;
-  width:275px;
-  height:54px;
-  background:url(images/button.png);
-  border:none;
-  text-align:center;
-  color:white;
-  text-transform:uppercase;
-  font-size:20px;
-  cursor: pointer;
-  cursor:hand;
+  margin:5px 0 20px 20px;
 }
