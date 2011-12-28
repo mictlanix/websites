@@ -58,7 +58,7 @@ h3 {
 }
 
 #sidebar-bg {
-  padding:72px 0 350px 0;
+  padding:72px 0 140px 0;
   margin:0 10px 0 0;
   background:url(images/branch-info-bg.png) repeat-y 75px;
 }
@@ -72,6 +72,7 @@ h3 {
 
 #emails .black-box {
   margin:10px 15px;
+  padding:1px 0;
   background:black;
   border:none;
   -webkit-border-radius:5px;
@@ -113,19 +114,32 @@ div.email.black {
 }
 
 #form-arrows {
+  padding:1px 0;
   width:26px;
   background:url(images/black-bg.png);
 }
 
 #form-arrows ul {
-  margin:45px 0 20px 0;
+  margin:135px 0 20px 0;
 }
 
 #form-arrows li {
-  margin:0 0 25px 5px;
   height:80px;
   vertical-align:middle;
 }
+
+#form-arrows li.df {
+  margin:0 0 34px 5px;
+}
+
+#form-arrows li.puebla {
+  margin:0 0 22px 5px;
+}
+
+#form-arrows li.tuxtla {
+  margin:0 0 0 5px;
+}
+
 
 #form-fields {
   position:absolute;

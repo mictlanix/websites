@@ -27,7 +27,6 @@ THE SOFTWARE.
 @model Mictlanix.WebSites.JMR.Models.ContactUs
 @{
     ViewBag.Title = "JMR - Contacto";
-    ViewBag.PageName = "Contacto";
     ViewBag.Section = "Contact";
 }
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
@@ -38,15 +37,21 @@ THE SOFTWARE.
 <div id="contact">
 	<div id="sidebar">
 		<div id="sidebar-bg" class="branches">
-			<h3>Sucursales:</h3>
+			<h3>Sucursales</h3>
 			<ul class="info">
+				<li class="main">
+					<h4>Lada Sin Costo</h4>
+					<span>01 800 836-8849</span>
+				</li>
 				<li class="df">
 					<a href="#df">
 						<h3 class="name"></h3>
 						<div class="phone-numbers">
 							<span>01 (55) 1668-5781</span>
 							<span>01 (55) 5816-4844</span>
-							<span>52*250771*2</span>
+							<span>ID 72*15*69323</span>
+							<span>ID 52*25077*2</span>
+							<span>044 (55) 3910-0625</span>
 						</div>
 					</a>
 				</li>
@@ -54,9 +59,9 @@ THE SOFTWARE.
 					<a href="#puebla">
 						<h3 class="name"></h3>
 						<div class="phone-numbers">
-							<span>01 (222) 409-7223</span>
-							<span>01 (222) 409-7224</span>
-							<span>52*250771*1</span>
+							<span>01 (22) 2409-7223</span>
+							<span>01 (22) 2409-7224</span>
+							<span>ID 52*25077*1</span>
 						</div>
 					</a>
 				</li>
@@ -64,8 +69,9 @@ THE SOFTWARE.
 					<a href="#tuxtla">
 						<h3 class="name"></h3>
 						<div class="phone-numbers">
-							<span>01 (961) 663-7604</span>
-							<span>045 (961) 157-6320</span>
+							<span>01 (96) 1663-7604</span>
+							<span>045 (96) 1157-6320</span>
+							<span>045 (96) 1211-5186</span>
 						</div>
 					</a>
 				</li>
@@ -92,17 +98,17 @@ THE SOFTWARE.
 	<div id="form-block">
 		<div id="form-arrows">
 			<ul>
-				<li>
+				<li class="df">
 					<a href="#df">
 						<img src="@Url.Content("~/Content/images/arrow.png")" alt="Contacto en DF" title="Contacto en DF"/>
 					</a>
 				</li>
-				<li>
+				<li class="puebla">
 					<a href="#puebla">
 						<img src="@Url.Content("~/Content/images/arrow.png")" alt="Contacto en Puebla" title="Contacto en Puebla"/>
 					</a>
 				</li>
-				<li>
+				<li class="tuxtla">
 					<a href="#tuxtla">
 						<img src="@Url.Content("~/Content/images/arrow.png")" alt="Contacto en Tuxtla" title="Contacto en Tuxtla"/>
 					</a>

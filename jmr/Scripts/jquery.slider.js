@@ -24,6 +24,7 @@
       this.settings = settings;
       this.findImages();
       this.initBackAndForward();
+      this.highLightThumb(this.thumbs_wrapper.find('.mtx-thumb0'));
     },
     findImages: function() {
       var context = this;

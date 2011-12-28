@@ -48,23 +48,21 @@ h2.success {
   background: url(images/branch-info-bg.png) repeat-y ;
 }
 
-#newsletters-img 
-{
-    position: relative;
-    left: 303px;
+#newsletters-img {
+    position:relative;
+    left:302px;
 }
 
-#newsletters-data{
+#newsletters-data {
     position:absolute;
-    top: 265px;
-    left:-30px;
-    background: url('images/black-bg.png') ;  
-    width:949px;
-    height:454px; 
+    top:120px;
+    width:100%;
+    height:370px; 
+    background:url('images/black-bg.png');
 }
 
 .newsletters-p-sucribe {
-  margin:15px 30px;
+  margin:15px 50px;
   font:normal 28px '01DigitMonoRegular', Arial, sans-serif;
   text-align:right;
   color:white;
@@ -72,49 +70,60 @@ h2.success {
   word-spacing:10px;
 }
 
-#newsletters-form{
-    background:transparent;
+#newsletters-form {
+    margin:0 50px;
+    height:174px;
     border:8px #d45500 solid;
-    width:474px;
-    height:220px;
-    margin-left:50px;
-    position:absolute;
-    top: 97px;
-}
-
-.newsletters-form-label{
-    color:#d45500;
-    font-size: 20px;
-    font-family:Haettenschweiler;
-    margin: 80px 0px 0px  20px;
-}
-
-.newsletters-fieldset input
-{
-    display: block; 
-    margin: 10px ;
-    padding:0 10px;
     background:transparent;
-    border-radius: 20px;
-    color: White;
-    width: 380px;
-    height: 40px;
+}
+
+#newsletters-form fieldset {
+  padding:15px 0 0 20px;
+}
+
+#newsletters-form label {
+    margin:40px 0 0 5px;
+    font-family:'YanoneKaffeesatzRegular', Arial, sans-serif;
     font-size:20px;
+    color:#d45500;
 }
 
-#newsletters-text
+#newsletters-form input
 {
-    background:#d45500;
-    width:407px;
-    height:188px;
-    position:absolute;
-    top: 97px;
-    left:490px;
-    font-size: 20px;
-    padding: 50px 25px 0px 25px;
-    text-align: justify;
+    display:block; 
+    margin:5px 0;
+    padding:5px 0;
+    background:transparent;
+    border-radius:20px;
+    color:white;
+    width:380px;
+    font-size:18px;
 }
 
+#newsletters button
+{
+    font-family:'YanoneKaffeesatzRegular', Arial, sans-serif;
+    font-size:18px;
+    margin:50px 0 0 0;
+    background:url('images/button.png') transparent;
+    width:275px;
+    height:44px;
+    color:White;
+    border:none;
+    cursor:pointer;
+}
+
+#newsletters-text {
+  position:absolute;
+  margin:0 50px 0 0;
+  padding:15px;
+  left:490px;
+  top:98px;
+  height:160px;
+  background:#d45500;
+  font-size:18px;
+  text-align:justify;
+}
 
 #sidebar {
   float:left;
@@ -129,53 +138,10 @@ h2.success {
   background:url(images/branch-info-bg.png) repeat-y 75px;
 }
 
-#newsletters-button
-{
+#newsletters-msg {
     position:absolute;
-    top: 380px;
-    margin: 0px 0px 0px 80px;
-}
-
-#button-font
-{
-    font-family: Haettenschweiler;
-    font-size: 20px;
-    position:absolute;
-    margin: 100px 0px 0px 0px;
-    background: url('images/button.png') transparent;
-    width:275px;
-    height:44px;
-    color:White;
-    border:none;
-    cursor:pointer;
-}
-
-#newsletters-msg
-{
-    font-size: 23px;
+    margin:30px 0 0 0;
+    right:50px;
+    font-size:20px;
     color: #d45500;
-    position:absolute;
-    top: 372px;
-    left: 500px;
-}
-
-.newsletters-fieldset
-{
-    border:none;
-}
-
-fieldset
-{
-    border:none;
-}
-
-.newsletters-footer-img
-{
-    float:right;
-    margin: 30px 10px 0px 10px;    
-}
-
-input:active 
-{
-    border:none;    
 }

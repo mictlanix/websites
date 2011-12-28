@@ -784,8 +784,17 @@ namespace Mictlanix.WebSites.JMR.Properties {
         ///   Looks up a localized string similar to Si.
         /// </summary>
         public static string Yes {
+			get {
+				return ResourceManager.GetString ("Yes", resourceCulture);
+			}
+		}
+		
+        /// <summary>
+        ///   Looks up a localized string similar to ~/Content/images/na.png.
+        /// </summary>
+        public static string DefaultPhoto {
             get {
-                return ResourceManager.GetString("Yes", resourceCulture);
+                return ResourceManager.GetString("DefaultPhoto", resourceCulture);
             }
         }
     }

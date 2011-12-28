@@ -33,6 +33,7 @@ using System.Web;
 using System.Web.Mvc;
 using Castle.ActiveRecord;
 using Mictlanix.WebSites.JMR.Models;
+using Mictlanix.WebSites.JMR.Properties;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
@@ -53,7 +54,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			foreach (var i in qry.ToList ().OrderBy (x => rand.Next ()).Take (8)) {
 				using (new SessionScope()) {
 					var item = Product.Find (i.Id);
-					var photo = item.Photos.OrderBy (x => rand.Next ()).FirstOrDefault ();
+					var photo = item.Photos.OrderBy (x => rand.Next ()).FirstOrDefault () ?? new Photo { Path = Resources.DefaultPhoto };
 					items.Add (new EquipmentItem {
 						Id = item.Id,
 						Category = item.Category,

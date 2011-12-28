@@ -360,4 +360,7 @@
   <data name="Name" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="DefaultPhoto" xml:space="preserve">
+    <value>~/Content/images/na.png</value>
+  </data>
 </root>

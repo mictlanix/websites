@@ -218,6 +218,8 @@
     <Content Include="Content\images\tools-sp.png" />
     <Content Include="Views\Sitemap\Index.cshtml" />
     <Content Include="Views\Shared\_MakesList.cshtml" />
+    <Content Include="Content\images\johndeere.png" />
+    <Content Include="Content\images\na.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -260,7 +262,10 @@
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
-    <None Include="sitemap.xml" />
+    <None Include="Content\fonts\digitmono\digitmono-webfont.eot" />
+    <None Include="Content\fonts\digitmono\digitmono-webfont.svg" />
+    <None Include="Content\fonts\digitmono\digitmono-webfont.ttf" />
+    <None Include="Content\fonts\digitmono\digitmono-webfont.woff" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

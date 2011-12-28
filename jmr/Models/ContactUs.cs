@@ -42,7 +42,7 @@ namespace Mictlanix.WebSites.JMR.Models
         [Required(ErrorMessage = "El nombre es obligatorio.")]
         public string Name { get; set; }
 		
-        [Required(ErrorMessage = "El email es obligatorio.")]
+        [Required(ErrorMessage = "El correo es obligatorio.")]
         public string Email { get; set; }
 		
         [DataType(DataType.MultilineText)]

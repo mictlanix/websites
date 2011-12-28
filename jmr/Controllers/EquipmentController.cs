@@ -34,6 +34,7 @@ using System.Web.Mvc;
 using Castle.ActiveRecord;
 using Mictlanix.WebSites.JMR.Models;
 using Mictlanix.WebSites.JMR.Helpers;
+using Mictlanix.WebSites.JMR.Properties;
 
 namespace Mictlanix.WebSites.JMR.Controllers
 {
@@ -98,8 +99,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			foreach (var equipment in details) {
 				Photo photo = Photo.Queryable.Where (x => x.Product.Id == equipment.Id).FirstOrDefault ();
 				
-				if (photo != null)
-					equipment.Path = photo.Path;
+				equipment.Path = (photo == null) ? Resources.DefaultPhoto : photo.Path;
 			}
 			
 			using (new SessionScope()) {

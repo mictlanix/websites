@@ -62,8 +62,18 @@ THE SOFTWARE.
 				@RenderBody()
 			</div>
 			<div id="footer">
+				<div style="float:left;margin:5px;z-index:99">
+					<div>
+						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+					</div>
+					<div>
+						<a name="fb_share">Compartir</a>
+					</div>
+				</div>
 				<img class="logo" src="@Url.Content("~/Content/images/logo-small-bw.png")" alt="JMR Maquinaría" />
 			</div>
+			<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+			<script src="//static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 		</div>
 	</body>
 </html>

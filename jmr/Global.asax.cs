@@ -15,6 +15,8 @@ namespace Mictlanix.WebSites.JMR
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+		static CultureInfo culture = new CultureInfo ("es-MX");
+		
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -53,12 +55,12 @@ namespace Mictlanix.WebSites.JMR
 			IConfigurationSource source = ConfigurationManager.GetSection ("activeRecord") as IConfigurationSource;
 			ActiveRecordStarter.Initialize (typeof(Product).Assembly, source);
 			
+			culture.NumberFormat.CurrencySymbol = "USD $";
+			culture.NumberFormat.CurrencyDecimalDigits = 0;
 		}
 		
 		protected void Application_BeginRequest (object sender, EventArgs e)
 		{
-			CultureInfo culture = new System.Globalization.CultureInfo ("es-MX");
-			culture.NumberFormat.CurrencySymbol = "USD $";
 			Thread.CurrentThread.CurrentCulture = culture;
 		}
 		
