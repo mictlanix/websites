@@ -318,7 +318,7 @@
   <data name="Title_Register" xml:space="preserve">
     <value>Registro</value>
   </data>
-  <data name="UpdateFoto" xml:space="preserve">
+  <data name="UploadPhoto" xml:space="preserve">
     <value>Subir Foto</value>
   </data>
   <data name="UserName" xml:space="preserve">
@@ -362,5 +362,8 @@
   </data>
   <data name="DefaultPhoto" xml:space="preserve">
     <value>~/Content/images/na.png</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otra</value>
   </data>
 </root>

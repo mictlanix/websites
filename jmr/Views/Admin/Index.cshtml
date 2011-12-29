@@ -3,6 +3,7 @@ Index.cshtml
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
+       Eduardo Nieto <enieto@mictlanix.org>
 
 Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -24,19 +25,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
-
 @using Mictlanix.WebSites.JMR
 @using Mictlanix.WebSites.JMR.Models
 @using Mictlanix.WebSites.JMR.Helpers
 @using Mictlanix.WebSites.JMR.Properties
 @model IEnumerable<Product>
-
 <link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
 <div id="admin-panel">
 
 @Html.ActionLink(Resources.CreateNew, "Create", new { }, new { @class = "button icon add" })
 
-<table style="width:100%">
+<table>
     <tr>
         <th>
             @Html.LabelFor(x => new Product().CreationTime)
@@ -77,7 +76,7 @@ THE SOFTWARE.
             @item.Category.GetDisplayName()
         </td>
         <td style="text-align:center">
-            @item.Make.GetDisplayName()
+            @Html.DisplayFor(x => item.MakeName)
         </td>
         <td style="text-align:center">
             @Html.DisplayFor(x => item.Model)

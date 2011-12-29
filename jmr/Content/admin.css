@@ -40,8 +40,25 @@ h3 {
 
 fieldset {
   padding:15px;
+  border:2px groove silver;
 }
- 
+
+table {
+  margin:10px 0;
+  width:100%;
+  border-collapse:collapse;
+}
+
+th {
+  padding:2px;
+  border-bottom:2px solid #FF6D00;
+}
+
+td {
+  padding:2px;
+  border-bottom:1px solid #333333;
+}
+
 #admin-panel {
   position:relative;
   margin:70px 20px;
@@ -57,7 +74,7 @@ fieldset {
   text-align:center;
 }
 
-.display-label,.editor-label  {
+.display-label,.editor-label,.display-label label, .editor-label label {
   margin:2px 0;
   text-transform:uppercase;
   font:normal 18px '01DigitMonoRegular', Arial, sans-serif;

@@ -1,8 +1,9 @@
 ﻿@*
-Index.cshtml
+Edit.cshtml
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
+       Eduardo Nieto <enieto@mictlanix.org>
 
 Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -24,17 +25,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
-
 @using Mictlanix.WebSites.JMR
 @using Mictlanix.WebSites.JMR.Models
 @using Mictlanix.WebSites.JMR.Properties
 @using Mictlanix.WebSites.JMR.Helpers
 @model Mictlanix.WebSites.JMR.Models.Product
- 
 @{
     ViewBag.Title = Resources.Edit;
 }
-
 <link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
 <div id="admin-panel">
 
@@ -44,12 +42,16 @@ THE SOFTWARE.
     @Html.ValidationSummary(true)
     <fieldset>
         @Html.HiddenFor(x => x.Id)
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.LabelFor(model => model.IsActive)
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Category)
         </div>
         <div class="editor-field">
-            <select id="category-list" name="Category">
+            <select id="Category" name="Category">
                 @foreach (var item in Enum.GetValues(typeof(CategoryEnum)))
                 {
                     if ((CategoryEnum)item == Model.Category)
@@ -67,7 +69,7 @@ THE SOFTWARE.
             @Html.LabelFor(model => model.Make)
         </div>
         <div class="editor-field">
-            <select id="make-list" name="Make">
+            <select id="Make" name="Make">
                 @foreach (var item in Enum.GetValues(typeof(MakeEnum)))
                 {
                     if ((MakeEnum)item == Model.Make)
@@ -80,13 +82,24 @@ THE SOFTWARE.
                     }
                 }
             </select>
+            @Html.EditorFor(model => model.MakeName)
+            @Html.ValidationMessageFor(model => model.MakeName)
         </div>
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.Model)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Model)
             @Html.ValidationMessageFor(model => model.Model)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Serial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Serial)
+            @Html.ValidationMessageFor(model => model.Serial)
         </div>
 
         <div class="editor-label">
@@ -106,22 +119,6 @@ THE SOFTWARE.
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Serial)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Serial)
-            @Html.ValidationMessageFor(model => model.Serial)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.Price)
         </div>
         <div class="editor-field">
@@ -130,11 +127,11 @@ THE SOFTWARE.
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IsActive)
+            @Html.LabelFor(model => model.Description)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.IsActive)
-            @Html.ValidationMessageFor(model => model.IsActive)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
         </div>
 
         <div class="editor-label">
@@ -146,7 +143,6 @@ THE SOFTWARE.
         </div>
 
         <p><button type="submit" class="icon save">@Resources.Save</button></p>
-
     </fieldset>
 }
 
@@ -155,3 +151,23 @@ THE SOFTWARE.
 </div>
 
 </div>
+<script type='text/javascript'> 
+	function onMakeChange() {
+		var selected = $("#Make option:selected");
+		
+		if(selected.val() == 1000) {
+        	$("#MakeName").show();
+        	$("#MakeName").val(null);
+    	} else {
+    		$("#MakeName").hide();
+    		$("#MakeName").val(selected.text());
+    	}
+	}
+
+	$(function(){
+		$("#Make").change(onMakeChange);
+		@if(Model != null && Model.Make != MakeEnum.Other) {
+		@:$("#MakeName").hide();
+		}
+    });
+</script>

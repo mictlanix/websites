@@ -53,6 +53,11 @@ namespace Mictlanix.WebSites.JMR.Models
         [Display(Name = "Make", ResourceType = typeof(Resources))]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         public MakeEnum Make { get; set; }
+		
+        [Property("make_name")]
+        [Display(Name = "Make", ResourceType = typeof(Resources))]
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        public string MakeName { get; set; }
 
         [Property]
         [Display(Name = "Model", ResourceType = typeof(Resources))]

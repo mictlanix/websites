@@ -49,6 +49,8 @@ namespace Mictlanix.WebSites.JMR.Models
         [Display(Name = "Volvo", ResourceType = typeof(Resources))]
         Volvo,
         [Display(Name = "JCB", ResourceType = typeof(Resources))]
-        JCB
+        JCB,
+        [Display(Name = "Other", ResourceType = typeof(Resources))]
+        Other = 1000
     }
 }

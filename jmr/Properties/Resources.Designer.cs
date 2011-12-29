@@ -666,9 +666,9 @@ namespace Mictlanix.WebSites.JMR.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Subir Foto.
         /// </summary>
-        public static string UpdateFoto {
+        public static string UploadPhoto {
             get {
-                return ResourceManager.GetString("UpdateFoto", resourceCulture);
+                return ResourceManager.GetString("UploadPhoto", resourceCulture);
             }
         }
         
@@ -795,6 +795,15 @@ namespace Mictlanix.WebSites.JMR.Properties {
         public static string DefaultPhoto {
             get {
                 return ResourceManager.GetString("DefaultPhoto", resourceCulture);
+            }
+        }
+		
+        /// <summary>
+        ///   Looks up a localized string similar to Otra.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
             }
         }
     }

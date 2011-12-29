@@ -58,7 +58,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 					items.Add (new EquipmentItem {
 						Id = item.Id,
 						Category = item.Category,
-						Make = item.Make,
+						MakeName = item.MakeName,
 						Model = item.Model,
 						Price = item.Price,
 						Path = photo.Path,

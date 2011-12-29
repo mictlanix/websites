@@ -71,9 +71,9 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
             using (new SessionScope())
             {
-                Product item = Product.Find(id);
+                Product item = Product.Find (id);
 
-                item.Photos.ToList();
+                item.Photos.ToList ();
 
                 return View(item);
             }
@@ -81,65 +81,6 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         //
         // GET: /Admin/Create
-
-        [HttpPost]
-        public ActionResult UpdatePhoto(int id, HttpPostedFileBase file)
-        {
-            var path = string.Format("~/Photos/{0:000000}", id);
-            var filename = string.Format("{0}/{1}.jpg", path, Guid.NewGuid());
-            
-            Photo item = new Photo {
-                Product = Product.Find(id),
-                Path = filename
-            };
-
-            Directory.CreateDirectory(Server.MapPath(path));
-            SavePhoto(item.Path, file);
-            item.Create();
-
-            return RedirectToAction("Details", new { id = id });
-        }
-
-        void SavePhoto(string fileName, HttpPostedFileBase file)
-        {
-            if (file != null && file.ContentLength > 0)
-            {
-                var img = System.Drawing.Image.FromStream(file.InputStream);
-                img = resizeImage(img, new Size(480, 320));
-                img.Save(Server.MapPath(fileName), System.Drawing.Imaging.ImageFormat.Jpeg);
-                img.Dispose();
-            }
-        }
-
-        private static Image resizeImage(Image imgToResize, Size size)
-        {
-            int sourceWidth = imgToResize.Width;
-            int sourceHeight = imgToResize.Height;
-
-            float nPercent = 0;
-            float nPercentW = 0;
-            float nPercentH = 0;
-
-            nPercentW = ((float)size.Width / (float)sourceWidth);
-            nPercentH = ((float)size.Height / (float)sourceHeight);
-
-            if (nPercentH < nPercentW)
-                nPercent = nPercentH;
-            else
-                nPercent = nPercentW;
-
-            int destWidth = (int)(sourceWidth * nPercent);
-            int destHeight = (int)(sourceHeight * nPercent);
-
-            Bitmap b = new Bitmap(destWidth, destHeight);
-            Graphics g = Graphics.FromImage((Image)b);
-            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-
-            g.DrawImage(imgToResize, 0, 0, destWidth, destHeight);
-            g.Dispose();
-
-            return (Image)b;
-        }
 
         public ActionResult Create()
         {
@@ -156,23 +97,24 @@ namespace Mictlanix.WebSites.JMR.Controllers
         // POST: /Admin/Create
 
         [HttpPost]
-        public ActionResult Create(Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                using (var session = new SessionScope())
-                {
-                    product.CreationTime = DateTime.Now;
-                    product.CreateAndFlush();
-                }
+        public ActionResult Create (Product item)
+		{
+			if (ModelState.IsValid) {
+				using (var session = new SessionScope()) {
+					if (item.Make != MakeEnum.Other) {
+						item.MakeName = item.Make.GetDisplayName ();
+					}
+					item.CreationTime = DateTime.Now;
+					item.CreateAndFlush ();
+				}
 
-                System.Diagnostics.Debug.WriteLine("New CashSession [Id = {0}]", product.Id);
+				System.Diagnostics.Debug.WriteLine ("New CashSession [Id = {0}]", item.Id);
             
-                return RedirectToAction("Details", new { id = product.Id } );
-            }
+				return RedirectToAction ("Details", new { id = item.Id });
+			}
 
-            return View(product);
-        }
+			return View (item);
+		}
         
         //
         // GET: /Admin/Edit/5
@@ -194,51 +136,75 @@ namespace Mictlanix.WebSites.JMR.Controllers
         // POST: /Admin/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Product item)
-        {
-            if (!ModelState.IsValid)
-                return View(item);
+        public ActionResult Edit (Product item)
+		{
+			if (!ModelState.IsValid)
+				return View (item);
+			
+			if (item.Make != MakeEnum.Other) {
+				item.MakeName = item.Make.GetDisplayName ();
+			}
+			
+			var product = Product.Find (item.Id);
 
-            var product = Product.Find(item.Id);
+			product.Category = item.Category;
+			product.Comment = item.Comment;
+			product.CreationTime = DateTime.Now;
+			product.Description = item.Description;
+			product.Hours = item.Hours;
+			product.IsActive = item.IsActive;
+			product.Make = item.Make;
+			product.MakeName = item.MakeName;
+			product.Model = item.Model;
+			product.Price = item.Price;
+			product.Serial = item.Serial;
+			product.Year = item.Year;
 
-            product.Category = item.Category;
-            product.Comment = item.Comment;
-            product.CreationTime = DateTime.Now;
-            product.Description = item.Description;
-            product.Hours = item.Hours;
-            product.IsActive = item.IsActive;
-            product.Make = item.Make;
-            product.Model = item.Model;
-            product.Price = item.Price;
-            product.Serial = item.Serial;
-            product.Year = item.Year;
+			product.Update ();
 
-            product.Update();
+			return RedirectToAction ("Index");
+		}
 
-            return RedirectToAction("Index");
+		[HttpPost]
+		public ActionResult UploadPhoto (int id, HttpPostedFileBase file)
+		{
+			var path = string.Format ("~/Photos/{0:000000}", id);
+			var filename = string.Format ("{0}/{1}.jpg", path, Guid.NewGuid ());
             
-        }
+			if (file == null || !file.ContentType.StartsWith ("image")) {
+				Product item;
+				ModelState.AddModelError ("", "Archivo inválido, no es una imagen.");
+				using (var session = new SessionScope()) {
+					item = Product.TryFind (id);
+					item.Photos.ToList ();
+				}
+				return View ("Details", item);
+			}
+			
+			Photo photo = new Photo {
+                Product = Product.TryFind (id),
+                Path = filename
+            };
 
+			SavePhotoAsJpeg (photo.Path, file);
+			photo.Create ();
+
+			return RedirectToAction ("Details", new { id = id });
+		}
+		
         [HttpPost]
-        public ActionResult DeletePhoto(int id)
-        {
-            Photo item;
-            int product;
+        public ActionResult DeletePhoto (int id)
+		{
+			Photo item;
+			int product;
 
-            using (new SessionScope())
-            {
-                item = Photo.Find(id);
-                product = item.Product.Id;
-                item.Delete();
-            }
-
-            try
-            {
-                System.IO.File.Delete(Server.MapPath(item.Path));
-            }
-            catch
-            {
-            }
+			using (new SessionScope()) {
+				item = Photo.Find (id);
+				product = item.Product.Id;
+				item.Delete ();
+			}
+			
+			DeletePhoto (item.Path);
 
             return RedirectToAction("Details", new { id = product });
         }
@@ -276,9 +242,73 @@ namespace Mictlanix.WebSites.JMR.Controllers
             }
         }
 
-        public ActionResult DeleteUnsuccessful()
-        {
-            return View();
-        }
+        public ActionResult DeleteUnsuccessful ()
+		{
+			return View ();
+		}
+		
+		void SavePhotoAsJpeg (string fileName, HttpPostedFileBase file)
+		{
+			if (file == null || file.ContentLength == 0)
+				return;
+			
+			var path = Path.GetDirectoryName (Server.MapPath (fileName));
+			var name = Path.GetFileName (fileName);
+			var img = System.Drawing.Image.FromStream (file.InputStream);
+			
+			Directory.CreateDirectory (path);
+			Directory.CreateDirectory (Path.Combine (path, "orginals"));
+			
+			img.Save (Path.Combine (path, "orginals", name),
+			          System.Drawing.Imaging.ImageFormat.Jpeg);
+			
+			img = ResizeImage (img, new Size (480, 320));
+			img.Save (Path.Combine (path, name),
+			          System.Drawing.Imaging.ImageFormat.Jpeg);
+			
+			img.Dispose ();
+		}
+		
+		void DeletePhoto (string fileName)
+		{
+			var path = Path.GetDirectoryName (Server.MapPath (fileName));
+			var name = Path.GetFileName (fileName);
+			
+			try {
+				System.IO.File.Delete (Path.Combine (path, name));
+				System.IO.File.Delete (Path.Combine (path, "orginals", name)); 
+			} catch {
+			}
+		}
+		
+		Image ResizeImage (Image image, Size size)
+		{
+			int src_width = image.Width;
+			int src_height = image.Height;
+
+			float ratio = 0;
+			float width_ratio = 0;
+			float height_ratio = 0;
+
+			width_ratio = ((float)size.Width / (float)src_width);
+			height_ratio = ((float)size.Height / (float)src_height);
+
+			if (height_ratio < width_ratio)
+				ratio = height_ratio;
+			else
+				ratio = width_ratio;
+
+			int dest_width = (int)(src_width * ratio);
+			int dest_height = (int)(src_height * ratio);
+
+			Bitmap b = new Bitmap (dest_width, dest_height);
+			Graphics g = Graphics.FromImage ((Image)b);
+			g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
+			g.DrawImage (image, 0, 0, dest_width, dest_height);
+			g.Dispose ();
+
+			return (Image)b;
+		}
     }
 }

@@ -40,7 +40,7 @@ namespace Mictlanix.WebSites.JMR.Models
 		public CategoryEnum Category { get; set; }
 		
 		[Display(Name = "Make", ResourceType = typeof(Resources))]
-		public MakeEnum Make { get; set; }
+		public string MakeName { get; set; }
 
 		[Display(Name = "Model", ResourceType = typeof(Resources))]
 		public string Model { get; set; }

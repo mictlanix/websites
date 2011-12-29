@@ -1,8 +1,9 @@
 ﻿@*
-Index.cshtml
+Details.cshtml
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
+       Eduardo Nieto <enieto@mictlanix.org>
 
 Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -24,42 +25,53 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
-
 @using Mictlanix.WebSites.JMR
 @using Mictlanix.WebSites.JMR.Models
 @using Mictlanix.WebSites.JMR.Properties
 @using Mictlanix.WebSites.JMR.Helpers
-@model Mictlanix.WebSites.JMR.Models.Product
- 
+@model Product
 @{
     ViewBag.Title = Resources.Details;
 }
-
-<link href="@Url.Content("~/Content/photos.css")" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css"></link>
 <div id="admin-panel">
 
 <h2>@Resources.Details</h2>
 
 <fieldset>
+    <div class="display-field">
+        @Html.LabelFor(model => model.IsActive)
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Category)
     </div>
     <div class="display-field">
         @Model.Category.GetDisplayName()
     </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Make)
     </div>
     <div class="display-field">
-        @Model.Make.GetDisplayName()
+        @Html.DisplayFor(model => model.MakeName)
     </div>
+        
+    <div class="display-label">
+        @Html.LabelFor(model => model.Serial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Serial)
+    </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Model)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Model)
-    </div>  
+    </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Year)
     </div>
@@ -74,20 +86,6 @@ THE SOFTWARE.
     </div>
         
     <div class="display-label">
-        @Html.LabelFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-        
-    <div class="display-label">
-        @Html.LabelFor(model => model.Serial)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Serial)
-    </div>
-        
-    <div class="display-label">
         @Html.LabelFor(model => model.Price)
     </div>
     <div class="display-field">
@@ -95,10 +93,10 @@ THE SOFTWARE.
     </div>
         
     <div class="display-label">
-        @Html.LabelFor(model => model.IsActive)
+        @Html.LabelFor(model => model.Description)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.IsActive)
+        @Html.DisplayFor(model => model.Description)
     </div>
         
     <div class="editor-label">
@@ -107,7 +105,6 @@ THE SOFTWARE.
     <div class="display-field">
         @Html.DisplayFor(model => model.Comment)
     </div>
-       
 </fieldset>
 
 
@@ -120,24 +117,18 @@ THE SOFTWARE.
 
 <h2>@Resources.Photos</h2>
 <fieldset>
-<div style="padding:20px">
-
-    <div class="editor-label">
-        @Resources.UpdateFoto
-    </div>
-    @using (Html.BeginForm("UpdatePhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @Html.ValidationSummary(true)
-        {
+	<div style="padding:20px">
+	    <div class="editor-label">
+	        @Resources.UploadPhoto
+	    </div>
+	    @using (Html.BeginForm("UploadPhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	    {
             @Html.HiddenFor(x => x.Id)
-
-            <div>
-                <input type="file" name="file" id="file" />
-                <button type="submit" class="icon save">@Resources.SavePhoto</button>
-            </div>
-        }
-    }
-</div>
+            <input type="file" name="file" id="file" />
+            <button type="submit" class="icon save">@Resources.SavePhoto</button>
+	        @Html.ValidationSummary(true)
+	    }
+	</div>
     <div class="hbar"></div>
     <div id="items-container">
         <ul class="list-items">

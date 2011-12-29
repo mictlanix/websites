@@ -1,8 +1,9 @@
 ﻿@*
-Index.cshtml
+Photo.cshtml
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
+       Eduardo Nieto <enieto@mictlanix.org>
 
 Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -24,22 +25,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *@
-
 @using Mictlanix.WebSites.JMR
 @using Mictlanix.WebSites.JMR.Models
 @using Mictlanix.WebSites.JMR.Properties
 @using Mictlanix.WebSites.JMR.Helpers
 @model Mictlanix.WebSites.JMR.Models.Photo
-
-     
-    <li id="item@(Model.Id)">
-        <div class="photo">
-            <img src="@Url.Content(Model.Path)" title="@Model.Id" class="small"/>
-            @using (Html.BeginForm("DeletePhoto", "Admin", new { id = Model.Id }))
-            {
-                <button type="submit">@Resources.Delete</button>
-            }
-        </div>
-    </li>
-  
- 
+<li id="item@(Model.Id)">
+    <div class="photo">
+        <img src="@Url.Content(Model.Path)" title="@Model.Id" class="small"/>
+        @using (Html.BeginForm("DeletePhoto", "Admin", new { id = Model.Id }))
+        {
+            <button type="submit">@Resources.Delete</button>
+        }
+    </div>
+</li>

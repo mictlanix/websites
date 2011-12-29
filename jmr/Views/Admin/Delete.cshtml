@@ -1,8 +1,9 @@
 ﻿@*
-Index.cshtml
+Delete.cshtml
 
 Author:
        Eddy Zavaleta <eddy@mictlanix.org>
+       Eduardo Nieto <enieto@mictlanix.org>
 
 Copyright (c) 2011 Eddy Zavaleta, Mictlanix and contributors.
 
@@ -42,24 +43,39 @@ THE SOFTWARE.
 <h2>@Resources.Delete</h2>
 
 <fieldset>
+    <div class="display-field">
+        @Html.LabelFor(model => model.IsActive)
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Category)
     </div>
     <div class="display-field">
         @Model.Category.GetDisplayName()
     </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Make)
     </div>
     <div class="display-field">
-        @Model.Make.GetDisplayName()
+        @Html.DisplayFor(model => model.MakeName)
     </div>
+        
+    <div class="display-label">
+        @Html.LabelFor(model => model.Serial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Serial)
+    </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Model)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Model)
-    </div>  
+    </div>
+    
     <div class="display-label">
         @Html.LabelFor(model => model.Year)
     </div>
@@ -74,20 +90,6 @@ THE SOFTWARE.
     </div>
         
     <div class="display-label">
-        @Html.LabelFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-        
-    <div class="display-label">
-        @Html.LabelFor(model => model.Serial)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Serial)
-    </div>
-        
-    <div class="display-label">
         @Html.LabelFor(model => model.Price)
     </div>
     <div class="display-field">
@@ -95,19 +97,18 @@ THE SOFTWARE.
     </div>
         
     <div class="display-label">
-        @Html.LabelFor(model => model.IsActive)
+        @Html.LabelFor(model => model.Description)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.IsActive)
+        @Html.DisplayFor(model => model.Description)
     </div>
         
-    <div class="display-label">
+    <div class="editor-label">
         @Html.LabelFor(model => model.Comment)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Comment)
     </div>
-   
     
     @using (Html.BeginForm()) {
         <p>

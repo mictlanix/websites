@@ -31,14 +31,16 @@ THE SOFTWARE.
 @model Product
 <div id="info">
 	<div class="display-image">
+		@if(Model.Make != MakeEnum.Other) {
 		<img src="@Url.Content(string.Format("~/Content/images/{0}.png", Model.Make.ToString().ToLower()))" alt="@Model.Make.GetDisplayName()" title="@Model.Make.GetDisplayName()"/>
+		}
 	</div>
 	
     <div class="display-label">Máquina</div>
     <div class="display-field">@Model.Category.GetDisplayName()</div>
     
     <div class="display-label">Marca</div>
-    <div class="display-field">@Model.Make.GetDisplayName()</div>
+    <div class="display-field">@Model.MakeName</div>
 	
     <div class="display-label">No. Serie</div>
     <div class="display-field">@Model.Serial</div>

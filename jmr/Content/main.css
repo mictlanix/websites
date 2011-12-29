@@ -295,7 +295,7 @@ button:active {
   max-height:36px;
 }
 
-.field-validation-error {
+.validation-summary-errors,.field-validation-error {
   margin:2px;
   color:red;
 }

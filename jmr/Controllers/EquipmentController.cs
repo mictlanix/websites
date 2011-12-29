@@ -71,7 +71,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 		{
 			var qry = from x in Product.Queryable
 					  where x.IsActive && x.Category == item
-                      select new EquipmentItem { Id = x.Id, Make = x.Make, Model = x.Model, Price = x.Price };
+                      select new EquipmentItem { Id = x.Id, MakeName = x.MakeName, Model = x.Model, Price = x.Price };
 
 			return Browse (item.GetDisplayName (), qry.ToList ());
 		}
@@ -80,7 +80,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
 		{
 			var qry = from x in Product.Queryable
 					  where x.IsActive && x.Make == item
-                      select new EquipmentItem { Id = x.Id, Make = x.Make, Model = x.Model, Price = x.Price };
+                      select new EquipmentItem { Id = x.Id, MakeName = x.MakeName, Model = x.Model, Price = x.Price };
 
 			return Browse (item.GetDisplayName (), qry.ToList ());
 		}
