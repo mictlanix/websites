@@ -6,7 +6,7 @@
     @foreach (var item in new MakeEnum []{ MakeEnum.CAT, MakeEnum.CASE, MakeEnum.Komatsu, MakeEnum.JohnDeere, MakeEnum.Volvo, MakeEnum.JCB }) {
 	<li>
 		<a href="/Equipment/@item">
-			<img src="@Url.Content(string.Format("~/Content/images/{0}.png", item.ToString().ToLower()))" alt="@(((CategoryEnum)item).GetDisplayName())" title="@(((CategoryEnum)item).GetDisplayName())"/>
+			<img src="@Url.Content(string.Format("~/Content/images/{0}.png", item.ToString().ToLower()))" alt="@item.GetDisplayName()" title="@item.GetDisplayName()"/>
 		</a>
 	</li>
     }
