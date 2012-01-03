@@ -29,7 +29,7 @@ THE SOFTWARE.
 @using Mictlanix.WebSites.JMR.Helpers
 @using Mictlanix.WebSites.JMR.Properties
 @{
-    ViewBag.Title = "JMR - Catálogo";
+    ViewBag.Title = "JMR - Catálogo de Maquinaría";
     ViewBag.Section = "Categories";
 }
 <link href="@Url.Content("~/Content/equipment.css")" rel="stylesheet" type="text/css"></link>
@@ -47,7 +47,7 @@ THE SOFTWARE.
 		@Html.Partial("_MakesList")
 	</div>
 	<div id="categories-list">
-		<h3>Tipos de Máquina:</h3>
+		<h3>Tipos de Maquinaría:</h3>
 		<ul>
             @foreach (var item in Enum.GetValues(typeof(CategoryEnum))) {
 			<li>
@@ -57,7 +57,3 @@ THE SOFTWARE.
 		</ul>
 	</div>
 </div>
-
-<script type="text/javascript">
-
-</script>

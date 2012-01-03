@@ -56,45 +56,60 @@ namespace Mictlanix.WebSites.JMR.Controllers
         // POST: /Contact/
 		
 		[HttpPost]
-        public ActionResult Index(ContactUs input)
-        {
-			if(!IsValidEmailAddress(input.Email))
-			{
-				ModelState.AddModelError("Email", "No es una dirección de email válida.");
+        public ActionResult Index (ContactUs input)
+		{
+			if (!IsValidEmailAddress (input.Email)) {
+				ModelState.AddModelError ("Email", "No es una dirección de email válida.");
 			}
 			
-		    if (ModelState.IsValid)
-		    {
-				string to = "info@jmrmaquinaria.mx";
-				string subject = string.Format("[{0}] Sitio Web - Contacto", input.To.ToUpper());
+			if (ModelState.IsValid) {
+				MailAddress to;
+				MailAddress[] cc = new MailAddress [2];
+				MailAddress from = new MailAddress (input.Email, input.Name);
+				string subject = string.Format ("[{0}] Sitio Web - Contacto", input.To.ToUpper ());
 				
-				SendEmail(input.Email, to, subject, input.ToString ());
-		        return PartialView("_Success", new ContactUs { IsSent = true });
-		    }
+				cc [0] = new MailAddress ("info@jmrmaquinaria.mx", "JMR Máquinaria");
+				
+				switch (input.To.ToUpper ()) {
+				case "PUEBLA":
+					to = new MailAddress ("jsanchez@jmrmaquinaria.mx", "Jesús Sánchez");
+					cc [1] = new MailAddress ("jmajesus@hotmail.com", "Jesús Sánchez");
+					break;
+				case "TUXTLA":
+					to = new MailAddress ("jromero@jmrmaquinaria.mx", "Juan Romero");
+					cc [1] = new MailAddress ("delsurestemaquinaria@hotmail.com", "Juan Romero");
+					break;
+				default:
+					to = new MailAddress ("jalcantar@jmrmaquinaria.mx", "Jair Alcantar");
+					cc [1] = new MailAddress ("jmadario@hotmail.com", "Rubén Perera");
+					break;
+				}
+				
+				SendEmail (from, to, cc, subject, input.ToString ());
+				return PartialView ("_Success", new ContactUs { IsSent = true });
+			}
 			
-            return PartialView("_Form", input);
-        }
+			return PartialView ("_Form", input);
+		}
 		
-		bool SendEmail(string addrFrom, string addrTo, string subject, string body)
+		bool SendEmail (MailAddress addrFrom, MailAddress addrTo, MailAddress[] addrCC,
+		                string subject, string body)
 		{
-			var smtp = new SmtpClient("localhost");
-			var addr_from = new MailAddress(addrFrom);
-			var addr_to = new MailAddress(addrTo);
+			var smtp = new SmtpClient ("localhost");
 			
-			try
-			{
-				using (var message = new MailMessage(addr_from, addr_to))
-				{
+			try {
+				using (var message = new MailMessage(addrFrom, addrTo)) {
+					foreach (var cc in addrCC) {
+						message.CC.Add (cc);
+					}
 					message.Subject = subject;
 					message.Body = body;
-				    smtp.Send(message);
+					smtp.Send (message);
 				}
 				
 				return true;
-			}
-			catch(Exception e)
-			{
-				System.Diagnostics.Debug.WriteLine(e);
+			} catch (Exception e) {
+				System.Diagnostics.Debug.WriteLine (e);
 			}
 			
 			return false;

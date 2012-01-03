@@ -211,7 +211,7 @@
     <value>El campo {0} debe tener entre {2} y {1} caracteres de largo.</value>
   </data>
   <data name="VibroCompactors" xml:space="preserve">
-    <value>Vibro Compactadoras</value>
+    <value>Vibrocompactadores</value>
   </data>
   <data name="Volvo" xml:space="preserve">
     <value>Volvo</value>

@@ -754,7 +754,7 @@ namespace Mictlanix.WebSites.JMR.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibro Compactadoras.
+        ///   Looks up a localized string similar to Vibrocompactadores.
         /// </summary>
         public static string VibroCompactors {
             get {
