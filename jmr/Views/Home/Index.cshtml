@@ -141,14 +141,13 @@ THE SOFTWARE.
 	<div class="hbar"></div>
 </div>
 <script type="text/javascript">
-	if(!window.slider)
-		var slider={};
-
-    slider.data=[
-    	{"id":"slide-01","desc":"Esperamos encuentre la información necesaria respecto a maquinaría de construcción. Ofrecemos a Ud. las mejores marcas en el mercado, a un excelente precio y listas para trabajar."},
-        {"id":"slide-02","desc":false},
-        {"id":"slide-03","desc":"Suscríbase a nuestro boletín para recibir información periódica sobre nuestra maquinaría y ofertas."},
-        {"id":"slide-04","desc":false},
-        {"id":"slide-05","desc":"Te ofrecemos promociones en la adquisición de tu maquinaría, garantías sobre partes originales y precios inigualables, solicita mayor información en nuestra sección de contacto."},
-    ];
+	$(function(){
+		slider.init([
+	    	{id:"slide-01",desc:"Esperamos encuentre la información necesaria respecto a maquinaría de construcción. Ofrecemos a Ud. las mejores marcas en el mercado, a un excelente precio y listas para trabajar."},
+	        {id:"slide-02",desc:false},
+	        {id:"slide-03",desc:"Suscríbase a nuestro boletín para recibir información periódica sobre nuestra maquinaría y ofertas."},
+	        {id:"slide-04",desc:false},
+	        {id:"slide-05",desc:"Te ofrecemos promociones en la adquisición de tu maquinaría, garantías sobre partes originales y precios inigualables, solicita mayor información en nuestra sección de contacto."}
+	    ]);
+	});
 </script>

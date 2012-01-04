@@ -170,7 +170,6 @@
     <Content Include="Content\images\black-bg.png" />
     <Content Include="Content\images\branches-bg.png" />
     <Content Include="Content\images\branch-info-bg.png" />
-    <Content Include="Content\images\button.png" />
     <Content Include="Scripts\path.min.js" />
     <Content Include="Views\Contact\_Form.cshtml" />
     <Content Include="Views\Contact\_Success.cshtml" />

@@ -27,6 +27,7 @@ THE SOFTWARE.
 
 #equipment {
   position:relative;
+  margin-top:-18px\9;/* IE Hack */
   padding:70px 0 0 0;
   background:#1b1b1b url(images/categories-bg.png) no-repeat left 100px;
   -webkit-border-radius:0 0 20px 20px;

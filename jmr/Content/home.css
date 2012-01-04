@@ -102,6 +102,7 @@ div.email.black {
 #featured .ad {
   display:inline-block;
   margin:20px 10px 15px 20px;
+  margin:15px 10px 0 20px\9;/* IE Hack */
   padding:1px 0 2px 0;
   width:160px;
   border-bottom:1px solid #707070;

@@ -46,6 +46,7 @@ h3 {
 #contact {
   position:relative;
   margin:0 34px;
+  margin-top:-18px\9;/* IE Hack */
   height:1183px;
   background:black url(images/contact-bg.png) no-repeat right top;
 }
