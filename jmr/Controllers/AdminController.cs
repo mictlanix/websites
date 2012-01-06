@@ -254,19 +254,21 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			
 			var path = Path.GetDirectoryName (Server.MapPath (fileName));
 			var name = Path.GetFileName (fileName);
-			var img = System.Drawing.Image.FromStream (file.InputStream);
 			
-			Directory.CreateDirectory (path);
-			Directory.CreateDirectory (Path.Combine (path, "orginals"));
+			using (var stream = file.InputStream) {
+				using (var img = Image.FromStream (stream)) {
+					Directory.CreateDirectory (path);
+					Directory.CreateDirectory (Path.Combine (path, "orginals"));
 			
-			img.Save (Path.Combine (path, "orginals", name),
-			          System.Drawing.Imaging.ImageFormat.Jpeg);
+					img.Save (Path.Combine (path, "orginals", name),
+			    			  System.Drawing.Imaging.ImageFormat.Jpeg);
 			
-			img = ResizeImage (img, new Size (480, 320));
-			img.Save (Path.Combine (path, name),
-			          System.Drawing.Imaging.ImageFormat.Jpeg);
-			
-			img.Dispose ();
+					using (var new_img = ResizeImage (img, new Size (480, 320))) {
+						new_img.Save (Path.Combine (path, name),
+			    			  		  System.Drawing.Imaging.ImageFormat.Jpeg);
+					}
+				}
+			}
 		}
 		
 		void DeletePhoto (string fileName)
@@ -302,13 +304,13 @@ namespace Mictlanix.WebSites.JMR.Controllers
 			int dest_height = (int)(src_height * ratio);
 
 			Bitmap b = new Bitmap (dest_width, dest_height);
-			Graphics g = Graphics.FromImage ((Image)b);
+			Graphics g = Graphics.FromImage (b);
 			g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
 			g.DrawImage (image, 0, 0, dest_width, dest_height);
 			g.Dispose ();
 
-			return (Image)b;
+			return b;
 		}
     }
 }

@@ -67,6 +67,7 @@ namespace Mictlanix.WebSites.JMR
 		protected void Application_EndRequest (Object sender, EventArgs e)
 		{
 			HttpContext.Current.Items.Remove ("CurrentUser");
+			System.GC.Collect ();
 		}
     }
 }

@@ -68,35 +68,18 @@ THE SOFTWARE.
 
 @foreach (var item in Model) {
     <tr>
-        
+        <td class="date">@Html.DisplayFor(x => item.CreationTime)</td>
+        <td>@item.Category.GetDisplayName()</td>
+        <td class="center">@Html.DisplayFor(x => item.MakeName)</td>
+        <td class="center">@Html.DisplayFor(x => item.Model)</td>
+        <td class="center">@Html.DisplayFor(x => item.Year)</td>
+        <td class="center">@Html.DisplayFor(x => item.Serial)</td>
+        <td class="right">@Html.DisplayFor(x => item.Price)</td>
+        <td class="center">@Html.DisplayFor(x => item.IsActive)</td>
         <td>
-            @Html.DisplayFor(x => item.CreationTime)
-        </td>
-        <td>
-            @item.Category.GetDisplayName()
-        </td>
-        <td style="text-align:center">
-            @Html.DisplayFor(x => item.MakeName)
-        </td>
-        <td style="text-align:center">
-            @Html.DisplayFor(x => item.Model)
-        </td>
-        <td style="text-align:center">
-            @Html.DisplayFor(x => item.Year)
-        </td>
-        <td style="text-align:center">
-            @Html.DisplayFor(x => item.Serial)
-        </td>
-        <td style="text-align:right">
-            @Html.DisplayFor(x => item.Price)
-        </td>
-        <td style="text-align:center">
-            @Html.DisplayFor(x => item.IsActive)
-        </td>
-        <td>
-            	@Html.ActionLink(Resources.Edit, "Edit", new { id = item.Id }) |
-            	@Html.ActionLink(Resources.Details, "Details", new { id = item.Id }) |
-            	@Html.ActionLink(Resources.Delete, "Delete", new { id = item.Id })                                
+	    	@Html.ActionLink(Resources.Edit, "Edit", new { id = item.Id }) |
+	    	@Html.ActionLink(Resources.Details, "Details", new { id = item.Id }) |
+	    	@Html.ActionLink(Resources.Delete, "Delete", new { id = item.Id })
         </td>
     </tr>
 }

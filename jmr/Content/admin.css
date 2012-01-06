@@ -59,6 +59,19 @@ td {
   border-bottom:1px solid #333333;
 }
 
+td.center {
+  text-align:center;
+}
+
+td.right {
+  text-align:right;
+}
+
+td.date {
+  text-align:center;
+  white-space:nowrap;
+}
+
 #admin-panel {
   position:relative;
   margin:70px 20px;
