@@ -72,6 +72,14 @@ h2 {
   margin:14px 0;
 }
 
+div.phone {
+  margin:10px 0 0 0;
+  padding:1px;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+}
+
 div.email {
   margin:10px 0 15px 0;
   padding:8px;
@@ -81,7 +89,7 @@ div.email {
 }
 
 div.email.black {
-  margin:10px 0;
+  margin:0px 0 10px 0;
   font-size:22px;
   background:transparent;
 }
