@@ -43,7 +43,12 @@ namespace Mictlanix.WebSites.JMR.Controllers
 
         public ActionResult Index ()
 		{
-			return View ();
+			var qry = from x in Product.Queryable
+					  where x.IsActive
+					  orderby x.Category
+                      select new EquipmentItem { Id = x.Id, Category = x.Category };
+
+			return View (qry.ToList ());
 		}
     }
 }

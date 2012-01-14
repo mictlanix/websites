@@ -33,6 +33,7 @@ using System.ComponentModel.DataAnnotations;
 using Castle.ActiveRecord;
 using Castle.ActiveRecord.Framework;
 using Mictlanix.WebSites.JMR.Properties;
+using Mictlanix.WebSites.JMR.Helpers;
 
 namespace Mictlanix.WebSites.JMR.Models
 {
@@ -120,31 +121,32 @@ namespace Mictlanix.WebSites.JMR.Models
   
 		#region Override Base Methods
 
-        public override string ToString()
-        {
-            return string.Format("{0} [{1}, {2}, {3}]", Category, Make, Model, Year);
-        }
+        public override string ToString ()
+		{
+			
+			return string.Format ("Tipo de Maquinaría: {0}, Marca: {1}, Modelo: {2}, Año: {3}. {4}.", Category.GetDisplayName(), MakeName, Model, Year, Description);
+		}
 
-        public override bool Equals(object obj)
-        {
-            Product other = obj as Product;
+        public override bool Equals (object obj)
+		{
+			Product other = obj as Product;
 
-            if (other == null)
-                return false;
+			if (other == null)
+				return false;
 
-            if (Id == 0 && other.Id == 0)
-                return (object)this == other;
-            else
-                return Id == other.Id;
-        }
+			if (Id == 0 && other.Id == 0)
+				return (object)this == other;
+			else
+				return Id == other.Id;
+		}
 
-        public override int GetHashCode()
-        {
-            if (Id == 0)
-                return base.GetHashCode();
+        public override int GetHashCode ()
+		{
+			if (Id == 0)
+				return base.GetHashCode ();
 
-            return string.Format("{0}#{1}", GetType().FullName, Id).GetHashCode();
-        }
+			return string.Format ("{0}#{1}", GetType ().FullName, Id).GetHashCode ();
+		}
 
         #endregion
     }

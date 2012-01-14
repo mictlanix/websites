@@ -35,8 +35,16 @@ THE SOFTWARE.
 		<meta charset="UTF-8" />
 		<meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)" />
 		<meta name="copyright" content="Copyright © 2011 Eddy Zavaleta, Mictlanix and contributors."/>
+		@if(string.IsNullOrEmpty (ViewBag.Description)) {
 		<meta name="description" content="Venta de Maquinaría Pesada: Excavadoras, Retroexcavadoras, Motoconformadoras, Vibrocompactadores, Tractores, Equipo de Asfalto, Cargadores Frontales, Grúas y Otros."/>
+		} else {
+		<meta name="description" content="@ViewBag.Description"/>
+		}
+		@if(string.IsNullOrEmpty (ViewBag.Keywords)) {
 		<meta name="keywords" content="maquinaria, maquinaria pesada, excavadoras, retroexcavadoras, motoconformadoras, vibrocompactadores, tractores, equipo de asfalto, cargadores frontales, grúas"/>
+		} else {
+		<meta name="keywords" content="@ViewBag.Keywords"/>
+		}
 		<title>@ViewBag.Title</title>
 		<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css"></link>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>

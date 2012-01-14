@@ -49,7 +49,7 @@ THE SOFTWARE.
 	<url>
 	  <loc>http://jmrmaquinaria.mx/Equipment/@item</loc>
 	  <changefreq>daily</changefreq>
-	  <priority>1</priority>
+	  <priority>0.9</priority>
 	</url>
 	}
 	@foreach (var item in Enum.GetValues(typeof(MakeEnum)))
@@ -58,6 +58,14 @@ THE SOFTWARE.
 	  <loc>http://jmrmaquinaria.mx/Equipment/@item</loc>
 	  <changefreq>daily</changefreq>
 	  <priority>0.9</priority>
+	</url>
+	}
+	@foreach (var item in Model)
+	{
+	<url>
+	  <loc>http://jmrmaquinaria.mx/Equipment/Specs/@item.Id</loc>
+	  <changefreq>weekly</changefreq>
+	  <priority>1</priority>
 	</url>
 	}
 	<url>
