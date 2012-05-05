@@ -240,12 +240,12 @@ button:active {
   background:url(images/df-label.png) no-repeat left top;
 }
 
-.branches li.puebla {
-  background:url(images/puebla.png) no-repeat 15px center;
+.branches li.oriente {
+  background:url(images/df.png) no-repeat 15px center;
 }
 
-.branches li.puebla h3 {
-  background:url(images/puebla-label.png) no-repeat left top;
+.branches li.oriente h3 {
+  background:url(images/oriente-label.png) no-repeat left top;
 }
 
 .branches li.tuxtla {

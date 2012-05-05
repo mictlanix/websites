@@ -56,7 +56,7 @@ namespace Mictlanix.WebSites.JMR.Controllers
         // POST: /Contact/
 		
 		[HttpPost]
-        public ActionResult Index (ContactUs input)
+		public ActionResult Index (ContactUs input)
 		{
 			if (!IsValidEmailAddress (input.Email)) {
 				ModelState.AddModelError ("Email", "No es una dirección de email válida.");
@@ -71,17 +71,17 @@ namespace Mictlanix.WebSites.JMR.Controllers
 				cc [0] = new MailAddress ("info@jmrmaquinaria.mx", "JMR Máquinaria");
 				
 				switch (input.To.ToUpper ()) {
-				case "PUEBLA":
-					to = new MailAddress ("jsanchez@jmrmaquinaria.mx", "Jesús Sánchez");
-					cc [1] = new MailAddress ("jmajesus@hotmail.com", "Jesús Sánchez");
+				case "ORIENTE":
+					to = new MailAddress ("diego@jmrmaquinaria.mx", "Diego Cuevas");
+					cc [1] = new MailAddress ("dario@jmrmaquinaria.mx", "Rubén Perera");
 					break;
 				case "TUXTLA":
 					to = new MailAddress ("jromero@jmrmaquinaria.mx", "Juan Romero");
 					cc [1] = new MailAddress ("delsurestemaquinaria@hotmail.com", "Juan Romero");
 					break;
 				default:
-					to = new MailAddress ("jalcantar@jmrmaquinaria.mx", "Jair Alcantar");
-					cc [1] = new MailAddress ("jmadario@hotmail.com", "Rubén Perera");
+					to = new MailAddress ("jsanchez@jmrmaquinaria.mx", "Jesús Sánchez");
+					cc [1] = new MailAddress ("jmajesus@hotmail.com", "Jesús Sánchez");
 					break;
 				}
 				
