@@ -87,18 +87,17 @@ THE SOFTWARE.
 				@RenderBody()
 			</div>
 			<div id="footer">
-				<div style="float:left;margin:5px;text-align:left;">
+				<div style="float:left;margin:3px;text-align:left;">
 					<div>
 						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 					</div>
-					<div>
-						<a name="fb_share">Compartir</a>
-					</div>
+					<iframe src="https://www.facebook.com/plugins/like.php?href=@Request.Url.ToString()"
+					        scrolling="no" frameborder="0"
+					        style="border:none; width:450px;height:80px"></iframe>
 				</div>
 				<img class="logo" src="@Url.Content("~/Content/images/logo-small-bw.png")" alt="JMR Maquinaría" title="Venta de Maquinaría Pesada" />
 			</div>
-			<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
-			<script src="//static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 		</div>
+		<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 	</body>
 </html>
