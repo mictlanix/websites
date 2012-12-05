@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="Googlebot" content="index,follow"/>
+    <title>Distribuidora Santiago</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <!--
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    -->
+    <script src="scripts/path.min.js"></script>
+    <script src="scripts/jquery.carouFredSel-5.6.1-packed.js"></script>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <script src="scripts/html5shiv.js"></script>
+    <script src="scripts/jquery.backgroundSize.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section id="about-us">
+	<!--
+	<div class="header">
+		<h1>Quiénes somos</h1>
+	</div>
+	-->
+	<div class="content">
+		<div class="text">
+			<div>
+				<p>Empresa fundada el 21 de Septiembre de 1959
+				con el objetivo principal de  satisfacer las
+				necesidades comerciales en el ramo de la
+				distribución de material y equipo eléctrico;
+				con más de 50 años de experiencia ha logrado
+				convertirse en una empresa madura en constante
+				evolución y equipo eléctrico; con más de 50
+				años de experiencia ha logrado convertirse en
+				una empresa madura en constante evolución.</p>
+			</div>
+			<div>
+				<h2>Visión</h2>
+				<p>Sumimos el compromiso de distribuir material y
+				equipo eléctrico, con una constante preocupación
+				por cubrir las necesidades de cada Cliente y de
+				las Personas que integramos la Empresa, dentro
+				de un marco de legalidad y honradez.</p>
+			</div>
+			<div>
+				<h2>Misión</h2>
+				<p>Aspiramos a lograr el Reconocimiento del mercado
+				de material y equipo eléctrico como los mejores
+				distribuidores.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<div id="header">
+	<div class="carousel">
+		<ul id="tc1"></ul>
+	</div>
+</div>
+<div id="menu">
+	<ul>
+		<li class="home"><a href="inicio"><span>Inicio</span></a></li>
+		<li class="about-us"><a href="nosotros"><span>Nosotros</span></a></li>
+		<li class="products"><a href="productos"><span>Productos</span></a></li>
+		<li class="branches"><a href="sucursales"><span>Sucursales</span></a></li>
+		<li class="contact"><a href="contacto"><span>Contacto</span></a></li>
+	</ul>
+</div>
+<div id="logo">
+	<img src="images/logo.png" alt="Distribuidora Santiago" />
+</div>
+<script type="text/javascript">
+function doMain(){
+	for (var i = 1; i <= 10; i++) {
+		$("#tc1").append($("<li>Distribuidora Santiago</li>"));
+	}
+	
+	$("#tc1").carouFredSel({
+	    width    : "100%",
+		direction: "right",
+	    auto     : {
+	        items           : 2,
+	        duration        : 12000,
+	        easing          : "linear",
+	        pauseDuration   : 0
+	    }
+	});
+}
+
+function doAboutUs(){
+	$("#about-us .content .text").hide().show("slide", { direction:"right" }, 3000);
+}
+
+function before(){
+	// do stuff
+}
+
+function notFound(){
+	//$("#content").html(null);
+}
+
+Path.map("inicio").to(function(){
+    window.location = "index.html";
+}).enter(before);
+
+Path.map("nosotros").to(function(){
+    window.location = "nosotros.html";
+}).enter(before);
+
+Path.map("productos").to(function(){
+    alert("en construcción");
+}).enter(before);
+
+Path.map("sucursales").to(function(){
+    window.location = "sucursales.html";
+}).enter(before);
+
+Path.map("contacto").to(function(){
+    window.location = "contacto.html";
+}).enter(before);
+
+Path.rescue(notFound);
+
+$(function() {
+	$(document.body).css( "background-size", "cover" );
+	
+	doAboutUs();
+	doMain();
+	
+	Path.history.listen(true);
+	$('#menu a').click(function(event){
+		event.preventDefault();
+		Path.history.pushState({}, "", $(this).attr("href"));
+	});
+	Path.history.pushState({}, "", "/");
+});
+</script>
+</body>
+</html>

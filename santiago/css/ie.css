@@ -1,0 +1,12 @@
+#content {
+	background:transparent url(../images/tb-logo-bg.png) no-repeat center center;
+	behavior:url(/scripts/PIE.htc);
+}
+#content .thumb {
+	-pie-background:rgba(52,205,215,0.7);
+	behavior:url(/scripts/PIE.htc);
+}
+.circle-base {
+    border-radius: 999px;
+    behavior: url(/scripts/PIE.htc);
+}

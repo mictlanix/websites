@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="Googlebot" content="index,follow"/>
+    <title>Distribuidora Santiago</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <!--
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    -->
+    <script src="scripts/path.min.js"></script>
+    <script src="scripts/jquery.carouFredSel-5.6.1-packed.js"></script>
+    <script src="scripts/jquery.form.js"></script>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <script src="scripts/html5shiv.js"></script>
+    <script src="scripts/jquery.backgroundSize.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section id="contact">
+	<div class="header">
+		<h1>Contacto</h1>
+	</div>
+	<div class="content">
+		<p>Si quiere hacernos una pregunta o sugerencia,<br/>
+		envianos tus datos y en breve te atenderemos. Gracias.</p>
+		<form id="contact-form" method="post" action="send.php">
+			<fieldset>
+				<div id="notification"></div>
+				<ul>
+					<li>
+						<label>Nombre:</label>
+						<input id="name" name="name" type="text" placeholder="Nombre y apellidos" required autofocus>
+					</li>
+					<li>
+						<label>Empresa:</label>
+						<input id="company" name="company" type="text" placeholder="Nombre de la empresa que representa (opcional)">
+					</li>
+					<li>
+						<label>Email:</label>
+						<input id="email" name="email" type="email" placeholder="nombre@empresa.com" required>
+					</li>
+					<li>
+						<label>Teléfono:</label>
+						<input id="phone" name="phone" type="tel" placeholder="55 1234-5678" required>
+					</li>
+					<li>
+						<textarea id="message" name="message" rows="5" placeholder="Mensaje..." required></textarea>
+						<button class="send" type="submit">Enviar</button>
+					</li>
+				</ul>
+			<fieldset>
+		</form>
+	</div>
+</section>
+<div id="header">
+	<div class="carousel">
+		<ul id="tc1"></ul>
+	</div>
+</div>
+<div id="menu">
+	<ul>
+		<li class="home"><a href="inicio"><span>Inicio</span></a></li>
+		<li class="about-us"><a href="nosotros"><span>Nosotros</span></a></li>
+		<li class="products"><a href="#"><span>Productos</span></a></li>
+		<li class="branches"><a href="sucursales"><span>Sucursales</span></a></li>
+		<li class="contact"><a href="contacto"><span>Contacto</span></a></li>
+	</ul>
+</div>
+<div id="logo">
+	<img src="images/logo.png" alt="Distribuidora Santiago" />
+</div>
+<script type="text/javascript">
+function doMain(){
+	for (var i = 1; i <= 10; i++) {
+		$("#tc1").append($("<li>Distribuidora Santiago</li>"));
+	}
+	
+	$("#tc1").carouFredSel({
+	    width    : "100%",
+		direction: "right",
+	    auto     : {
+	        items           : 2,
+	        duration        : 12000,
+	        easing          : "linear",
+	        pauseDuration   : 0
+	    }
+	});
+}
+
+function doContact(){
+	$("#contact").css( "background-size", "contain" );
+	$("#contact-form").hide().show("drop", {}, 3000);
+	
+	$("#contact-form").ajaxForm({ 
+        dataType: 'json',
+        beforeSubmit: function(){
+            $("button.send").attr("disabled", "disabled");
+        },
+        success: function(data){
+        	$("#notification").hide();
+        	$("#notification").removeClass().addClass(data.type).html(data.message).fadeIn("slow");
+        	$("button.send").removeAttr("disabled");
+        	
+        	if(data.type == "success")
+                $("#contact-form").clearForm();
+        }
+    });
+}
+
+function before(){
+	// do stuff
+}
+
+function notFound(){
+	//$("#content").html(null);
+}
+
+Path.map("inicio").to(function(){
+    window.location = "index.html";
+}).enter(before);
+
+Path.map("nosotros").to(function(){
+    window.location = "nosotros.html";
+}).enter(before);
+
+Path.map("productos").to(function(){
+    alert("en construcción");
+}).enter(before);
+
+Path.map("sucursales").to(function(){
+    window.location = "sucursales.html";
+}).enter(before);
+
+Path.map("contacto").to(function(){
+    window.location = "contacto.html";
+}).enter(before);
+
+Path.rescue(notFound);
+
+$(function() {
+	$(document.body).css( "background-size", "cover" );
+	
+	doContact();
+	doMain();
+	
+	Path.history.listen(true);
+	$('#menu a').click(function(event){
+		event.preventDefault();
+		Path.history.pushState({}, "", $(this).attr("href"));
+	});
+	Path.history.pushState({}, "", "/");
+});
+</script>
+</body>
+</html>

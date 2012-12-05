@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+DirectoryIndex index.php index.html home.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) $1.php [L]

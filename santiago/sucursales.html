@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="Googlebot" content="index,follow"/>
+    <title>Distribuidora Santiago</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <!--
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    -->
+    <script src="scripts/path.min.js"></script>
+    <script src="scripts/jquery.carouFredSel-5.6.1-packed.js"></script>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <script src="scripts/html5shiv.js"></script>
+    <script src="scripts/jquery.backgroundSize.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section id="branches">
+    <!--
+	<div class="header">
+		<h1>Sucursales</h1>
+	</div>
+    -->
+	<div class="content">
+		<div id="branch01" class="circle-base branch">
+			<div class="info">
+				<h2>
+                    <a href="http://goo.gl/maps/5wuLb" target="_blank">Muritz</a>
+                    <span>Muritz</span>
+                </h2>
+				<p>Lago Muritz No. 5<br/>
+				Col. Anáhuac CP. 11320, México DF<br/>
+				(casi esq. con Marina Nacional)</p>
+				<p>
+					<a href="mailto:recepcion.muritz@santiago.com.mx">
+						recepcion.muritz@santiago.mx
+					</a>
+				</p>
+				<p>
+					<a href="tel:52799898">t. 52 79 98 98</a><br/>
+					<a href="tel:52605940">f. 52 60 59 40</a>
+				</p>
+			</div>
+		</div>
+		<div id="branch02" class="circle-base branch">
+			<div class="info">
+				<h2>
+                    <a href="http://goo.gl/maps/ZsQUT" target="_blank">Ermita</a>
+                    <span>Ermita</span>
+                </h2>
+				<p>Calz. Ermita Iztapalapa No. 1681<br/>
+				CP. 09830, México DF</p>
+				<p>
+					<a href="mailto:recepcion.ermita@santiago.com.mx">
+						recepcion.ermita@santiago.mx
+					</a>
+				</p>
+				<p>
+					<a href="tel:56854040">t. 56 85 40 40</a><br/>
+					<a href="tel:56851220">f. 56 85 12 20</a>
+				</p>
+			</div>
+		</div>
+		<div id="branch-hours">
+			<h2>Horarios de Atención</h2>
+			<p>Lunes a Viernes de 8:00 a 19:00 hrs.</p>
+			<p>Sábados de 8:00 a 15:00 hrs.</p>
+		</div>
+		<div id="branch-toll-free">
+			<p>Desde el interior de la república.</p>
+			<p><strong>01 800 711 1554</strong></p>
+		</div>
+	</div>
+</section>
+<div id="header">
+	<div class="carousel">
+		<ul id="tc1"></ul>
+	</div>
+</div>
+<div id="menu">
+	<ul>
+		<li class="home"><a href="inicio"><span>Inicio</span></a></li>
+		<li class="about-us"><a href="nosotros"><span>Nosotros</span></a></li>
+		<li class="products"><a href="productos"><span>Productos</span></a></li>
+		<li class="branches"><a href="sucursales"><span>Sucursales</span></a></li>
+		<li class="contact"><a href="contacto"><span>Contacto</span></a></li>
+	</ul>
+</div>
+<div id="logo">
+	<img src="images/logo.png" alt="Distribuidora Santiago" />
+</div>
+<script type="text/javascript">
+function doMain(){
+	for (var i = 1; i <= 10; i++) {
+		$("#tc1").append($("<li>Distribuidora Santiago</li>"));
+	}
+	
+	$("#tc1").carouFredSel({
+	    width    : "100%",
+		direction: "right",
+	    auto     : {
+	        items           : 2,
+	        duration        : 12000,
+	        easing          : "linear",
+	        pauseDuration   : 0
+	    }
+	});
+}
+
+function doBranches(){
+	$("#branches").css( "background-size", "contain" );
+	$(".branch").hide();
+	$("#branch01").show("puff", {percent:200}, 3000);
+	$("#branch02").show("puff", {percent:200}, 3000);
+}
+
+function before(){
+	// do stuff
+}
+
+function notFound(){
+	//$("#content").html(null);
+}
+
+Path.map("inicio").to(function(){
+    window.location = "index.html";
+}).enter(before);
+
+Path.map("nosotros").to(function(){
+    window.location = "nosotros.html";
+}).enter(before);
+
+Path.map("productos").to(function(){
+    alert("en construcción");
+}).enter(before);
+
+Path.map("sucursales").to(function(){
+    window.location = "sucursales.html";
+}).enter(before);
+
+Path.map("contacto").to(function(){
+    window.location = "contacto.html";
+}).enter(before);
+
+Path.rescue(notFound);
+
+$(function() {
+	$(document.body).css( "background-size", "cover" );
+	
+	doBranches();
+	doMain();
+	
+	Path.history.listen(true);
+	$('#menu a').click(function(event){
+		event.preventDefault();
+		Path.history.pushState({}, "", $(this).attr("href"));
+	});
+	Path.history.pushState({}, "", "/");
+});
+</script>
+</body>
+</html>

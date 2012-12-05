@@ -1,0 +1,539 @@
+@import url("../fonts/sansumi.css");
+@import url("../fonts/hero.css");
+@import url("../fonts/disco.css");
+
+* {
+	margin:0;
+	padding:0;
+	color:#fff;
+}
+html {
+	height:100%;
+}
+body {
+	height:100%;
+	background:#000 url(../images/bg.jpg) center center fixed no-repeat;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+h1 {
+	font-size:36px;
+}
+h2 {
+	font-family:HeroLight;
+	font-size:26px;
+	font-weight:light;
+}
+h2 b {
+	font-family:Hero;
+	font-size:26px;
+	font-weight:bold;
+}
+h3 {
+	font-family:HeroLight;
+	font-size:18px;
+}
+p {
+	font-family:HeroLight;
+	font-weight:light;
+}
+b {
+	font-family:Hero;
+	font-weight:bold;
+}
+a {
+	text-decoration:none;
+}
+#header,#menu,#logo {
+	position:absolute;
+}
+#logo {
+	right:30px;
+	top:9%;
+}
+#header {
+	left:0;
+	right:0;
+	top:0;
+}
+#header .carousel {
+	width:auto;
+	background:rgba(0, 50, 152, 0.25);
+	font-family:DISCO;
+	font-size:14px;
+	text-transform:lowercase;
+	-webkit-transform : translateZ(0); 
+	-o-transform : translateZ(0); 
+	-moz-transform : translateZ(0); 
+	transform : translateZ(0); 
+}
+#header .carousel ul {
+	display:block;
+	list-style:none;
+}
+#header .carousel li {
+	display:block;
+	margin:4px 6px;
+	float:left;
+	text-align:center;
+}
+.clearfix {
+	float: none;
+	clear: both;
+}
+#menu {
+	right:25px;
+	top:30%;
+	padding:1px;
+}
+#menu ul {
+	width:200px;
+	list-style:none;
+}
+#menu li {
+	height:62px;
+}
+#menu li span {
+	display:none;
+}
+#menu li:hover span {
+	display:inline;
+}
+#menu a {
+	display:block;
+	padding:24px 68px 24px 0;
+	font-family:SansumiBold;
+	font-size:14px;
+	text-transform:uppercase;
+	text-align:right;
+}
+#menu li.home {
+	background:url(../images/menu-home.png) right center no-repeat;
+}
+#menu li.home:hover {
+	background:url(../images/menu-home-hover.png) right center no-repeat;
+}
+#menu li.about-us {
+	background:url(../images/menu-about-us.png) right center no-repeat;
+}
+#menu li.about-us:hover {
+	background:url(../images/menu-about-us-hover.png) right center no-repeat;
+}
+#menu li.products {
+	background:url(../images/menu-products.png) right center no-repeat;
+}
+#menu li.products:hover {
+	background:url(../images/menu-products-hover.png) right center no-repeat;
+}
+#menu li.branches {
+	background:url(../images/menu-branches.png) right center no-repeat;
+}
+#menu li.branches:hover {
+	background:url(../images/menu-branches-hover.png) right center no-repeat;
+}
+#menu li.contact {
+	background:url(../images/menu-contact.png) right center no-repeat;
+}
+#menu li.contact:hover {
+	background:url(../images/menu-contact-hover.png) right center no-repeat;
+}
+.box_shadow {
+     -moz-box-shadow: 1px 1px 8px black;
+  -webkit-box-shadow: 1px 1px 8px black; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          box-shadow: 1px 1px 8px black; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+.circle-base {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+}
+/*** Home Section ***/
+
+#home {
+}
+
+#home .header {
+	position:absolute;
+	left:10%;
+	top:8%;
+	right:180px;
+}
+#home .header p {
+	font-size:32px;
+}
+#home .header p small {
+	font-size:26px;
+}
+#home .header .legend01 {
+	position:absolute;
+	left:78px;
+	top:30%;
+}
+#home .header .legend02 {
+	position:absolute;
+	left:30%;
+	top:80px;
+	text-align:right;
+	
+}
+#home .content {
+	position:absolute;
+	left:0px;
+	right:220px;
+	top:30%;
+	bottom:200px;
+	z-index:10;
+}
+#home .banner-img {
+	width:100%;
+	height:100%;
+}
+#home .banner-img img {
+	width:100%;
+	height:100%;
+	opacity:0.75;
+}
+#home .banner-txt {
+	margin:1% 10% 0 0;
+	text-align:right;
+}
+#home .banner-txt p {
+	font-size:28px;
+}
+#home .banner-txt b {
+	font-size:30px;
+}
+#home .header small {
+	font-size:80%;
+}
+#home .footer {
+	position:fixed;
+	left:70px;
+	right:70px;
+	bottom:15px;
+	border-top:1px solid white;
+	border-bottom:1px solid white;
+	background:rgba(255, 255, 255, 0.6);
+}
+#home .footer .image_carousel {
+	width:100%;
+	vertical-align:middle;
+	-webkit-transform : translateZ(0); 
+	-o-transform : translateZ(0); 
+	-moz-transform : translateZ(0); 
+	transform : translateZ(0); 
+}
+#home .footer .image_carousel .icon {
+	display:block;
+	float:left;
+    margin:10px;
+	height:36px;
+    vertical-align:middle;
+}
+#home .footer .image_carousel img {
+	display:block;
+}
+#home .footer .image_carousel .i01 {
+	margin-top:1px;
+}
+#home .footer .image_carousel .i02 {
+	margin-top:2px;
+}
+#home .footer .image_carousel .i03 {
+	margin-top:3px;
+}
+#home .footer .image_carousel .i04 {
+	margin-top:4px;
+}
+#home .footer .image_carousel .i05 {
+	margin-top:5px;
+}
+#home .footer .image_carousel .i06 {
+	margin-top:6px;
+}
+#home .footer .image_carousel .i07 {
+	margin-top:7px;
+}
+#home .footer .image_carousel .i08 {
+	margin-top:8px;
+}
+#home .footer .image_carousel .i09 {
+	margin-top:9px;
+}
+#home .footer .image_carousel .i10 {
+	margin-top:10px;
+}
+#home .footer .image_carousel .i11 {
+	margin-top:11px;
+}
+#home .footer .image_carousel .i12 {
+	margin-top:12px;
+}
+#home .footer .image_carousel .i13 {
+	margin-top:13px;
+}
+#home .footer .image_carousel .i14 {
+	margin-top:14px;
+}
+#home .footer .image_carousel .i15 {
+	margin-top:15px;
+}
+#home .footer .image_carousel .auto {
+	margin:auto 0;
+	width:33px;
+	height:16px;
+}
+/*** About Us Section ***/
+
+#about-us {
+    
+}
+
+#about-us .header {
+	position:absolute;
+	top:5%;
+	z-index:10;
+}
+#about-us h1 {
+	width:436px;
+	padding:9px 0 8px 150px;
+	background:url(../images/about-hbg.png) right center no-repeat;
+	font-family:SansumiBold;
+}
+#about-us .content {
+	position:absolute;
+	left:0;
+	bottom:0;
+	top:0;
+	width:1011px;
+	min-height:760px;
+	background:url(../images/about-bg.png) left bottom no-repeat;
+}
+#about-us .content .text {
+	position:absolute;
+	left:50px;
+	bottom:270px;
+	width:640px;
+	text-align:right;
+}
+#about-us .content .text p {
+	font-family:Hero;
+	font-size:15px;
+	color:black;
+}
+#about-us .content .text h2 {
+	font-family:HeroLight;
+	font-size:26px;
+}
+#about-us .content .text div:nth-child(1) {
+	padding:0 50px 14px 80px;
+}
+#about-us .content .text div:nth-child(2) {
+	padding:0 110px 12px 0;
+}
+#about-us .content .text div:nth-child(3) {
+	padding:0 160px 0 0;
+}
+
+/*** Branches Section ***/
+
+#branches {
+    height:100%;
+    min-height:720px;
+	background:url(../images/branches-bg.png) 0 0 no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+}
+#branches h1 {
+	display:none;
+}
+#branches .branch h2 {
+    margin:12px 0 12px 40px;
+	font-family:SansumiExtraBold;
+	font-size:24px;
+    line-height:27px;
+    text-align:center;
+}
+#branches .branch h2 a {
+    display:none;
+}
+#branches .branch:hover h2 span {
+    display:none;
+}
+#branches .branch:hover h2 a {
+    display:inline-block;
+    padding:5px 0 0 40px;
+    background:url(../images/location.png) left center no-repeat;
+}
+#branches .content {
+	position:absolute;
+	left:0;
+	top:12%;
+	right:0;
+}
+#branches .branch {
+	padding:1px;
+    width:400px;
+    height:400px;
+    text-align:right;
+    overflow:hidden;
+}
+#branches .info {
+    margin:100px 35px 0 5px;
+}
+#branches .info p {
+    display:none;
+	padding:12px 0;
+	border-top:1px solid white;
+	font-family:DISCORegular;
+	font-size:14px;
+	line-height:18px;
+}
+#branches .branch:hover h2 {
+	text-align:right;
+}
+#branches .branch:hover p {
+	display:block;
+}
+#branch01:hover,#branch02:hover {
+	background:rgba(255, 255, 255, 0.6);
+}
+#branch01 {
+	margin:50px 0 0 -10px;
+    background:rgba(255, 255, 255, 0.6) url(../images/branch01.png) 90% 90% no-repeat;
+}
+#branch02 {
+	position:absolute;
+	left:500px;
+	top:200px;
+    background:rgba(255, 255, 255, 0.6) url(../images/branch02.png) right 70% no-repeat;
+}
+#branch-hours {
+	width:325px;
+	margin:25px 0 0 40px;
+	font-family:DISCORegular;
+	font-size:14px;
+	text-align:center;
+}
+#branch-hours h2 {
+	margin:4px 0;
+	font-family:SansumiBold;
+	font-size:14px;
+}
+#branch-toll-free {
+	position:absolute;
+	left:160px;
+	top:550px;
+	font-family:DISCORegular;
+	text-align:center;
+}
+#branch-toll-free strong {
+	font-family:SansumiExtraBold;
+	font-size:22px;
+}
+
+/*** Branches Section ***/
+
+#contact {
+	height:100%;
+	background:url(../images/contact-bg.png) 0 0 no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+}
+#contact h1 {
+	display:none;
+}
+#contact .content {
+	position:absolute;
+	left:56px;
+	top:35%;
+	bottom:0px;
+	width:470px;
+	overflow:hidden;
+}
+#contact .content p {
+	font-family:DISCORegular;
+	font-size:14px;
+	text-align:right;
+}
+#contact ul {
+	display:block;
+	list-style:none;
+}
+#contact li {
+	display:block;
+	margin:20px 0 0 0;
+	padding:1px;
+	border-bottom:1px solid white;
+}
+#contact li:last-child {
+	border-bottom:none;
+}
+form#contact-form,
+form#contact-form fieldset {
+	border: none;
+}
+form#contact-form {
+	margin:50px 0 0 0;
+	font-family:Hero;
+	font-size:13px;
+}
+#contact label {
+	float:left;
+	padding:4px 10px 4px 0;
+	width:70px;
+	text-align:right;
+}
+form#contact-form input,
+form#contact-form textarea {
+	display:block;
+	width:360px;
+	padding:4px 0;
+	background:transparent;
+	border: none;
+	font-family:Hero;
+	font-size:13px;
+}
+form#contact-form textarea {
+	display:block;
+	margin:0 0 10px 4px;
+	padding:4px;
+	width:95%;
+	background:rgba(255, 255, 255, 0.3);
+	border-top:1px solid white;
+	border-bottom:1px solid white;
+}
+form#contact-form button {
+	display: block;
+	margin:auto;
+	padding:7px 25px;
+	background:rgba(0, 50, 152, 0.5);
+	border:1px solid white;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	color: #ffffff;
+	text-shadow: 0 1px 1px #000000;
+	font-family:Hero;
+	font-size:14px;
+}
+form#contact-form button:hover {
+	background:rgba(255, 255, 255, 0.5);
+	border:2px solid #003298;
+	color:#003298;
+	cursor: pointer;
+}
+form#contact-form div.error, form#contact-form .success {
+	padding: 5px 5px 5px 25px;
+    margin: 5px 0px;
+}
+form#contact-form div.error {
+	border: 1px solid #ff0000;
+	background: #ffdddd;
+	color: #3c3c3c;
+}
+form#contact-form div.success {
+	border: 1px solid #009900;
+	background: #cfffcf;
+	color: #003300;
+}

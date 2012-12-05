@@ -1,0 +1,11 @@
+
+@font-face {
+    font-family: 'DISCORegular';
+    src: url('disco/DISCO___-webfont.eot');
+    src: url('disco/DISCO___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('disco/DISCO___-webfont.woff') format('woff'),
+         url('disco/DISCO___-webfont.ttf') format('truetype'),
+         url('disco/DISCO___-webfont.svg#DISCORegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
