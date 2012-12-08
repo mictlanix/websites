@@ -1,21 +1,11 @@
 <?php
-	session_start();
-  include '0B$cUr3/_db_credentials_.php';
+  include '_functions.php';
   
+	session_start();
+  validate_token();
+	
 	// response hash
 	$response = array('type'=>'', 'message'=>'');
-	
-  if ($_SESSION['token'] != $_POST['token']){
-  	$response['type'] = 'error';
-  	$response['message'] = "Invalid token!";
-  	print json_encode($response);
-		exit;
-	}
-	
-	function is_valid_email($email) {
-	  return preg_match('#^[a-z0-9.!\#$%&\'*+-/=?^_`{|}~]+@([0-9.]+|([^\s]+\.+[a-z]{2,6}))$#si', $email);
-	}
-	
 	$field_names = array('name'=>'nombre', 'email'=>'email', 'phone'=>'teléfono', 'message'=>'mensaje');
 
 	try{
@@ -32,25 +22,32 @@
 		}
 		
 		// ok, field validations are ok
-		//$to      = "eddy@mictlanix.org";
-		$to      = "info@tinbox.mx";
+		$to      = "eddy@mictlanix.org";
+		//$to      = "info@tinbox.mx";
+		$from		 = "website@tinbox.mx";
 		$email   = $_POST["email"];
 		$subject = "Tinbox - Sitio Web";
 		$body    = "Nombre: ".$_POST["name"]."\n".
 		           "Email: ".$_POST["email"]."\n".
 		           "Tel.: ".$_POST["phone"]."\n\n".
 		            $_POST["message"];
-		$headers = "From: ".$email;
-			
+		$headers = "From: ".$from;
+		
+		// save email
+		try {
+			save_email($email, 0);
+		} catch (Exception $e) {
+		}
+		
 		// now, send email
-		if(!mail($to, $subject, $body, $headers, "-f$email")) {
+		if(!mail($to, $subject, $body, $headers, "-f$from")) {
 			throw new Exception('Ups, algo salió mal. Intentalo más tarde.');
 		}
 		
 		// let's assume everything is ok, setup successful response
 		$response['type'] = 'success';
 		$response['message'] = 'Gracias por escribirnos!';
-	}catch(Exception $e){
+	} catch (Exception $e) {
 		$response['type'] = 'error';
 		$response['message'] = $e->getMessage();
 	}

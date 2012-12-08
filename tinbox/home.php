@@ -15,16 +15,19 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="/home">Tinbox</a>
+          <a class="brand" href="/">
+          	<img src="images/logo.png" alt="Tinbox Logo">
+          	<span>Tinbox</span>
+          </a>
           <p class="navbar-text pull-left">&#9733; Crea nuevos recuerdos &#9733;</p>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li class="active"><a href="#">Inicio</a></li>
               <li><a href="calendars">Calendarios</a></li>
-              <li><a href="#notebooks">Cuadernos</a></li>
+              <!--<li><a href="notebooks">Cuadernos</a></li>-->
               <li><a href="contact">Contacto</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
@@ -56,24 +59,25 @@
 	      <div class="row">
 	        <div class="span4">
 	          <h2 title="World Travel">
-	          	<img src="images/worldtravel.png">
+	          	<img src="images/worldtravel.png" alt="World Travel">
 	          </h2>
 	          <p>Un viaje por 12 hermosas ciudades, con personalizaciones impactantes en distintos estilos que marcaron época.<br/>¡Bon voyage!</p>
 	          <p><a href="calendars">Ver detalles &raquo;</a></p>
 	        </div>
 	        <div class="span4">
 	          <h2 title="80's">
-	          	<img src="images/80s.png">
+	          	<img src="images/80s.png" alt="80's">
 	          </h2>
 	          <p>Revive la nostalgia por años ridículamente divertidos. ¡No hace falta que hayas usado hombreras para que lo disfrutes!<br/>Yo &hearts; los 80's!</p>
 	          <p><a href="calendars">Ver detalles &raquo;</a></p>
        		</div>
 	        <div class="span4">
 	          <h2 title="Cuadernos">
-	          	<img src="images/notebooks.png">
+	          	<img src="images/notebooks.png" alt="Cuadernos">
 	          </h2>
 	          <p>Crea tus propias memorias. Regálaselo a tus clientes, a tus amigos, a quien tú quieras! Ideal para la oficina y el colegio.<br/>¿Cuál quieres? Escoge el tuyo.</p>
-	          <p><a href="notebooks">Ver detalles &raquo;</a></p>
+	          <p><a href="javascript:void(0)">Próximamente</a></p>
+	          <!--<p><a href="notebooks">Ver detalles &raquo;</a></p>-->
 	        </div>
       	</div>
 
@@ -93,5 +97,6 @@
 			$('#myCarousel').carousel();
 		});
 		</script>
+		<?php include_once("_analyticstracking.php") ?>
   </body>
 </html>

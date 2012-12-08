@@ -15,16 +15,19 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="/home">Tinbox</a>
+          <a class="brand" href="/">
+          	<img src="images/logo.png" alt="Tinbox Logo">
+          	<span>Tinbox</span>
+          </a>
           <p class="navbar-text pull-left">&#9733; Crea nuevos recuerdos &#9733;</p>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li><a href="home">Inicio</a></li>
               <li><a href="calendars">Calendarios</a></li>
-              <li><a href="#notebooks">Cuadernos</a></li>
+              <!--<li><a href="notebooks">Cuadernos</a></li>-->
               <li class="active"><a href="#">Contacto</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
@@ -105,5 +108,6 @@
 		  });
 		});
 		</script>
+		<?php include_once("_analyticstracking.php") ?>
   </body>
 </html>

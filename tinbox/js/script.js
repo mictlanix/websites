@@ -1,5 +1,5 @@
 $(function(){
-	
+	"use strict";
 	
 	$('.subscribe-form').submit(function() {
 		if($('.subscribe-email').attr('value')) {

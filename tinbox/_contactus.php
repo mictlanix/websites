@@ -3,15 +3,16 @@
 				<div class="left-column-form">
 					<ul>
 						<li class="">
-							<h1><a href="/calendars">Calendarios</a></h1>
+							<h1><a href="calendars">Calendarios</a></h1>
 							<p>Calendario 2013, revive la nostalgia por los años 80's o haz un viaje por 12 hermosas ciudades.</p>
 						</li>
 						<li class="">
-							<h1><a href="/notebooks">Cuadernos</a></h1>
+							<!--<h1><a href="notebooks">Cuadernos</a></h1>-->
+							<h1><a href="javascript:void(0)">Cuadernos</a></h1>
 							<p>Todo lo que hacemos y lo que podemos hacer está totalmente personalizado para ti.</p>
 						</li>
 						<li class="last">
-							<h1><a href="/contact">Contacto</a></h1>
+							<h1><a href="contact">Contacto</a></h1>
 							<p>Haremos lo mejor para ti, si tan sólo nos lo dices!</p>
 						</li>
 					</ul>

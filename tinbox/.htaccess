@@ -1,5 +1,5 @@
 Options +FollowSymLinks
-DirectoryIndex index.php index.html home.php
+DirectoryIndex home index.php index.html
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

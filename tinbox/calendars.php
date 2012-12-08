@@ -12,20 +12,23 @@
     <link href="css/colorbox.css" rel="stylesheet" media="screen">
     <link href="css/style.css" rel="stylesheet" media="screen">
   </head>
-  <body>
+  <body>		
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="/home">Tinbox</a>
+          <a class="brand" href="/">
+          	<img src="images/logo.png" alt="Tinbox Logo">
+          	<span>Tinbox</span>
+          </a>
           <p class="navbar-text pull-left">&#9733; Crea nuevos recuerdos &#9733;</p>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li><a href="home">Inicio</a></li>
               <li class="active"><a href="#">Calendarios</a></li>
-              <li><a href="#notebooks">Cuadernos</a></li>
+              <!--<li><a href="notebooks">Cuadernos</a></li>-->
               <li><a href="contact">Contacto</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
@@ -217,8 +220,7 @@
 			  </div>
 			</div>
 		</div>
-		
-		<!-- FOOTER -->
+
 		<div class="bluebg">
 			<div id="tabs-container" class="container">
 				<ul id="calendar-tabs" class="nav nav-tabs">
@@ -241,25 +243,55 @@
 			<div class="to-up"><a href="#" class="go-to-up gray-blue"></a></div>
 			<?php include '_contactus.php';?>
 		</div>
+
+		<div id="howtobuy">
+			<button id="orders" type="button" class="btn btn-large btn-warning">Pedidos</button>
+			<div class="content">
+				<a id="close" href="#"><i class="icon-remove icon-white"></i></a>
+				<h1>Pide tus calendarios</h1>
+				<p>Vía correo electrónico a <a href="mailto:info@tinbox.mx" target="_blank">info@tinbox.mx</a> o por teléfono al <a href="tel:5556723912" target="_blank">(55) 5672-3912</a>.</p>
+			  <ol>
+			  	<li>Descarga el <a href="downloads/base-2013.xls" target="_blank"><i class="icon-download-alt icon-white"></i>formato</a>
+			  			y sus <br/><a href="downloads/instrucciones-2013.pdf" target="_blank"><i class="icon-download-alt icon-white"></i>instrucciones</a> de llenado.</li>
+			  	<li>LLena el formato y mándalo a nuestro <br/><a href="mailto:info@tinbox.mx" target="_blank"><i class="icon-envelope icon-white"></i> correo electrónico</a>, escribenos si tienes alguna duda.</li>
+			  	<li>Espera la confirmación de tu pedido e instrucciones de pago.</li>
+			  	<li>Confirma el pago mandando tu comprobante vía <a href="mailto:info@tinbox.mx" target="_blank"><i class="icon-envelope icon-white"></i> correo electrónico</a>.</li>
+			  	<li>Recíbelos en tu casa u oficina.</li>
+			  </ol>
+			</div>
+		</div>
+		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/slides.jquery.min.js"></script>
 		<script src="js/jquery.colorbox-min.js"></script>
 		<script>
+		(function(){
+			var imgList = [];
+			var imgArr = ["images/wood_tile.gif",
+										"images/calendar-header-bg.png",
+										"images/calendar-size-content-bg.png",
+										"images/calendar-sizes-bg.png"];
+			
+			for(var i in imgArr) {
+				imgList.push(new Image(imgArr[i]));
+			}
+		})();
+		
 		function buildThumbnails(model, size){
 			var container = $("#" + model + " .thumbnails");
 			
-			for(var i = 0; i < 12; i++){
+			for(var i = 1; i < 13; i++){
 				var e = $("<li class='span3'><a href='' class='thumbnail'><img src='' alt=''></a></li>");
 						
 				$("img", e).attr("src", "examples/" + model + "/" + size + "/thumbs/" + ("0" + i).substr(-2) + ".jpg");
-				$("a", e).attr("href","examples/" + model + "/" + size + "/" + ("0" + i).substr(-2) + ".jpg");
+				$("a", e).attr("href","examples/" + model + "/" + size + "/" + ("0" + i).substr(-2) + ".jpg").addClass(model);
 				
 				container.append(e);
 			}			
 		}
 
-		$(function(){		  
+		$(function(){
 		  $("#calendar-sizes").slides({
 		  	start:3,
 		    next:'next',
@@ -268,7 +300,7 @@
 		    preloadImage:'images/loading.gif',
 		    generatePagination:false,
 				animationComplete:function(current) {
-					var sizes = ["cd","desk","mini","postal","org","poster"];
+					var sizes = ["mini","desk","cd","postal","org","poster"];
 					var size = sizes[current-1];
 					
 					$('#80s img').each(function(i) {
@@ -296,11 +328,26 @@
 		    }
 		  });
 		 
-		 	buildThumbnails("80s", "mini");
-		 	buildThumbnails("worldtravel", "mini");
+		 	buildThumbnails("80s", "cd");
+		 	buildThumbnails("worldtravel", "cd");
 		 	
-		  $(".thumbnail").colorbox({rel:'thumbnail',current:'{current} / {total}'});
+		  $("#80s .thumbnail").colorbox({rel:'80s',current:'{current} / {total}'});
+		  $("#worldtravel .thumbnail").colorbox({rel:'worldtravel',current:'{current} / {total}'});
+		  
+		  $('#orders').click(function(){ 
+		  	$(this).hide();
+		  	$('#howtobuy .content').show('fast');
+		  	return false;
+		  });
+ 		  $('#close').click(function(){
+		  	$('#howtobuy .content').hide('fast', function(){
+		  		$('#orders').show();
+		  	});
+		  	return false;
+		  });
+		  
 		});
 		</script>
+		<?php include_once("_analyticstracking.php") ?>
   </body>
 </html>
