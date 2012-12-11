@@ -90,24 +90,7 @@
 		</div>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script>
-		$(function(){
-			$('.contact-form').submit(function() {
-				if($('.contact-form textarea').attr('value')) {
-					alert('Thank you for your message');
-					$.post("/contact_us", $('.contact-form').serialize());
-					$('.contact-form')[0].reset();
-				}
-				return false;
-			});
-			
-			var e = $(".go-to-up");
-		  e.click(function(){
-		    $("html:not(:animated)" +( !$.browser.opera ? ",body:not(:animated)" : "")).animate({ scrollTop: 0}, 500 );
-		    return false;
-		  });
-		});
-		</script>
+		<script src="js/script.js"></script>
 		<?php include_once("_analyticstracking.php") ?>
   </body>
 </html>

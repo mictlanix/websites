@@ -21,23 +21,24 @@
 			throw new Exception('El email proporcionado no es válido.');
 		}
 		
+		$email   = $_POST["email"];
+		
+		// save email
+		try {
+			save_email($email, 2);
+		} catch (Exception $e) {
+		}
+		
 		// ok, field validations are ok
 		$to      = "eddy@mictlanix.org";
-		//$to      = "info@tinbox.mx";
+		//$to      = "info@tinbox.mx, judith@tinbox.mx";
 		$from		 = "website@tinbox.mx";
-		$email   = $_POST["email"];
 		$subject = "Tinbox - Sitio Web";
 		$body    = "Nombre: ".$_POST["name"]."\n".
 		           "Email: ".$_POST["email"]."\n".
 		           "Tel.: ".$_POST["phone"]."\n\n".
 		            $_POST["message"];
 		$headers = "From: ".$from;
-		
-		// save email
-		try {
-			save_email($email, 0);
-		} catch (Exception $e) {
-		}
 		
 		// now, send email
 		if(!mail($to, $subject, $body, $headers, "-f$from")) {
