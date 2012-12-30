@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Eddy Zavaleta (eddy@mictlanix.org)"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="Googlebot" content="index,follow"/>
+    <meta name="distribution" content="global"/>
+    <meta name="rating" content="general"/>
+    <link rel="icon" href="http://tinbox.com.mx/images/tinboxIcono.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="http://tinbox.com.mx/images/tinboxIcono.ico" type="image/x-icon"/>
+    <title>Tinbox</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+</head>
+<body>
+    <div id="header">
+    </div>
+    <div id="tinbox" class="calendar">
+        <img src="images/tinbox.jpg" />
+    </div>
+    <div id="counter">
+		<p><a class="redirect" href="http://www.tinbox.com.mx/">Ir a Tinbox</a></p>
+		<span id="countdown">5</span>
+    </div>
+    <script type="text/javascript">
+		function redirect() {
+			window.location.replace("http://www.tinbox.com.mx/");
+		}
+        $(function() {
+			$("a.redirect").click(function(event){
+			    event.preventDefault();
+			    redirect();
+			});
+            $('#countdown').countDown({
+	            startNumber:5,
+	            startFontSize:'50px',
+		        endFontSize:'30px',
+	            callBack: function(me) {
+		            redirect();
+	            }
+            });
+        });
+    </script>
+</body>
+</html>

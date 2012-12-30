@@ -1,0 +1,20 @@
+body {
+    background: black url('image/logo-text-vert.png') center bottom no-repeat;    background-image:url('image/logo-text-vert.png');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:100% 95%%; 
+}
+
+* {
+    margin: 0;
+}
+
+div {
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    margin-top: 5px;
+}
+

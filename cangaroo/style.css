@@ -1,0 +1,331 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    background: #e6e3dc url(images/background.jpg) repeat-x;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #fab31b;
+    margin-top: 8px;
+    padding-left: 2px;
+    padding-bottom: 4px;
+    background: #333333 url(images/gris.png) repeat-x;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    background: transparent url(images/amarillo.png) top repeat-x;
+    margin-top: 0;
+    padding: 2px 0;
+}
+
+h4 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #fff;
+    background: #333333 url(images/gris.png) repeat-x;
+    margin-top: 0;
+    padding: 4px 2px;
+}
+
+p {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    width: 90%;
+    padding-left: 5%;
+}
+
+.blank {
+    margin: 0;
+    padding: 0;
+    height: 0;
+    clear: both;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+#container {
+    width: 900px;
+    margin: 2px auto;
+}
+
+#header {
+    display: block;
+    padding: 2px 8px;
+}
+
+#header h1 {
+    float: left;
+    height: 65px;
+    background: transparent url(images/canguro-small.jpg) 8px 0 no-repeat;
+	font-size: 0.72em;
+	margin: 0;
+}
+
+#header h1 a {
+    position: relative;
+    top: 70px;
+    color: #fff;
+    font-weight: normal;
+}
+
+#brands {
+    width: 356px;
+    height: 72px;
+    margin-top: 18px;
+    margin-left: 552px;
+    background: transparent url(images/brands.png) no-repeat;
+}
+
+#navigation {
+    display: block;
+    padding-top: 40px;
+}
+
+#navigation ul {
+    list-style: none;
+    float: right;
+    font-size: 12px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#navigation ul li {
+    float:left;
+    margin-right: 3px;
+}
+
+#navigation ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #e6e3dc;
+    width: 58px;
+    height: 24px;
+    padding-top: 5px;
+}
+
+#navigation ul li a:hover {
+    background: url(images/button.jpg) no-repeat;
+}
+
+#navigation .on {
+    background: url(images/button.jpg) no-repeat;
+}
+
+#content {
+    background: #fff url(images/contentback.png) repeat-x;
+    margin-top: 44px;
+    padding: 10px;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+
+#footer p {
+    margin-bottom: 0;
+}
+
+#footer span {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background: transparent url(images/gris.png) repeat-x;
+}
+
+#footer a, #footer a:hover, #footer a:visited {
+    color: #fff;
+    font-weight: bold;
+}
+
+#validator {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: smaller;
+}
+
+#validator a, #validator a:hover, #validator a:visited {
+    color: #000;
+}
+
+.columns {
+    position: relative;
+    clear: both;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+.columns ul {
+    list-style-type: circle;
+}
+
+.columns ol {
+    list-style-type: lower-alpha;
+    margin: 0;
+}
+
+.columns li {
+    font-size: smaller;
+}
+
+.colright, .colmid, .colleft {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.col1, .col2, .col3 {
+    position: relative;
+    float: left;
+    padding: 0 0 1em 0;
+    overflow: hidden;
+}
+
+.two {
+    background: #fff;
+}
+
+.two .colleft {
+    right: 50%;
+}
+
+.two .col1 {
+    width: 46%;
+    left: 52%;
+}
+
+.two .col2 {
+    width: 50%;
+    left: 54%;
+}
+
+.three {
+	background: #fff;
+}
+
+.three .colmid {
+	right: 33.3%;
+}
+
+.three .colleft {
+	right: 33.3%;
+}
+
+.three .col1 {
+    width: 30%;
+    left: 101.5%;
+}
+
+.three .col2 {
+    width: 30%;
+    left: 39%;
+}
+
+.three .col3 {
+    width: 30%;
+    left: 74%;
+}
+
+.opaque {
+    background-color: #f2f1ee;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+#myform {
+    border: solid 2px #f5b31b;
+    background-color: #f5fb9c;
+    margin: 0 auto;
+    width: 600px;
+    padding: 14px;
+}
+
+#myform fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#myform h1 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#myform p {
+    font-size: 11px;
+    color: #666666;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #f5b31b;
+    padding-bottom: 10px;
+}
+
+#myform label {
+    display: block;
+    font-weight: bold;
+    text-align: right;
+    width: 190px;
+    float: left;
+}
+
+#myform .small {
+    color: #666666;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: right;
+    width: 190px;
+}
+
+#myform input {
+    float: left;
+    font-size: 12px;
+    padding: 4px 2px;
+    border: solid 1px #f5b31b;
+    width: 350px;
+    margin: 2px 0 20px 10px;
+}
+
+#myform textarea {
+    float: left;
+    font-size: 12px;
+    padding: 4px 2px;
+    border: solid 1px #f5b31b;
+    width: 350px;
+    height: 100px;
+    margin: 2px 0 20px 10px;
+}
+
+#myform button {
+    clear: both;
+    margin-left: 200px;
+    width: 125px;
+    height: 31px;
+    background: #666666 url(images/gris.png) repeat-x;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+}
+

@@ -1,0 +1,17 @@
+body {
+    background: black url('images/logo-text-vert.png') 100% 95%% no-repeat fixed;
+}
+
+* {
+    margin: 0;
+}
+
+div {
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    margin-top: 5px;
+}
+

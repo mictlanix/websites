@@ -1,0 +1,31 @@
+.slideshow {
+    width:958px;
+    height:332px;
+}
+.slideshow-images {
+    left:288px;
+    width:670px;
+    height:330px;
+    z-index: 0;
+}
+.slideshow-images img {
+    position: static;
+}
+.slideshow-thumbnails {
+    top: 0;
+    width: 323px;
+    height:332px;
+}
+.slideshow-thumbnails ul {
+    width: 323px;
+}
+.slideshow-thumbnails li {
+    margin: 0;
+    padding:0 0 2px 0;
+}
+.slideshow-thumbnails a {
+    padding: 0px;
+}
+.slideshow-thumbnails a:hover {
+    background-color: transparent !important;
+}

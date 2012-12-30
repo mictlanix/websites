@@ -1,0 +1,25 @@
+body {
+    background:black;
+    text-align:center;
+    color:#dddddd;
+    font-size:14px;
+}
+a, a:hover, a:visited {
+	color:white;
+}
+}
+b {
+    color:white;
+}
+#header {
+    margin:200px 0 0 0;
+}
+#countdown {
+    font-size:50px;
+    font-weight:bold;
+}
+.calendar {
+display:inline-block;
+margin:10px;
+vertical-align:middle;
+}

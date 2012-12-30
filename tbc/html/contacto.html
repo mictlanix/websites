@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+	<head>
+	    <title>TBC - Contacto</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<link rel="stylesheet" type="text/css" href="../css/coach.css" />
+        <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+	</head>
+    <body>
+        <div id="header">
+            <div class="content">
+                <div id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="contacto.html">
+                                <span>Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="logo">
+                    <a href="#">
+                        <img src="images/logo.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div class="content">
+                <div class="text-content">
+                    <div id="myform">
+                        <form action="send.php" method="post">
+                            <h2>Forma de Contacto</h2>
+                            <p>Escribanos, con gusto le atenderemos.</p>
+                            <fieldset>
+                                <label>Nombre
+                                <span class="small">Escriba su nombre</span>
+                                </label>
+                                <input type="text" name="name" id="name" />
+                                <label>Puesto
+                                <span class="small">Puesto que ocupa en su organización</span>
+                                </label>
+                                <input type="text" name="jobtitle" id="jobtitle" />
+                                <label>Email
+                                <span class="small">Escriba una dirección válida</span>
+                                </label>
+                                <input type="text" name="email" id="email" />
+                                <label>Teléfono
+                                <span class="small">Escriba su número telefónico</span>
+                                </label>
+                                <input type="text" name="phone" id="phone" />
+                                <label>Producto
+                                <span class="small">Producto o servicio de su interés</span>
+                                </label>
+                                            <select name="product">
+                                                    <option></option>
+                                                    <option>Alineación Total y Medición del Desempeño</option>
+                                                    <option>Rediseño de Procesos de Negocios</option>
+                                                    <option>Software: Administración de Documentos</option>
+                                                    <option>Software: Alineación Total y Medición del Desempeño</option>
+                                                    <option>Software: Modelado de Procesos</option>
+                                                    <option>Taller de Disciplina de Gestión</option>
+                                                    <option>Taller de Ideología Fundamental</option>
+                                                    <option>Taller de Mapas Mentales</option>
+                                                    <option>Taller de Modelado de Procesos</option>
+                                                    <option>Taller de Planeación Estratégica</option>
+                                            </select>
+                                <label>Empresa
+                                <span class="small">Escriba el nombre de su organización</span>
+                                </label>
+                                <input type="text" name="company" id="company" />
+                                <label>Comentarios
+                                <span class="small">Dudas o preguntas</span>
+                                </label>
+                                <textarea name="comments" id="comments" rows="7"
+                                cols="40"></textarea>
+                                <button type="submit">Enviar</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <p>Gracias por su interés, pronto nos pondremos en contacto con usted.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div class="content">
+            </div>
+            <div class="copyright">Created by <a href="#">Click</a> | www.clicksistemas.com.mx</div>
+        </div>
+    </body>
+</html>

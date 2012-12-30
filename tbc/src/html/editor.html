@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="planeacion, estrategia, estrategica, negocio, indicador, desempeño"/>
+        <meta name="description" content="The Business Coach"/>
+        <meta name="author" content="Eddy Zavaleta (ezavaleta@clicksistemas.com.mx)" />
+        <meta name="copyright" content="2010 Click TI, S. A. de C. V." />
+        <title>The Business Coach</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <script type="text/javascript" src="wym/jquery.js"></script>
+        <script type="text/javascript" src="wym/jquery.wymeditor.js"></script>
+        <script type="text/javascript">
+            //<![CDaTa[
+            jQuery(function() {
+                jQuery('.editor').wymeditor({
+                    html: '<h1>Titulo</h1><p>Texto.</p>',
+                    logoHtml: '',
+                    classesItems: [
+                        {'name': 'clear', 'title': 'P: Clear', 'expr': 'p'},
+                        {'name': 'column', 'title': 'UL: Column', 'expr': 'ul'},
+                        {'name': 'border', 'title': 'TB: Border', 'expr': 'table'}
+                    ],
+                    preInit: function(wym) {
+                        wym._options.toolsItems[16].name = "MyPreview";
+                    },
+                    postInit: function(wym) {
+                        jQuery(wym._box).find(wym._options.containersSelector)
+                            .removeClass('wym_dropdown')
+                            .addClass('wym_panel')
+                            .find('h2 > span')
+                            .remove();
+                        jQuery(wym._box).find('li.wym_tools_preview a')
+                            .click(doPreview);
+                        jQuery(wym._box).find(wym._options.iframeSelector)
+                            .css('height', '400px');
+                    }
+                });
+            });
+
+            function doPreview() {
+                document.editForm.action = "preview.php";
+                document.editForm.target = "Preview_Window";
+                document.editForm.code.value = jQuery.wymeditors(0).xhtml();
+
+                window.open('about:blank','Preview_Window');
+                document.editForm.submit();
+
+                return false;
+            }
+
+            function doSave() {
+                document.editForm.action = "admin.php";
+                document.editForm.target = "";
+                document.editForm.code.value = jQuery.wymeditors(0).xhtml();
+                document.editForm.submit();
+
+                return true;
+            }
+            //]]>
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <div class="content">
+                <div id="logo">
+                    <a href="Home">
+                        <img src="images/logo.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div class="content">
+                <div class="text-content">
+                    <textarea class="editor" cols="" rows=""></textarea>
+                    <form name="editForm" method="post" action="">
+                        <input type="submit" name="save" value="Guardar" onclick="doSave();"/>
+                        <input type="hidden" name="code" id="code" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
