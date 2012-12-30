@@ -22,9 +22,9 @@
           <p class="navbar-text pull-left">&#9733; Crea nuevos recuerdos &#9733;</p>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-              <li><a href="home">Inicio</a></li>
+              <li><a href="/">Inicio</a></li>
               <li><a href="calendars">Calendarios</a></li>
-              <!--<li><a href="notebooks">Cuadernos</a></li>-->
+              <li><a href="notebooks">Cuadernos</a></li>
               <li class="active"><a href="#">Contacto</a></li>
             </ul>
           </div>

@@ -30,8 +30,8 @@
 		}
 		
 		// ok, field validations are ok
-		$to      = "eddy@mictlanix.org";
-		//$to      = "info@tinbox.mx, judith@tinbox.mx";
+		//$to      = "eddy@mictlanix.org";
+		$to      = "info@tinbox.mx, judith@tinbox.mx";
 		$from		 = "website@tinbox.mx";
 		$subject = "Tinbox - Sitio Web";
 		$body    = "Nombre: ".$_POST["name"]."\n".

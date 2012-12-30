@@ -24,7 +24,7 @@
             <ul class="nav pull-right">
               <li class="active"><a href="#">Inicio</a></li>
               <li><a href="calendars">Calendarios</a></li>
-              <!--<li><a href="notebooks">Cuadernos</a></li>-->
+              <li><a href="notebooks">Cuadernos</a></li>
               <li><a href="contact">Contacto</a></li>
             </ul>
           </div>
@@ -76,8 +76,7 @@
 	          	<img src="images/notebooks.png" alt="Cuadernos">
 	          </h2>
 	          <p>Crea tus propias memorias. Regálaselo a tus clientes, a tus amigos, a quien tú quieras! Ideal para la oficina y el colegio.<br/>¿Cuál quieres? Escoge el tuyo.</p>
-	          <p><a href="javascript:void(0)">Próximamente</a></p>
-	          <!--<p><a href="notebooks">Ver detalles &raquo;</a></p>-->
+	          <p><a href="notebooks">Ver detalles &raquo;</a></p>
 	        </div>
       	</div>
 

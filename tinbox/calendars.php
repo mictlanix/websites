@@ -23,9 +23,9 @@
           <p class="navbar-text pull-left">&#9733; Crea nuevos recuerdos &#9733;</p>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-              <li><a href="home">Inicio</a></li>
+              <li><a href="/">Inicio</a></li>
               <li class="active"><a href="#">Calendarios</a></li>
-              <!--<li><a href="notebooks">Cuadernos</a></li>-->
+              <li><a href="notebooks">Cuadernos</a></li>
               <li><a href="contact">Contacto</a></li>
             </ul>
           </div>
@@ -265,7 +265,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/slides.jquery.min.js"></script>
-		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="js/jquery.colorbox.min.js"></script>
 		<script>
 		(function(){
 			var imgList = [];
@@ -275,7 +275,9 @@
 										"images/calendar-sizes-bg.png"];
 			
 			for(var i in imgArr) {
-				imgList.push(new Image(imgArr[i]));
+			  var img = document.createElement("img");
+			  img.src = imgArr[i];
+				imgList.push(img);
 			}
 		})();
 		

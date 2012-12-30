@@ -1,3 +1,7 @@
+@import url(//fonts.googleapis.com/css?family=Cabin+Sketch);
+@import url(//fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(../fonts/roughtrad/stylesheet.css);
+
 html, body {
   margin: 0;
   padding: 0;
@@ -59,6 +63,9 @@ button {
 }
 .go-to-up.gray-beige {
 	background-position:-144px 0;
+}
+.go-to-up.gray-green2 {
+	background-position:-192px 0;
 }
 /* CAROUSEL
 -------------------------------------------------- */
@@ -597,16 +604,145 @@ button.subscribe-it {
 #howtobuy #close {
 	float:right;
 }
-/* CALENDARS CSS
+/* NOTEBOOK CSS
 -------------------------------------------------- */
 
 .notebook-bg {
   width:100%;
   background:url(../images/brick-bg.gif);
   position:relative;
-  padding:41px 0 40px;
+  padding:40px 0 100px;
 }
-
+.roundabout-holder {
+  list-style:none;
+  padding:0;
+  margin:0;
+  height:400px;
+  width:400px;
+}
+.roundabout-moveable-item {
+  height:368px;
+  width:312px;
+  cursor:pointer;
+}
+.roundabout-in-focus {
+  cursor: auto;
+}
+.roundabout-moveable-item img {
+  position:absolute;
+  bottom:0px;
+  box-shadow:black 4px 4px 8px;
+}
+.roundabout-moveable-item[data-key="junior"] img {
+  left:23px;
+}
+.roundabout-moveable-item[data-key="mini"] img {
+  left:46px;
+}
+#nb-size-desc {
+  margin:35px 30px;
+  padding:1px 0 20px;
+  height:320px;
+  color:#402211;
+  text-align:center;
+  background:rgba(38,202,211,0.7);
+  border-radius:20px;
+}
+#nb-size-desc p {
+  font:40px/44px 'WC RoughTrad', 'Sketch Rockwell', 'Cabin Sketch';
+}
+#nb-size-desc b {
+  color:#F8E0A4;
+}
+#nb-size-desc small {
+  font-size:34px;
+}
+#nb-size-desc .junior {
+  margin:78px 0 0;
+}
+#nb-size-desc .maxi {
+  display:none;
+  margin:78px 0 0;
+}
+#nb-size-desc .mini {
+  display:none;
+  margin:60px 0 0;
+}
+.nb-green-bg {
+  width:100%;
+  background:#00A19A;
+  position:relative;
+  padding:68px 0 60px;
+}
+.nb-catalog-title {
+  position:absolute;
+  top:-67px;
+  width:100%;
+  height:134px;
+	background:url("../images/nb-catalog-bg.png") repeat-x center top;
+	text-align:center;
+}
+.nb-catalog-title h1 {
+  margin-top:24px;
+  font:63px 'WC RoughTrad', 'Sketch Rockwell', 'Cabin Sketch';
+  color:#F8E0A4;
+}
+.nb-catalog-menu {
+  margin:30px 0;
+  padding:1px 20px;
+  height:22px;
+  background:#F8E0A4;
+  border-radius:18px;
+}
+.nb-catalog-menu ul {
+  margin-top:-4px;
+  list-style:none;
+  font:20px 'Arial Black';
+}
+.nb-catalog-menu li {
+  margin-right:15px;
+  padding:1px;
+  float:left;
+  width:30px;
+  height:30px;
+  text-align:center;
+}
+.nb-catalog-menu li.active {
+  border-radius:15px;
+  background:#F9B233;
+}
+.nb-catalog-menu li a {
+  display:block;
+  margin:4px 0;
+  color:#402211;
+  text-decoration:none;
+}
+.nb-models {
+	margin:60px auto 60px;
+}
+.nb-models ul.baraja-container {
+  width:224px;
+}
+.nb-models ul.baraja-container li {
+  background:none;
+}
+.nb-models li img {
+  position:absolute;
+	display:block;
+}
+.nb-models li img:first-child {
+	margin:12px 0 0 12px;
+}
+#nb-model-name {
+  margin:60px auto 0;
+  padding:22px 0;
+  width:76px;
+  border-radius:38px;
+  background:#F9B233;
+  color:#402211;
+  text-align:center;
+  font:32px/32px 'Arial Black';
+}
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
