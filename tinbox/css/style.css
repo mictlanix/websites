@@ -700,7 +700,7 @@ button.subscribe-it {
   font:20px 'Arial Black';
 }
 .nb-catalog-menu li {
-  margin-right:15px;
+  margin-right:28px;
   padding:1px;
   float:left;
   width:30px;
@@ -735,8 +735,8 @@ button.subscribe-it {
 }
 #nb-model-name {
   margin:60px auto 0;
-  padding:22px 0;
-  width:76px;
+  padding:25px 0;
+  width:82px;
   border-radius:38px;
   background:#F9B233;
   color:#402211;

@@ -110,7 +110,7 @@
 		<script src="js/jquery.baraja.js"></script>
 		<script>
 		function buildFilters(){
-    	var filters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","P","R","S","T","U","V"];
+    	var filters = ["A","B","C","D","E","F","G","H","I","L","M","N","P","R","T"];
     	var list = $(".nb-catalog-menu ul");
     	
     	for (var i in filters) {
@@ -122,41 +122,47 @@
     	
     	$(".nb-catalog-menu li:first").addClass("active");
     }
-		  
+    
+		function in_array(arr, val) {
+      for(var i=0;i<arr.length;i++) {
+        if(arr[i] === val) {
+          return true;
+        }
+      }
+      return false;
+    }
+    
     function buildBaraja(model){
-    	var models = ["A1","A2","A3","A4","A5","A6","A7","A8","A12",
-    				  "B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12","B13",
-    				  "C1","C2",
-    				  "D1","D2","D3","D4",
-    				  "E1","E2","E3","E4","E5",
-    				  "F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20",
-    				  "G1","G2","G3","G4","G5","G6",
-    				  "H1","H2","H3","H4","H5","H6","H7",
-    				  "I1","I2","I3","I4","I5",
-    				  "J1","J2","J3","J4","J5","J6","J7",
-    				  "K1","K2","K3","K4","K5","K6","K7","K8",
-    				  "L1","L2","L3","L4","L5","L6","L7","L8",
-    				  "M1","M2","M3","M4","M5","M6","M7","M8",
-    				  "P1","P2","P3","P4","P5","P6","P7","P8","P9",
-    				  "R1","R2",
-    				  "S1","S2","S3","S4",
-    				  "T1","T2","T3","T4","T5","T6","T7","T8","T9","T10","T11","T12","T13","T14","T15","T16","T17","T18","T19","T20",
-    				  "U1","U2","U3","U4",
-    				  "V1","V2","V3","V4"];
+    	var models = {"A":{first:1,last:36,exclude:[12]},
+                    "B":{first:1,last:27,exclude:[]},
+                    "C":{first:1,last:09,exclude:[]},
+                    "D":{first:1,last:09,exclude:[]},
+                    "E":{first:1,last:09,exclude:[]},
+                    "F":{first:1,last:18,exclude:[]},
+                    "G":{first:1,last:09,exclude:[]},
+                    "H":{first:1,last:27,exclude:[]},
+                    "I":{first:1,last:09,exclude:[]},
+                    "L":{first:1,last:18,exclude:[]},
+                    "M":{first:1,last:09,exclude:[]},
+                    "N":{first:1,last:09,exclude:[]},
+                    "P":{first:1,last:09,exclude:[]},
+                    "R":{first:1,last:09,exclude:[]},
+                    "T":{first:1,last:36,exclude:[]}};
+      
     	var html_items = $("<ul></ul>");
-    	
-    	for (var i in models) {
-    		var m = models[i];
-    		
-    		if(m.charAt(0) !== model)
-    		  continue;
-    		
-    		var e = $("<li><img alt=''/><img src='images/nb-card.png' alt=''/></li>");
-    		e.attr("data-key", m);
-    		$("img:first", e).attr("src", "nb/" + m + ".jpg");
-    		
-    		html_items.append(e);
-    	}
+  		var m = models[model];
+    	    	
+      for (var i = m.first; i <= m.last; i++) {
+        if(in_array (m.exclude, i))
+          continue;
+        
+        var item = model + i;
+        var e = $("<li><img alt=''/><img src='images/nb-card.png' alt=''/></li>");
+        e.attr("data-key", item);
+        $("img:first", e).attr("src", "nb/" + item + ".jpg");
+        
+        html_items.append(e);
+      }
     	
     	return html_items.children();
     }
@@ -172,6 +178,7 @@
       });
       
       var baraja = $('#nb-baraja').baraja({
+        speed:400,
         focusCallback: function(){
           $('#nb-model-name').html($(this).data('key'));
         }

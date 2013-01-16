@@ -32,7 +32,7 @@
 		// if we want to specify a selector that triggers the previous() function
 		prevEl : '',
 		// default transition speed
-		speed : 300,
+		speed : 500,
 		// default transition easing
 		easing : 'ease-in-out',
 		focusCallback: function() {}
@@ -507,7 +507,7 @@
 
 				var $el = $( this );
 
-				self._setTransition( $el, 'all', 500, 'ease-out', i * 200 );
+				self._setTransition( $el, 'all', self.options.speed, 'ease-out', i * 120 );
 				self._applyTransition( $el, { transform : 'none', opacity : 1 }, function() {
 
 					++cnt;
