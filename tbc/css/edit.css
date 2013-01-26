@@ -22,13 +22,14 @@ input.text {
 }
 button {
     display:inline-block;
-    float:right;
     border:none;
-    cursor:pointer;
+    float:right;
     font-size:12px;
     text-align:center;
     color:#FFFFFF;
     background:url(../images/button.gif) 0 0 no-repeat;
     width:76px;
     height:25px;
+    /*clear: both;*/
+    cursor:pointer;
 }

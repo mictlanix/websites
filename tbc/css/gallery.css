@@ -9,26 +9,26 @@
     height:100%;
 }
 .slideshow-images-visible {
-    margin-left:0;
+    margin-left: 0;
 }
 .slideshow-images-prev {
-    margin-left:-500px;
+    margin-left: -500px;
 }
 .slideshow-images-next {
-    margin-left:500px;
+    margin-left: 500px;
 }
 .slideshow-controller {
     top:92%;
 }
 .bg_slideshow form {
-    margin:0 auto;
+    margin: 0 auto;
     width:950px;
-    background:white;
-    text-align:right;
-    padding:5px;
+    background: white;
+    text-align: right;
+    padding: 5px;
 }
 .text-content form {
-    text-align:right;
+    text-align: right;
 }
 input.file  {
     float: left;
