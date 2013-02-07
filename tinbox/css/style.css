@@ -691,7 +691,7 @@ button.subscribe-it {
   margin:30px 0;
   padding:1px 20px;
   height:22px;
-  background:#F8E0A4;
+  background:#FF5363;//#F8E0A4;
   border-radius:18px;
 }
 .nb-catalog-menu ul {
@@ -700,7 +700,7 @@ button.subscribe-it {
   font:20px 'Arial Black';
 }
 .nb-catalog-menu li {
-  margin-right:28px;
+  margin-right:20px;
   padding:1px;
   float:left;
   width:30px;
@@ -709,12 +709,15 @@ button.subscribe-it {
 }
 .nb-catalog-menu li.active {
   border-radius:15px;
-  background:#F9B233;
+  background:#fff;//#F9B233;
+}
+.nb-catalog-menu li.active a {
+  color:red;
 }
 .nb-catalog-menu li a {
   display:block;
   margin:4px 0;
-  color:#402211;
+  color:#fff;//#402211;
   text-decoration:none;
 }
 .nb-models {
@@ -731,7 +734,7 @@ button.subscribe-it {
 	display:block;
 }
 .nb-models li img:first-child {
-	margin:12px 0 0 12px;
+	margin:11px 0 0 6px;
 }
 #nb-model-name {
   margin:60px auto 0;

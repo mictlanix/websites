@@ -110,13 +110,16 @@
 		<script src="js/jquery.baraja.js"></script>
 		<script>
 		function buildFilters(){
-    	var filters = ["A","B","C","D","E","F","G","H","I","L","M","N","P","R","T"];
+    	var filters = ["A","B","C","D","E","F","G","H","I","❤J","L","M","N","❤O","P","R","T"];
     	var list = $(".nb-catalog-menu ul");
     	
     	for (var i in filters) {
     		var f = filters[i];
     		var e = $("<li><a></a></li>");
-    		e.children("a").attr("href", "#" + f).html(f);
+    		e.children("a")
+    		 .attr("id", f.length == 1 ? f : f[1])
+    		 .attr("href", "#" + (f.length == 1 ? f : f[1]))
+    		 .html(f.length == 1 ? f : f[0]);
     		list.append(e);
     	}
     	
@@ -142,9 +145,11 @@
                     "G":{first:1,last:09,exclude:[]},
                     "H":{first:1,last:27,exclude:[]},
                     "I":{first:1,last:09,exclude:[]},
+                    "J":{first:1,last:10,exclude:[]},
                     "L":{first:1,last:18,exclude:[]},
                     "M":{first:1,last:09,exclude:[]},
                     "N":{first:1,last:09,exclude:[]},
+                    "O":{first:1,last:10,exclude:[]},
                     "P":{first:1,last:09,exclude:[]},
                     "R":{first:1,last:09,exclude:[]},
                     "T":{first:1,last:36,exclude:[]}};
@@ -193,14 +198,16 @@
         
         $(".nb-catalog-menu li.active").removeClass("active");
         $(this).parent().addClass("active");
-        
-        baraja.replace(buildBaraja($(this).text()));
+        console.log(this.href);
+        baraja.replace(buildBaraja(this.href[this.href.length-1]));
         setTimeout(function() {
           $('#nb-model-name').html($("#nb-baraja li:first").data('key'));
 				}, 1000);
       });
       
-      $(".nb-catalog-menu a:first").trigger("click");
+      //$(".nb-catalog-menu a:first").trigger("click");
+      $("#J,#O").css({fontSize:'28px',marginTop:'3px'});
+      $("#J").trigger("click");
     });
 		</script>
 		<?php include_once("_analyticstracking.php") ?>
