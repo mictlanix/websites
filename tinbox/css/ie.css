@@ -1,0 +1,14 @@
+#howtobuy .content {
+  background:transparent;
+  -ms-filter:'progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8000000,endColorstr=#D8000000)'; 
+}
+#nb-size-desc {
+  border-radius:20px;
+  background:transparent;
+  -ms-filter:'progid:DXImageTransform.Microsoft.gradient(startColorstr=#B226CAD3,endColorstr=#B226CAD3)'; 
+}
+.nb-catalog-menu {
+  background:rgb(249, 224, 264);
+  background:transparent;
+  -ms-filter:'progid:DXImageTransform.Microsoft.gradient(startColorstr=#BFF8E0A4,endColorstr=#BFF8E0A4)'; 
+}

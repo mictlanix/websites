@@ -161,6 +161,11 @@
 
 			} ).css( 'z-index', extra );
 
+			currZIndex = this.itemZIndexMin + this.itemsCount - 1;
+      $el = this.$items.filter( function() {
+        return Number( $( this ).css( 'z-index' ) ) === currZIndex;
+      });
+	    this.options.focusCallback.call($el);
 		},
 		_initEvents : function() {
 

@@ -12,6 +12,9 @@
     <link href="css/colorbox.css" rel="stylesheet" media="screen">
     <link href="css/baraja.css" rel="stylesheet" media="screen">
     <link href="css/style.css" rel="stylesheet" media="screen">
+    <!--[if lt IE 9]>
+    <link href="css/ie.css" rel="stylesheet" media="screen" >
+    <![endif]-->
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -77,7 +80,6 @@
       </div>
     </div>
 		
-		<!-- FOOTER -->
 		<div class="nb-green-bg">
 		  <div class="nb-catalog-title">
 		    <h1>Catálogo</h1>
@@ -91,7 +93,11 @@
             <li><img alt=''/><img src='images/nb-card.png' alt=''/></li>
           </ul>
         </div>
-				<div id="nb-model-name">A1</div>
+				<div class="nb-model-container">
+				  <a id="nb-prev" class="arrow-left" href="#"></a>
+				  <span id="nb-model-name">&nbsp;</span>
+				  <a id="nb-next" class="arrow-right" href="#"></a>
+				</div>
 			</div>
 		</div>
 
@@ -110,7 +116,7 @@
 		<script src="js/jquery.baraja.js"></script>
 		<script>
 		function buildFilters(){
-    	var filters = ["A","B","C","D","E","F","G","H","I","❤J","L","M","N","❤O","P","R","T"];
+    	var filters = ["A","B","C","D","E","F","G","H","I","♥J","L","M","N","♥O","P","R","T"];
     	var list = $(".nb-catalog-menu ul");
     	
     	for (var i in filters) {
@@ -156,13 +162,13 @@
       
     	var html_items = $("<ul></ul>");
   		var m = models[model];
-    	    	
+    	
       for (var i = m.first; i <= m.last; i++) {
         if(in_array (m.exclude, i))
           continue;
         
         var item = model + i;
-        var e = $("<li><img alt=''/><img src='images/nb-card.png' alt=''/></li>");
+        var e = $("<li><img alt=''/><img src='images/nb-card-pink.png' alt=''/></li>");
         e.attr("data-key", item);
         $("img:first", e).attr("src", "nb/" + item + ".jpg");
         
@@ -198,15 +204,27 @@
         
         $(".nb-catalog-menu li.active").removeClass("active");
         $(this).parent().addClass("active");
-        console.log(this.href);
+
         baraja.replace(buildBaraja(this.href[this.href.length-1]));
+        
         setTimeout(function() {
           $('#nb-model-name').html($("#nb-baraja li:first").data('key'));
 				}, 1000);
       });
       
+      // navigation
+      $('#nb-prev' ).on('click',function(e){
+        e.preventDefault();
+        baraja.previous();
+      });
+      
+      $('#nb-next' ).on('click',function(e){
+        e.preventDefault();
+        baraja.next();
+      });
+				
       //$(".nb-catalog-menu a:first").trigger("click");
-      $("#J,#O").css({fontSize:'28px',marginTop:'3px'});
+      $("#J,#O").css({fontSize:'28px',marginTop:'3px',color:'red'});
       $("#J").trigger("click");
     });
 		</script>

@@ -11,6 +11,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/colorbox.css" rel="stylesheet" media="screen">
     <link href="css/style.css" rel="stylesheet" media="screen">
+    <!--[if lt IE 9]>
+    <link href="css/ie.css" rel="stylesheet" media="screen" >
+    <![endif]-->
   </head>
   <body>		
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -286,9 +289,10 @@
 			
 			for(var i = 1; i < 13; i++){
 				var e = $("<li class='span3'><a href='' class='thumbnail'><img src='' alt=''></a></li>");
-						
-				$("img", e).attr("src", "examples/" + model + "/" + size + "/thumbs/" + ("0" + i).substr(-2) + ".jpg");
-				$("a", e).attr("href","examples/" + model + "/" + size + "/" + ("0" + i).substr(-2) + ".jpg").addClass(model);
+				var fmt = i > 9 ? i.toString() : "0" + i;
+				
+				$("img", e).attr("src", "examples/" + model + "/" + size + "/thumbs/" + fmt + ".jpg");
+				$("a", e).attr("href","examples/" + model + "/" + size + "/" + fmt + ".jpg").addClass(model);
 				
 				container.append(e);
 			}			
