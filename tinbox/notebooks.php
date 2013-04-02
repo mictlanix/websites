@@ -116,7 +116,7 @@
 		<script src="js/jquery.baraja.js"></script>
 		<script>
 		function buildFilters(){
-    	var filters = ["A","B","C","D","E","F","G","H","I","♥J","L","M","N","♥O","P","R","T"];
+    	var filters = ["A","B","C","D","E","F","G","H","I","J","L","M","N","O","P","Q","R","T"];
     	var list = $(".nb-catalog-menu ul");
     	
     	for (var i in filters) {
@@ -129,7 +129,8 @@
     		list.append(e);
     	}
     	
-    	$(".nb-catalog-menu li:first").addClass("active");
+      $('.nb-catalog-menu li').css({marginLeft:'19px'});
+    	$(".nb-catalog-menu li:first").css({marginLeft:0}).addClass("active");
     }
     
 		function in_array(arr, val) {
@@ -157,6 +158,7 @@
                     "N":{first:1,last:09,exclude:[]},
                     "O":{first:1,last:10,exclude:[]},
                     "P":{first:1,last:09,exclude:[]},
+                    "Q":{first:1,last:09,exclude:[]},
                     "R":{first:1,last:09,exclude:[]},
                     "T":{first:1,last:36,exclude:[]}};
       
@@ -224,8 +226,8 @@
       });
 				
       //$(".nb-catalog-menu a:first").trigger("click");
-      $("#J,#O").css({fontSize:'28px',marginTop:'3px',color:'red'});
-      $("#J").trigger("click");
+      //$("#J,#O").css({fontSize:'28px',marginTop:'3px',color:'red'});
+      $('#Q').trigger("click");
     });
 		</script>
 		<?php include_once("_analyticstracking.php") ?>
