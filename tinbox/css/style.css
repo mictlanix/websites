@@ -672,7 +672,7 @@ button.subscribe-it {
 }
 .nb-green-bg {
   width:100%;
-  background:#25CAD3 url(../images/nb-hearts-bg.png) -250px 0;
+  background:#25CAD3 url(../images/nb-bg-04.png) center bottom;
   position:relative;
   padding:68px 0 60px;
 }
@@ -762,7 +762,7 @@ button.subscribe-it {
 	height:0;
 	border-top:20px solid transparent;
 	border-bottom:20px solid transparent;	
-	border-left:20px solid #F9B233;
+	border-left:20px solid #BE1621;
 	vertical-align:middle;
 }
 .arrow-left {
@@ -771,7 +771,7 @@ button.subscribe-it {
 	height:0; 
 	border-top:20px solid transparent;
 	border-bottom:20px solid transparent;
-	border-right:20px solid #F9B233;
+	border-right:20px solid #BE1621;
 	vertical-align:middle;
 }
 /* RESPONSIVE CSS

@@ -170,7 +170,7 @@
           continue;
         
         var item = model + i;
-        var e = $("<li><img alt=''/><img src='images/nb-card-pink.png' alt=''/></li>");
+        var e = $("<li><img alt=''/><img src='images/nb-card-04.png' alt=''/></li>");
         e.attr("data-key", item);
         $("img:first", e).attr("src", "nb/" + item + ".jpg");
         
