@@ -47,8 +47,8 @@ function myheader ($title, $slideshow = FALSE, $style = NULL, $script = NULL, $w
     indent_line ("<title>$title</title>", 2);
     header_meta ("keywords", "planeacion, estrategia, estrategica, negocio, indicador, desempeño");
     header_meta ("description", "The Business Coach");
-    header_meta ("author", "Eddy Zavaleta <eddy@mictlanix.org>");
-    header_meta ("copyright", "2011 © mictlanix.org");
+    header_meta ("author", "Eddy Zavaleta <eddy@mictlanix.com>");
+    header_meta ("copyright", "2010-2013 Eddy Zavaleta, Mictlanix, and contributors.");
     if($slideshow)
     {
         header_css ("/css/slideshow.css");
@@ -249,7 +249,7 @@ function footer_element ($content = NULL)
         indent_content ($content, $indent);
 
     indent_line ("</div>", --$indent);
-    indent_line ("<div class=\"copyright\">Powered by <a href=\"http://mictlanix.org\">mictlanix</a> | mictlanix.org</div>", $indent);
+    indent_line ("<div class=\"copyright\">Created by <a href=\"http://mictlanix.com\">Mictlanix</a> | www.mictlanix.com</div>", $indent);
     indent_line ("</div>", --$indent);
 }
 

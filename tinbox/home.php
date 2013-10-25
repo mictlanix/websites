@@ -37,7 +37,7 @@
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <div class="img" style="background-image:url(images/slide-201304.jpg)"></div>
+          <div class="img" style="background-image:url(images/slide-201307.jpg)"></div>
         </div>
         <div class="item">
           <div class="img" style="background-image:url(images/slide02.jpg)"></div>

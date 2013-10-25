@@ -103,7 +103,7 @@
 
 		<!-- FOOTER -->
 		<div class="graybg clearfix">
-			<div class="to-up"><a href="#" class="go-to-up gray-green2"></a></div>
+			<div class="to-up"><a href="#" class="go-to-up gray-green3"></a></div>
 			<?php include '_contactus.php';?>
 		</div>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -158,7 +158,7 @@
                     "N":{first:1,last:09,exclude:[]},
                     "O":{first:1,last:10,exclude:[]},
                     "P":{first:1,last:09,exclude:[]},
-                    "Q":{first:1,last:09,exclude:[]},
+                    "Q":{first:10,last:14,exclude:[]},
                     "R":{first:1,last:09,exclude:[]},
                     "T":{first:1,last:36,exclude:[]}};
       
@@ -177,6 +177,18 @@
         html_items.append(e);
       }
     	
+      for (var i = 1; i < m.first; i++) {
+        if(in_array (m.exclude, i))
+          continue;
+        
+        var item = model + i;
+        var e = $("<li><img alt=''/><img src='images/nb-card-04.png' alt=''/></li>");
+        e.attr("data-key", item);
+        $("img:first", e).attr("src", "nb/" + item + ".jpg");
+        
+        html_items.append(e);
+      }
+      
     	return html_items.children();
     }
     
@@ -224,7 +236,7 @@
         e.preventDefault();
         baraja.next();
       });
-				
+			
       //$(".nb-catalog-menu a:first").trigger("click");
       //$("#J,#O").css({fontSize:'28px',marginTop:'3px',color:'red'});
       $('#Q').trigger("click");

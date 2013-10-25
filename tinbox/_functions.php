@@ -24,7 +24,7 @@ function save_email($email, $active = 1) {
 	}
 	
 	try {
-	  $dbh = new PDO('mysql:host='.$db_host.';dbname='.$db_name.';charset=utf-8', $db_user, $db_password);
+	  $dbh = new PDO('mysql:host='.$db_host.';dbname='.$db_name.';charset=utf8', $db_user, $db_password);
 	  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  
 	  $sth = $dbh->prepare('SELECT active FROM subscriber WHERE email = :email');

@@ -68,6 +68,9 @@ button {
 .go-to-up.gray-green2 {
 	background-position:-192px 0;
 }
+.go-to-up.gray-green3 {
+	background-position:-240px 0;
+}
 /* CAROUSEL
 -------------------------------------------------- */
 .carousel {
@@ -672,7 +675,7 @@ button.subscribe-it {
 }
 .nb-green-bg {
   width:100%;
-  background:#25CAD3 url(../images/nb-bg-04.png) center bottom;
+  background:#6bbe9b url(../images/nb-bg-06.png) center center;
   position:relative;
   padding:68px 0 60px;
 }

@@ -73,8 +73,8 @@ $files = get_slideshow_data ();
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="keywords" content="planeacion, estrategia, estrategica, negocio, indicador, desempeño"/>
         <meta name="description" content="The Business Coach"/>
-        <meta name="author" content="Eddy Zavaleta (ezavaleta@clicksistemas.com.mx)" />
-        <meta name="copyright" content="2010 Click TI, S. A. de C. V." />
+        <meta name="author" content="Eddy Zavaleta (eddy@mictlanix.com)" />
+        <meta name="copyright" content="2010-2013 Eddy Zavaleta, Mictlanix, and contributors." />
         <title>The Business Coach</title>
         <link rel="stylesheet" type="text/css" href="css/slideshow.css"/>
         <link rel="stylesheet" type="text/css" href="css/gallery.css"/>
