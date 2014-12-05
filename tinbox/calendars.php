@@ -55,7 +55,7 @@
 												Cartulina premium con caballete y<br/>
 												arillo metálico.
 											</p>
-											<p class="price">$100</p>
+											<p class="price">$128</p>
 										</div>
 		              </div>
 		            </div>
@@ -73,7 +73,7 @@
 												Cartulina premium con caballete y<br/>
 												arillo metálico.
 											</p>
-											<p class="price">$110</p>
+											<p class="price">$140</p>
 										</div>
 		              </div>
 		            </div>
@@ -91,7 +91,7 @@
 												Cartulina premium con caja de
 												acrílico.
 											</p>
-											<p class="price">$90</p>
+											<p class="price">$115</p>
 										</div>
 		              </div>
 		            </div>
@@ -109,7 +109,7 @@
 												Cartulina premium con caballete y<br/>
 												arillo metálico.
 											</p>
-											<p class="price">$110</p>
+											<p class="price">$140</p>
 										</div>
 		              </div>
 		            </div>
@@ -127,16 +127,16 @@
 												Cartulina premium con colgador<br/>
 												para pared y arillo metálico.
 											</p>
-											<p class="price">$155</p>
+											<p class="price">$190</p>
 										</div>
 		              </div>
 		            </div>
 		            
 		            <div>
 		              <div class="content vertical span">
-										<h1>Poster</h1>
+										<h1>Póster</h1>
 	                	<div class="image">
-											<img src="images/calendar-size-poster.png" alt="Calendario Poster" style="margin-top:-108px" />
+											<img src="images/calendar-size-poster.png" alt="Calendario Póster" style="margin-top:-108px" />
 	                	</div>
 										<div class="description">
 											<p class="hilite">¡Perfecto para decorar la pared!</p> 
@@ -145,7 +145,7 @@
 												Cartulina premium con colgador<br/>
 												para pared y arillo metálico.
 											</p>
-											<p class="price">$280</p>
+											<p class="price">$335</p>
 										</div>
 		              </div>
 		            </div>
@@ -176,37 +176,37 @@
 	              <li class="">
 	              	<a href="#1" title="Mini">
 	              		<img src="images/slider-position-mini.png" alt="Mini"/>
-	              		<span>$100</span>
+	              		<span>$128</span>
 	             		</a>
 	           		</li>
 	              <li class="">
 	              	<a href="#2" title="Escritorio">
 	              		<img src="images/slider-position-desk.png" alt="Escritorio"/>
-	              		<span>$110</span>
+	              		<span>$140</span>
 	             		</a>
 	           		</li>
 	              <li class="">
 	              	<a href="#3" title="CD">
 	              		<img src="images/slider-position-cd.png" alt="CD"/>
-	              		<span>$90</span>
+	              		<span>$115</span>
 	             		</a>
 	           		</li>
 	              <li class="">
 	              	<a href="#4" title="Postal">
 	              		<img src="images/slider-position-postal.png" alt="Postal"/>
-	              		<span>$110</span>
+	              		<span>$140</span>
 	             		</a>
 	           		</li>
 	              <li class="">
 	              	<a href="#5" title="Organizador">
 	              		<img src="images/slider-position-org.png" alt="Organizador"/>
-	              		<span>$155</span>
+	              		<span>$190</span>
 	             		</a>
 	           		</li>
 	              <li class="last">
-	              	<a href="#6" title="Poster">
-	              		<img src="images/slider-position-poster.png" alt="Poster"/>
-	              		<span>$280</span>
+	              	<a href="#6" title="Póster">
+	              		<img src="images/slider-position-poster.png" alt="Póster"/>
+	              		<span>$335</span>
 	             		</a>
 	           		</li>
 	           		<!--
@@ -254,8 +254,8 @@
 				<h1>Pide tus calendarios</h1>
 				<p>Vía correo electrónico a <a href="mailto:info@tinbox.mx" target="_blank">info@tinbox.mx</a> o por teléfono al <a href="tel:5556723912" target="_blank">(55) 5672-3912</a>.</p>
 			  <ol>
-			  	<li>Descarga el <a href="downloads/base-2013.xls" target="_blank"><i class="icon-download-alt icon-white"></i>formato</a>
-			  			y sus <br/><a href="downloads/instrucciones-2013.pdf" target="_blank"><i class="icon-download-alt icon-white"></i>instrucciones</a> de llenado.</li>
+			  	<li>Descarga el <a href="downloads/base-2014.xls" target="_blank"><i class="icon-download-alt icon-white"></i>formato</a>
+			  			y sus <br/><a href="downloads/instrucciones-2014.pdf" target="_blank"><i class="icon-download-alt icon-white"></i>instrucciones</a> de llenado.</li>
 			  	<li>LLena el formato y mándalo a nuestro <br/><a href="mailto:info@tinbox.mx" target="_blank"><i class="icon-envelope icon-white"></i> correo electrónico</a>, escribenos si tienes alguna duda.</li>
 			  	<li>Espera la confirmación de tu pedido e instrucciones de pago.</li>
 			  	<li>Confirma el pago mandando tu comprobante vía <a href="mailto:info@tinbox.mx" target="_blank"><i class="icon-envelope icon-white"></i> correo electrónico</a>.</li>

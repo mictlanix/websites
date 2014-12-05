@@ -37,16 +37,22 @@
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <div class="img" style="background-image:url(images/slide-201307.jpg)"></div>
+          <div class="img" style="background-image:url(images/slide-2014-wt.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide02.jpg)"></div>
+          <div class="img" style="background-image:url(images/slide-2014-corp.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide03.jpg)"></div>
+          <div class="img" style="background-image:url(images/slide-2014-hombre.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide04.jpg)"></div>
+          <div class="img" style="background-image:url(images/slide-2014-80s.jpg)"></div>
+        </div>
+        <div class="item">
+          <div class="img" style="background-image:url(images/slide-2014-seasons.jpg)"></div>
+        </div>
+        <div class="item">
+          <div class="img" style="background-image:url(images/slide-2014-fotocal.jpg)"></div>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
