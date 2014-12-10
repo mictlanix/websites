@@ -37,22 +37,28 @@
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <div class="img" style="background-image:url(images/slide-2014-wt.jpg)"></div>
+          <div class="img" style="background-image:url(images/slides-2015-01.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide-2014-corp.jpg)"></div>
+          <div class="img" style="background-image:url(images/slides-2015-02.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide-2014-hombre.jpg)"></div>
+          <div class="img" style="background-image:url(images/slides-2015-03.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide-2014-80s.jpg)"></div>
+          <div class="img" style="background-image:url(images/slides-2015-04.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide-2014-seasons.jpg)"></div>
+          <div class="img" style="background-image:url(images/slides-2015-05.jpg)"></div>
         </div>
         <div class="item">
-          <div class="img" style="background-image:url(images/slide-2014-fotocal.jpg)"></div>
+          <div class="img" style="background-image:url(images/slides-2015-06.jpg)"></div>
+        </div>
+        <div class="item">
+          <div class="img" style="background-image:url(images/slides-2015-07.jpg)"></div>
+        </div>
+        <div class="item">
+          <div class="img" style="background-image:url(images/slides-2015-08.jpg)"></div>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
