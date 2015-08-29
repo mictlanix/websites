@@ -317,3 +317,13 @@ button:active {
   		display:block;
 	}
 }
+
+#special-offer {
+	position:fixed;
+	right:35px;
+	top:70px;
+	width:166px;
+	height:162px;
+	background:url(images/oferta-st.png) no-repeat;
+	z-index:999;
+}
