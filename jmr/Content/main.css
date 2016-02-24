@@ -318,12 +318,12 @@ button:active {
 	}
 }
 
-#special-offer {
+#special-offer,#special-offer2 {
 	position:fixed;
 	right:35px;
 	top:70px;
 	width:166px;
 	height:162px;
-	background:url(images/oferta-st.png) no-repeat;
+	background:url(images/oferta-st2.png) no-repeat;
 	z-index:999;
 }
