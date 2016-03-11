@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Factura Electrónica Simple</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <style>
+    * {
+        font-family: 'Oswald', sans-serif;
+        color:#395791;
+        text-align:center;
+        margin:0;
+        padding:0;
+    }
+    html, body {
+        height:100%;
+    }
+    html { 
+        background:#4E79BA;
+    }
+    body { 
+        background:url(images/fes-logo.png) no-repeat center 30% fixed;
+        background-size:40%;
+    }
+    h2 {
+        font-size:46px;
+        font-weight:400;
+        color:#3B5B8C;
+        margin-bottom:20px;
+    }
+    footer { 
+        height:160px;
+    }
+    .wrapper {
+        min-height:100%;
+        margin:0 auto -160px; /* the bottom margin is the negative value of the footer's height */
+    }
+    a, .info {
+        font-family:'Oswald', sans-serif;
+        font-weight:300;
+        text-decoration:none;
+        text-align:center;
+    }
+    @media screen and (orientation:portrait) and (max-device-width: 736px)  {
+        body { background-size:55%; }
+        h2 { font-size:56px; }
+        footer { height:210px; }
+        .wrapper { margin-bottom:-210px;}
+        a, .info { font-size:30px; }
+    }
+    </style>
+  </head>
+  <body>
+  		<div class="wrapper"></div>
+  		<footer>
+            <h2>Próximamente</h2>
+            <p class="info"><a href="mailto:info@facturaelectronicasimple.mx">info@FacturaElectronicaSimple.mx</a></p>
+            <p class="info">Georgia 181 Col. Nápoles 03810 Ciudad de México</p>
+  		</footer>
+  </body>
+</html>
