@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Una marca orgullosamente Colombiana inspirada en la mujer sensual, soñadora que quiere verse bien.">
         <meta name="author" content="">
-        <title>FenLove</title>
+        <title>FenLove - Catálogo</title>
         <!-- favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
@@ -17,74 +17,76 @@
         <!-- styles -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/easyzoom.css" rel="stylesheet">
     </head>
-    <body>
-        <div class="my-home">
-
-            <div class="bg-y">
+    <body class="bg-p">
+        <div class="my-contact">
+            <div class="bg-p">
                 <nav class="navbar navbar-toggleable-sm navbar-inverse">
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#my-navbar" aria-controls="my-navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.html">
                         <img src="images/logo-white.png" title="FenLove" alt="FenLove">
                     </a>
                     <div class="collapse navbar-collapse" id="my-navbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.html">Catálogo</a>
+                                <a class="nav-link" href="catalog.html">Catálogo <span class="sr-only">(current)</span></a>
                             </li>
                             <!--<li class="nav-item">
                                 <a class="nav-link" href="about-us.html">Nosotros</a>
                             </li>-->
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="contact.html">Contacto</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
-                        <div class="col-12 offset-md-5 col-md-6 col-lg-5">
-                            <div class="logo">
-                                <img src="images/logo.png" title="FenLove" alt="FenLove">
+                        <h2 class="col-10 offset-1">Un pequeño saludo...</h2>
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-10 col-md-4 offset-1">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" class="form-control" id="name" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-4 offset-1 offset-md-0">
+                                <div class="form-group">
+                                    <label for="email">Correo</label>
+                                    <input type="text" class="form-control" id="email" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-8 offset-1">
+                                <div class="form-group">
+                                    <label for="subject">Asunto</label>
+                                    <input type="text" class="form-control" id="subject" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-8 offset-1">
+                                <div class="form-group">
+                                    <label for="message">Mensaje</label>
+                                    <textarea class="form-control" id="message" rows="6"></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row bg-w">
-                        <div class="col-12 offset-md-5 col-md-6 col-lg-5">
-                            <div class="description">
-                                <p>Una marca orgullosamente Colombiana inspirada en la mujer sensual, soñadora que quiere verse bien.</p>
+                        <div class="row">
+                            <div class="col-3 col-md-2 offset-7">
+                                <div class="form-group text-right">
+                                    <button type="submit" class="btn">Enviar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row bg-w hidden-sm-down">
-                        <div class="col-12 col-md-5">
-                            <div class="red-bikini">
-                                <img src="images/BikiniRojo.png" alt="Bikini Rojo" />
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
+                <div class="clearfix">&nbsp;</div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col">
-                        <div class="launch text-center">
-                            <h3>Lanzamiento</h3>
-                            <a href="catalog.html">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row bg-w">
-                    <div class="col">
-                        <div class="new-models text-center">
-                            <h3>Nuevos Modelos</h3>
-                            <span>Próximamente</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="container-fluid ">
                 <div class="row bg-b">
                     <div class="col-7">
                         <div class="social">
@@ -115,5 +117,18 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="js/easyzoom.js"></script>
+        <script>
+            $(function(){
+                var $easyzoom = $(".easyzoom").easyZoom();
+                $(".my-thumbnail img").click(function(){
+                    var api = $easyzoom.data('easyZoom');
+                    //$(".my-photo img").attr("src", this.src);
+                    api.swap(this.src, this.src);
+
+                });
+            });
+        </script>
+
     </body>
 </html>

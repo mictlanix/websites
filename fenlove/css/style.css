@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Cambay:400,400i,700,700i');
+* {
+  font-family: 'Cambay', sans-serif;
+}
+a {
+  text-decoration:none;
+  color:#fff;
+}
+.navbar-nav {
+  margin-top: 20px;
+}
+.navbar-brand img {
+  margin-top: -6px;
+}
+.nav-item {
+  margin-left: 15px;
+}
+.navbar-inverse .navbar-nav .nav-link {
+  font-size: 0.85em;
+  color:#fff;
+}
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+  display:block !important;
+}
+
+.bg-b {
+  background-color: #000;
+}
+.bg-p {
+  background-color: #ff19a7;
+}
+.bg-w {
+  background-color: #fff;
+}
+.bg-y {
+  background-color: #ffc107;
+}
+
+.social, .copyright {
+  padding: 30px 0 20px;
+}
+.social h4 {
+  font-size: 0.75em;
+  color: #fff;
+}
+.social a {
+  margin-right: 25px;
+}
+.copyright p {
+  font-size: 0.8em;
+  color: #fff;
+  margin-bottom: 0px;
+}
+.copyright a {
+  text-decoration:none;
+  color: #fff;
+}
+
+.my-home .logo {
+  margin-top: 50px;
+}
+.my-home .logo img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.my-home .description {
+  margin-bottom: 50px;
+}
+.my-home .description p {
+    padding: 0em 0.6em;
+    margin: 2% 0;
+    border-left: 0.4em solid #ff19a7;
+}
+.red-bikini {
+    position: absolute;
+    top: -600px; /* half of image height */
+    left: 10%; /* right space */
+}
+.red-bikini img {
+    display: block;
+    width: 400px;
+}
+.my-home .launch,
+.my-home .new-models {
+  margin-right: -15px;
+  margin-left: -15px;
+  height: 600px;
+  background: url(../images/lanzamiento.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.my-home .launch {
+  height: 600px;
+  background: url(../images/slide-02.jpg) no-repeat center center;
+}
+.my-home .new-models {
+  height: 628px;
+  background: url(../images/new-models.png) no-repeat center center;
+}
+.my-home .launch h3,
+.my-home .new-models h3 {
+  padding-top: 240px;
+  margin-bottom: 30px;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 20px black; 
+  color:#fff;
+}
+.my-home .launch a {
+  padding: 0.6em 1.8em 0.3em;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-decoration:none;
+  background-color: #ff19a7;
+  color:#fff;
+}
+.my-home .new-models span {
+  font-size: 1em;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 8px black; 
+  color:#fff;
+}
+.my-catalog p {
+  margin-top: 2em;
+  margin-bottom: 0;
+  font-size: 1.3em;
+  color: #a1a1a1;
+}
+.my-catalog .navbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+.my-catalog .nav-link {
+  text-shadow: 1px 1px 4px black; 
+}
+.my-catalog .slide-img {
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+}
+.my-catalog .slide1 {
+  background: url(../images/slide-01.jpg) no-repeat center center;
+}
+.my-catalog .slide1 > img,
+.my-catalog .slide2 > img,
+.my-catalog .slide3 > img {
+  margin-top: 150px;
+  margin-left: 10%;
+}
+.my-catalog .slide2 {
+  background: url(../images/slide-02.jpg) no-repeat center center;
+}
+.my-catalog .slide3 {
+  background: url(../images/slide-03.jpg) no-repeat center center;
+}
+.my-catalog #my-carousel {
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 10px #888888;
+}
+.my-catalog .my-thumbnail {
+  padding: 15px 10px;
+}
+.my-catalog .image-container img.back {
+  display: none;
+}
+.my-catalog .image-container:hover img.front {
+  display: none;
+}
+.my-catalog .image-container:hover img.back {
+  display: block !important;
+}
+.my-catalog .name,
+.my-catalog .price {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1.0em;
+  text-transform: uppercase;
+  color: #000;
+}
+.my-catalog .price {
+  margin-top: 10px;
+  padding: 3px 5px 0px;
+  line-height: 1;
+  border-left: 0.2em solid #ff19a7;
+}
+.my-catalog .col-6 .name,
+.my-catalog .col-6 .price {
+  font-size: 0.7em;
+}
+.my-product {
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 10px #888888;
+}
+.my-product #my-sheet {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 40px #777;
+}
+.my-product .my-thumbnail {
+  margin:20px 0 0 0;
+  cursor: pointer;
+}
+.my-product .my-photo {
+  margin:20px 0;
+}
+.my-product .my-detail {
+  margin-top:0.5rem;
+}
+.my-product .my-detail h1 {
+  margin-bottom: .8rem;
+  font-size: 1.4em;
+  font-weight: bold;
+  color:#ff19a7;
+}
+.my-product .my-detail h2 {
+  margin-bottom: .8rem;
+  font-size: 1.3em;
+}
+.my-product .my-detail h3 {
+  margin-bottom: .8rem;
+  font-size: 1em;
+  font-weight: bold;
+}
+.my-product .my-detail small {
+  font-size: 60%;
+}
+.my-product .my-detail strong {
+  margin-left: 8px;
+  font-weight: bolder;
+  font-size: 105%;
+  letter-spacing: 5px;
+}
+.my-product .my-detail p {
+  margin-top: -0.5rem;
+  font-size: 0.8em;
+}
+.my-product .my-detail a {
+  margin-right: 14px;
+  text-decoration:none;
+}
+.my-product .my-detail .share-buttons {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.my-contact h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #fff;
+}
+.my-contact form {
+  margin-bottom: 8rem;
+}
+.my-contact form label {
+  color: #fff;
+}
+.my-contact form input,
+.my-contact form textarea {
+  background-color: #db0087 !important;
+  color: #fff !important;
+  border: 1px solid rgba(0,0,0,.15) !important;
+  border-radius: 0;
+}
+.my-contact form button {
+  margin-top:1.5em;
+  padding: 0.8em 2em 0.4em;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-decoration:none;
+  background-color:#fff;
+  color: #ff19a7;
+  border-radius: 0;
+}
+
+/* sm */
+@media (min-width: 576px) {
+  
+}
+
+/* md */
+@media (min-width: 768px) {
+  .social, .copyright {
+    padding: 30px 50px 20px;
+  }
+  .my-home .logo {
+    margin-top: 280px;
+  }
+  .my-home .description {
+    margin-bottom: 160px;
+  }
+  .my-home .launch h3,
+  .my-home .new-models h3 {
+    font-size: 4em;
+  }
+  .my-catalog #my-carousel {
+    margin-bottom: 50px;
+  }
+  .my-catalog .my-thumbnail {
+    padding: 30px 30px;
+  }
+  .my-catalog .name,
+  .my-catalog .price {
+    font-size: 1.2em;
+  }
+  .my-catalog .col-sm-3 .name,
+  .my-catalog .col-sm-3 .price {
+    font-size: 0.9em;
+  }
+  .my-product .my-thumbnail {
+    margin:20px 0 0 30px;
+  }
+  .my-product .my-detail {
+    margin-top:30px;
+  }
+}
+/* lg */
+@media (min-width: 992px) {
+  .my-catalog .my-thumbnail {
+    padding: 20px;
+  }
+  .my-product .my-photo {
+    margin:20px 14px 20px;
+  }
+  .my-product .my-detail p {
+    font-size: 1em;
+  }
+}
