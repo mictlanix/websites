@@ -1,4 +1,8 @@
-
+<?php
+	session_start();
+	$token = md5(uniqid(rand(), true)); 
+	$_SESSION['token'] = $token;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Una marca orgullosamente Colombiana inspirada en la mujer sensual, soñadora que quiere verse bien.">
         <meta name="author" content="">
-        <title>FenLove - Catálogo</title>
+        <title>FenLove - Contacto</title>
         <!-- favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
@@ -38,7 +42,7 @@
                                 <a class="nav-link" href="about-us.html">Nosotros</a>
                             </li>-->
                             <li class="nav-item active">
-                                <a class="nav-link" href="contact.html">Contacto</a>
+                                <a class="nav-link" href="contact.php">Contacto</a>
                             </li>
                         </ul>
                     </div>
@@ -48,36 +52,37 @@
                         <h2 class="col-10 offset-1">Un pequeño saludo...</h2>
                     </div>
                     <form>
+                        <input type="hidden" name="token" value="<?php echo $token; ?>" />
                         <div class="row">
                             <div class="col-10 col-md-4 offset-1">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
-                                    <input type="text" class="form-control" id="name" placeholder="">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-10 col-md-4 offset-1 offset-md-0">
                                 <div class="form-group">
                                     <label for="email">Correo</label>
-                                    <input type="text" class="form-control" id="email" placeholder="">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-10 col-md-8 offset-1">
                                 <div class="form-group">
                                     <label for="subject">Asunto</label>
-                                    <input type="text" class="form-control" id="subject" placeholder="">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-10 col-md-8 offset-1">
                                 <div class="form-group">
                                     <label for="message">Mensaje</label>
-                                    <textarea class="form-control" id="message" rows="6"></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-3 col-md-2 offset-7">
                                 <div class="form-group text-right">
-                                    <button type="submit" class="btn">Enviar</button>
+                                    <button id="send" type="submit" class="btn">Enviar</button>
                                 </div>
                             </div>
                         </div>
@@ -114,18 +119,26 @@
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="js/easyzoom.js"></script>
         <script>
             $(function(){
-                var $easyzoom = $(".easyzoom").easyZoom();
-                $(".my-thumbnail img").click(function(){
-                    var api = $easyzoom.data('easyZoom');
-                    //$(".my-photo img").attr("src", this.src);
-                    api.swap(this.src, this.src);
+                $('form').submit(function(event) {
+                    event.preventDefault();
 
+                    if($('textarea#message').val()) {
+                        $.post("send.php", $('form').serialize(), function(data) {
+                            if(data.type === 'success') {
+                                $('form')[0].reset();
+                            } else {
+                                alert(data.message);
+                            }
+                        }, "json");
+                    }
+
+                    return false;
                 });
             });
         </script>

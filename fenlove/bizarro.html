@@ -34,11 +34,8 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="catalog.html">Catálogo <span class="sr-only">(current)</span></a>
                             </li>
-                            <!--<li class="nav-item">
-                                <a class="nav-link" href="about-us.html">Nosotros</a>
-                            </li>-->
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contacto</a>
+                                <a class="nav-link" href="contact.php">Contacto</a>
                             </li>
                         </ul>
                     </div>
@@ -68,24 +65,31 @@
                         <div class="col-12 col-sm-9 col-md-5">
                             <div class="my-photo easyzoom easyzoom--overlay">
                                 <a href="images/Bizarro/01.jpg">
-                                    <img class="w-100" src="images/Bizarro/01.jpg" alt="Bizarro">
+                                    <img class="w-100" src="images/Bizarro/01.jpg" alt="Chicle Pasion">
                                 </a>
                             </div>
                         </div>
                         <div class="col-12 col-md-5">
                             <div class="my-detail">
                                 <h1>Bizarro</h1>
-                                <h2>$1,000.00 <small>USD</small></h2>
+                                <h2>$65 <small>USD</small></h2>
+                                <h3>Tallas <strong>S M L</strong>
+                                    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#my-sizes">tabla</button>
+                                </h3>
                                 <h3>Detalle</h3>
                                 <p class="text-justify">
                                         Top estraple con un divertido diseño en la parte delantera  y un color llamativo. Cuenta con dos almohadillas para evitar que se marquen  los senos.<br>
-                                        El panty cuenta con una banda en el área de la cintura para un mejor contorno, la parte delantera cuenta con un delicado moño .
+                                        El panty cuenta con una banda en el área de la cintura para un mejor contorno, la parte delantera cuenta con un delicado moño.
                                 </p>
                                 <p>
                                     80% Nylon-Poliamida<br>
                                     20% Elastano-Spandex
                                 </p>
-                                <h3>Talla <strong>S M L</strong></h3>
+                                <ul class="list-unstyled small">
+                                    <li>*Puedes elegir tallas diferentes para Top y Bottom.</li>
+                                    <li>*Fotografía solo de referencia. La compra no incluye los productos adicionales que aparecen en la imagen.</li>
+                                    <li>*Debido a diferencias de calibración entre pantallas de ordenador, tabletas y otros dispositivos; el color de la prenda puede variar levemente de lo que estás viendo.</li>
+                                </ul>
                                 <div class="share-buttons">
                                     <a href="http://twitter.com/home?status=%23fenlove Bizarro+http://fenlove.me/bizarro.html" onclick="return !window.open(this.href, 'Compartir', 'width=670,height=340,top=150,left=150')" target="_blank">
                                         <img src="images/tw-pink.png" alt="Twitter" />
@@ -176,19 +180,53 @@
             </div>
         </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="my-sizes" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img class="w-100" src="images/tallas.jpg" alt="Tallas">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="js/easyzoom.js"></script>
         <script>
             $(function(){
-                var $easyzoom = $(".easyzoom").easyZoom();
-                $(".my-thumbnail img").click(function(){
-                    var api = $easyzoom.data('easyZoom');
-                    //$(".my-photo img").attr("src", this.src);
-                    api.swap(this.src, this.src);
+                var $easyzoom = null;
 
+                $("img.back").click(function(){
+                    window.location.href = $(this).parent().next("a").attr("href");
                 });
+
+                $("#my-sheet .my-thumbnail img").click(function(){
+                    if ($easyzoom == null) {
+                        $(".my-photo img").attr("src", this.src);
+                    } else {
+                        var api = $easyzoom.data('easyZoom');
+                        api.swap(this.src, this.src);
+                    }
+                });
+
+                $(window).resize(function(){
+                    var page_width = $('body').innerWidth();
+
+                    if (page_width >= 576) {
+                        if ($easyzoom == null) {
+                            $easyzoom = $(".easyzoom").easyZoom();
+                        }
+                    } else if ($easyzoom != null) {
+                        var api = $easyzoom.data('easyZoom');
+                        api.teardown();
+                        $easyzoom = null;
+                    }
+                });
+
+                $(window).resize();
             });
         </script>
 

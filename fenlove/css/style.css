@@ -87,7 +87,6 @@ a {
   margin-right: -15px;
   margin-left: -15px;
   height: 600px;
-  background: url(../images/lanzamiento.jpg) no-repeat center center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -96,7 +95,7 @@ a {
 }
 .my-home .launch {
   height: 600px;
-  background: url(../images/slide-02.jpg) no-repeat center center;
+  background: url(../images/lanzamiento.jpg) no-repeat center center;
 }
 .my-home .new-models {
   height: 628px;
@@ -165,10 +164,15 @@ a {
   box-shadow: 0px 5px 10px #888888;
 }
 .my-catalog .my-thumbnail {
-  padding: 15px 10px;
+  margin: 15px 0px;
+  border: 0.25rem solid white;
+}
+.my-catalog .my-thumbnail:hover {
+  border: 0.25rem solid #ff19a7;
 }
 .my-catalog .image-container img.back {
   display: none;
+  cursor: pointer;
 }
 .my-catalog .image-container:hover img.front {
   display: none;
@@ -212,6 +216,7 @@ a {
 }
 .my-product .my-detail {
   margin-top:0.5rem;
+  margin-right:2.0rem;
 }
 .my-product .my-detail h1 {
   margin-bottom: .8rem;
@@ -249,6 +254,11 @@ a {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.my-product .my-detail .list-unstyled li {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
 .my-contact h2 {
   margin-top: 2em;
   margin-bottom: 1em;
@@ -277,10 +287,13 @@ a {
   color: #ff19a7;
   border-radius: 0;
 }
+.my-contact form button:hover {
+  background-color:#ffc107;
+  color: #fff;
+}
 
 /* sm */
 @media (min-width: 576px) {
-  
 }
 
 /* md */
@@ -302,7 +315,11 @@ a {
     margin-bottom: 50px;
   }
   .my-catalog .my-thumbnail {
-    padding: 30px 30px;
+    margin: 15px 10px;
+    border: 0.5rem solid white;
+  }
+  .my-catalog .my-thumbnail:hover {
+    border: 0.5rem solid #ff19a7;
   }
   .my-catalog .name,
   .my-catalog .price {
@@ -321,9 +338,6 @@ a {
 }
 /* lg */
 @media (min-width: 992px) {
-  .my-catalog .my-thumbnail {
-    padding: 20px;
-  }
   .my-product .my-photo {
     margin:20px 14px 20px;
   }
